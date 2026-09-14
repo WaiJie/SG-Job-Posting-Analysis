@@ -173,7 +173,7 @@ These distinctions help separate overall posting activity from signals that may 
 
 ## Current dataset
 
-|                   |                  |
+|  Details          |                  |
 | ----------------- | ---------------- |
 | **Source**        | MyCareersFuture  |
 | **Coverage**      | June–August 2026 |

@@ -1,0 +1,3831 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive overview of monthly job posting activity by job function and role.">
+  <title>Job Market Pulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#12343b;--muted:#68777c;--paper:#f7f5ef;--surface:#fffdf8;--line:#d9e1dc;--green:#0b6b61;--mint:#d7ece3;--lime:#e3b23c;--orange:#e9785b;--blue:#7ab6c9;--shadow:0 18px 45px rgba(18,52,59,.09)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,Arial,sans-serif;font-size:15px;line-height:1.5}
+    #net{position:fixed;inset:0;z-index:0;width:100%;height:100%;pointer-events:none;opacity:.9}.hero-grid,main,footer{position:relative;z-index:1}
+    .shell{width:min(1180px,calc(100% - 40px));margin:auto}.eyebrow{font:11px "DM Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+    header{position:sticky;top:0;z-index:5;border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent);background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(12px)}.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:17px;font-weight:800;letter-spacing:-.05em;text-decoration:none;color:var(--ink)}.brand i{display:inline-block;width:10px;height:10px;background:var(--lime);border-radius:50%;margin-right:8px}.nav a:not(.brand){color:var(--muted);text-decoration:none;font-size:13px;font-weight:700}.nav a:not(.brand):hover{color:var(--green)}.links{display:flex;gap:24px;align-items:center}.dropdown{position:relative}.dropdown-toggle{background:none;border:0;color:var(--muted);font:700 13px/1.5 Manrope,Arial,sans-serif;padding:0;cursor:pointer;white-space:nowrap}.dropdown-toggle:hover{color:var(--green)}.dropdown-panel{position:absolute;top:calc(100% + 8px);right:0;min-width:180px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;display:none;z-index:20}.dropdown.open .dropdown-panel{display:block}.dropdown-panel a{display:block;padding:9px 12px;border-radius:8px}.dropdown-panel a:hover{background:var(--mint)}@media(hover:hover){.dropdown:hover .dropdown-panel{display:block}}
+    .hero{min-height:530px;display:grid;align-items:center;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-150px;top:-80px;background:var(--mint);z-index:0}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;column-gap:55px;row-gap:14px;align-items:center;padding:76px 0}.hero h1{font-size:clamp(42px,6vw,76px);letter-spacing:-.075em;line-height:.98;margin:15px 0 20px;max-width:690px}.hero h1 em{display:inline-block;font-style:normal;color:var(--green);margin-left:.12em}.hero p{font-size:17px;color:var(--muted);max-width:600px;margin:0}.button{display:inline-flex;margin-top:30px;padding:13px 19px;border-radius:7px;background:var(--green);color:#fff;text-decoration:none;font-weight:800;font-size:13px}.button:hover{background:#064b43}.hero-card{background:color-mix(in srgb,var(--surface) 90%,transparent);padding:29px;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);transform:rotate(2deg)}.hero-card h2{font-size:18px;margin:4px 0 22px;letter-spacing:-.04em}.hero-updated{grid-column:2;margin:0;font:11px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:right}
+    main{padding:55px 0 92px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}.section-head h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.065em;line-height:1;margin:7px 0 0}.section-head p{margin:0;max-width:500px;color:var(--muted);font-size:13px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.filter{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--muted)}select{appearance:none;border:1px solid var(--line);border-radius:7px;background:var(--surface);padding:10px 32px 10px 11px;color:var(--ink);font:700 13px Manrope,Arial,sans-serif;background-image:linear-gradient(45deg,transparent 50%,var(--green) 50%),linear-gradient(135deg,var(--green) 50%,transparent 50%);background-position:calc(100% - 15px) 15px,calc(100% - 10px) 15px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;cursor:pointer}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}.metric{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:19px 18px}.metric span{display:block;color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.metric strong{display:block;font:800 clamp(24px,3vw,35px) Manrope,Arial,sans-serif;letter-spacing:-.05em;margin:8px 0 4px}.metric small{font-size:11px;color:var(--muted)}.metric-delta{font-size:12px;font-weight:800;white-space:nowrap}.up{color:var(--green)!important}.down{color:#b44532!important}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:23px;min-width:0}.panel h3{font-size:16px;letter-spacing:-.035em;margin:0}.panel-head{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:18px}.panel-head span{font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:right}.chart{width:100%;height:262px;display:block}.chart text{font-family:Manrope,Arial,sans-serif;fill:var(--muted);font-size:11px}.axis{stroke:var(--line);stroke-width:1}.trend-area{fill:var(--mint);opacity:.8}.trend-line{fill:none;stroke:var(--green);stroke-width:3}.trend-dot{fill:var(--surface);stroke:var(--green);stroke-width:3}.trend-multi-line{fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}.trend-multi-dot{stroke:var(--surface);stroke-width:2}.trend-legend{display:flex;flex-wrap:wrap;gap:7px 13px;margin-top:2px;justify-content:center}.trend-legend span{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--muted)}.trend-legend i{width:8px;height:8px;border-radius:50%;display:inline-block}.bar{fill:var(--green)}.bar:hover{fill:var(--orange)}.bar-light{fill:var(--blue)}.bar-label{font-size:10px!important}.tip{pointer-events:none;position:fixed;opacity:0;background:var(--ink);color:white;border-radius:5px;padding:7px 9px;font:700 11px Manrope,Arial,sans-serif;z-index:20;transition:opacity .12s}.tip.visible{opacity:1}.tip.wide{white-space:normal;max-width:260px;line-height:1.5}
+    .ranking{list-style:none;padding:0;margin:0}.ranking li{display:grid;grid-template-columns:22px minmax(120px,1fr) minmax(70px,1.5fr) 70px;gap:10px;align-items:center;padding:9px 0;border-top:1px solid #edf0ea}.responsibility-row{cursor:pointer}.responsibility-row:hover{background:rgba(207,232,218,.35)}.rank{font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}.rank-name{font-size:12px;font-weight:700;line-height:1.3}.track{height:8px;background:#edf0ea;overflow:hidden;border-radius:4px}.fill{display:block;height:100%;background:var(--bar-color,var(--green));border-radius:4px}.rank-value{text-align:right;font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}.ranking.resp li{grid-template-columns:22px minmax(110px,1.2fr) minmax(60px,1fr) 64px 64px}.resp-head{display:grid;grid-template-columns:22px minmax(110px,1.2fr) minmax(60px,1fr) 64px 64px;gap:10px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;padding:0 0 8px}.resp-head span:nth-child(n+4){text-align:right}.mom-value{text-align:right;font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}
+    .wide{margin-bottom:16px}.table-wrap{overflow-x:auto}.table{width:100%;border-collapse:collapse;font-size:12px}.table th{font:10px "DM Mono",monospace;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:0 11px 10px}.table td{padding:11px;border-top:1px solid #edf0ea}.table td:not(:first-child),.table th:not(:first-child){text-align:right}.table td:first-child{font-weight:700}.cell-change{font:700 10px Manrope,Arial,sans-serif;color:var(--muted);white-space:nowrap;margin-left:4px}.change-pos{color:var(--green);font-weight:800}.change-neg{color:#b44532;font-weight:800}.note{margin:18px 0 0;color:var(--muted);font-size:11px}.footer{padding:26px 0;border-top:1px solid var(--line);font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;text-align:center}
+    #roles,#tools,#methodology,#monthly-detail,#limitations{margin-top:64px;padding-top:18px}#roles,#tools,#methodology,#monthly-detail,#limitations{scroll-margin-top:84px}#dashboard{scroll-margin-top:47px}#monthly-detail .monthly-heading{margin-top:0}
+    #tools .tool-grid{grid-template-columns:1fr 1fr}.tool-card p{margin:8px 0 0;color:var(--muted);font-size:13px}.tool-tag{display:inline-block;margin-top:17px;padding:5px 9px;border-radius:5px;background:var(--mint);color:var(--green);font:10px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.06em}
+    .methodology-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;margin-top:28px}.limitations-grid{grid-template-columns:1fr 1fr}.method-flow{display:flex;flex-direction:column;align-items:center}.method-step{width:min(100%,430px);padding:15px 20px;text-align:center;background:color-mix(in srgb,var(--mint) 42%,var(--surface));border:1px solid color-mix(in srgb,var(--green) 24%,var(--line));border-radius:10px;color:var(--ink);font:600 13px "DM Mono",monospace;letter-spacing:.09em}.method-arrow{height:29px;display:flex;align-items:center;justify-content:center;color:var(--green);font:700 22px Manrope,Arial,sans-serif}.method-notes{display:grid;gap:12px}.method-note{padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:13px}.method-note .eyebrow{margin-bottom:8px}.method-note h3{margin:0;font-size:17px;letter-spacing:-.04em}.method-note p{margin:8px 0 0;color:var(--muted);font-size:13px}.method-note ul{margin:13px 0 0;padding-left:18px;color:var(--muted);font-size:12px}.method-note li+li{margin-top:5px}.method-note-meta{margin-top:14px;padding-top:10px;border-top:1px solid var(--line);color:var(--muted);font:italic 11px Manrope,Arial,sans-serif;letter-spacing:0;text-transform:none}
+    .metric-group-title{margin:26px 0 10px;font:11px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.metric-group-title:first-of-type{margin-top:0}.metrics.two{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .overall-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:16px;align-items:start}.overall-layout .metric-group-title{margin-top:0}.job-function-summary{margin-top:16px}.hero-big{margin-top:14px}.hero-card .hero-big{text-align:center}.hero-big-num{font:800 clamp(34px,4vw,46px) Manrope,Arial,sans-serif;letter-spacing:-.06em;line-height:1;color:var(--ink)}.hero-big-num.up{color:var(--green)}.hero-big-num.down{color:#b44532}.hero-big-label{margin-top:4px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.hero-divide{border:none;border-top:1px solid var(--line);margin:16px 0 12px}.hero-insights-head{display:flex;justify-content:space-between;gap:10px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.hero-insights{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.hero-insights .insight-stat:only-child{grid-column:1/-1}.hero-insights .insight-stat{padding:9px 12px}.hero-insights .insight-stat small.up{color:var(--green)}.hero-insights .insight-stat small.down{color:#b44532}.detail-insights{margin-bottom:16px}.detail-insights .insight-stat{background:var(--surface)}.signal-title{margin-top:0}.ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}.takeaway{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:14px 18px;margin:0 0 24px}.takeaway .eyebrow{margin-bottom:8px;color:var(--muted)}.ticker-insight{margin:0;color:var(--ink);font-size:13px}.ticker-item{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:14px 16px}.ticker-item span{display:block;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.ticker-item strong{display:block;font-size:24px;font-weight:800;letter-spacing:-.04em;margin:6px 0 2px}.ticker-item small{font-size:11px;font-weight:700;color:var(--muted)}.glance-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;margin-top:16px}.glance-metric{padding:14px 16px;text-align:center}.glance-metric strong{font-size:clamp(20px,2.4vw,28px)}.hero-glance-foot{margin-top:14px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:center}.metrics-soon{margin-bottom:16px}.metrics-soon p{margin:8px 0 0;color:var(--muted);font-size:13px}.insight-stat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px}.insight-stat span{display:block;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.insight-stat strong{display:block;font-size:13px;margin:4px 0 2px;letter-spacing:-.02em}.insight-stat small{font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}.expand-btn{display:block;width:100%;margin-top:12px;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--green);font:700 12px Manrope,Arial,sans-serif;cursor:pointer}.expand-btn:hover{background:var(--mint)}.pagination{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.page-btn{padding:8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--green);font:700 12px Manrope,Arial,sans-serif;cursor:pointer}.page-btn:disabled{opacity:.4;cursor:default}.page-btn:not(:disabled):hover{background:var(--mint)}.page-info{font:11px "DM Mono",monospace;color:var(--muted)}.ranking-table th:nth-child(2),.ranking-table td:nth-child(2){text-align:left}.ranking-table .track{display:block;min-width:80px}.bar-cell{display:flex;align-items:center;gap:10px}.bar-cell .track{flex:1}.bar-count{font:700 11px Manrope,Arial,sans-serif;color:var(--muted);white-space:nowrap}
+    .monthly-heading{margin:64px 0 22px}.monthly-heading h2{font-size:clamp(25px,3.5vw,36px);letter-spacing:-.06em;line-height:1;margin:7px 0 0}.monthly-heading p{margin:10px 0 0;color:var(--muted);font-size:13px;max-width:560px}.monthly-heading .filters{margin:18px 0 0}
+    .responsibility-detail{margin-top:16px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:13px;max-height:640px;overflow:hidden;display:flex;flex-direction:column}.responsibility-detail h3{flex:none}#detail-copy,#tool-detail-copy{overflow-y:auto;min-height:0;scrollbar-gutter:stable}.resp-layout{display:grid;gap:16px;grid-template-columns:1fr;margin-top:16px;align-items:start}.resp-layout.has-detail{grid-template-columns:1.15fr .85fr}.resp-layout .responsibility-detail{margin-top:0}#detail-copy ul{list-style:disc;margin:8px 0 0;padding-left:20px}#detail-copy li{font-size:13px;color:var(--ink);margin-top:6px}#detail-copy li:first-child{margin-top:0}#detail-copy .detail-empty{color:var(--muted);font-style:italic}.responsibility-detail[hidden]{display:none}.responsibility-detail h3{font-size:15px;margin:0 0 5px}.responsibility-detail p{font-size:12px;color:var(--muted);margin:0}.responsibility-detail strong{color:var(--ink)}.detail-pager{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.detail-pager .page-btn{padding:6px 12px;font-size:11px}.detail-pager .page-info{font-size:11px}
+    @media(max-width:800px){.hero-grid,.grid,.overall-layout,.methodology-grid{grid-template-columns:1fr}.hero{min-height:auto}.hero-grid{padding:65px 0}.hero-card{transform:none}.hero-updated{grid-column:1}.metrics{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{margin-top:17px}.links{gap:12px;max-width:70vw;overflow-x:auto;scrollbar-width:none}.links a:nth-child(2){display:inline}}@media(max-width:480px){.shell{width:min(100% - 28px,1180px)}.nav{height:60px}.links a{font-size:11px}.hero h1{font-size:43px}.hero-insights{grid-template-columns:1fr}.metrics{gap:8px}.metric{padding:14px}.ranking li{grid-template-columns:19px minmax(98px,1fr) minmax(45px,1fr) 52px;gap:7px}.rank-name{font-size:11px}.rank-value{font-size:10px}.ranking.resp li,.resp-head{grid-template-columns:18px minmax(84px,1.2fr) minmax(40px,.8fr) 52px 52px;gap:7px}.panel{padding:17px}#roles,#tools,#methodology,#monthly-detail,#limitations{scroll-margin-top:72px}#dashboard{scroll-margin-top:35px}}
+
+    .dashboard-controls{display:flex;align-items:center;gap:16px;margin:0 0 14px}.dashboard-filters{margin-bottom:0;justify-content:flex-start}.dashboard-controls-note{margin-left:auto;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.dashboard-head{margin-bottom:10px}.dashboard-note{margin:0 0 18px;color:var(--muted);font-size:12px;max-width:660px}.toggle-btn{display:inline-flex;align-items:center;gap:8px;border:0;background:none;padding:0;color:var(--ink);font:700 12px Manrope,Arial,sans-serif;cursor:pointer}.toggle-track{position:relative;width:34px;height:19px;border-radius:10px;background:#c8d1cd;border:1px solid var(--line);display:inline-block;transition:.15s}.toggle-knob{position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.15);transition:.15s}.toggle-btn.is-on .toggle-track{background:var(--green);border-color:var(--green)}.toggle-btn.is-on .toggle-knob{left:17px}.panel.bare{background:none;border:0;box-shadow:none;padding:0}
+@media(max-width:800px){.dashboard-filters{justify-content:flex-start}.dashboard-controls{display:block;text-align:left}.dashboard-controls-note{display:block;margin:8px 0 0}.metrics-head{display:block}.metrics-head .dashboard-controls{margin-top:10px}.metrics.three{grid-template-columns:repeat(2,minmax(0,1fr))}.ticker{grid-template-columns:repeat(2,1fr)}.resp-layout.has-detail{grid-template-columns:1fr}.limitations-grid{grid-template-columns:1fr}.dropdown{position:static}.dropdown-toggle{display:none}.dropdown-panel{display:contents}}
+  </style>
+</head>
+<body>
+  <canvas id="net" aria-hidden="true"></canvas>
+  <header><nav class="shell nav"><a class="brand" href="#top"><i></i>Job Market Pulse</a><div class="links"><a href="#dashboard">Dashboard</a><a href="#monthly-detail">Monthly analysis</a><a href="#roles">Role analysis</a><a href="#limitations">Limitations</a></div></nav></header>
+  <section class="hero" id="top"><div class="shell hero-grid"><div><div class="eyebrow" id="hero-range">Preview · Singapore job market</div><h1>See where <em>work is moving.</em></h1><p>Explore monthly job-posting activity across <span id="hero-job-function-count">43</span> job functions, then see the roles most often advertised in those postings, organised into an automated taxonomy.</p><a class="button" href="#dashboard">Explore the dashboard ↓</a></div><aside class="hero-card" aria-label="Dataset at a glance" aria-live="polite"><div class="eyebrow" id="hero-glance-eyebrow">Dataset at a glance</div><div class="glance-grid"><div class="metric glance-metric"><span>Total posts observed</span><strong id="hero-total-posts">—</strong></div><div class="metric glance-metric"><span>Unique jobs</span><strong id="hero-unique-jobs">—</strong></div><div class="metric glance-metric"><span>Recruiter posts</span><strong id="hero-recruiter-posts">—</strong></div><div class="metric glance-metric"><span>Recruiter share</span><strong id="hero-recruiter-share">—</strong></div></div><hr class="hero-divide"><div class="hero-glance-foot" id="hero-glance-foot">MyCareersFuture</div></aside><div class="hero-updated" id="hero-updated">Last updated August 2026</div></div></section>
+  <main class="shell" id="dashboard">
+    <div class="section-head dashboard-head">
+      <div><div class="eyebrow">Dashboard</div><h2>Job postings, made legible.</h2></div>
+    </div>
+    <p class="dashboard-note">Explore the market with recruiter and new job filters. Figures are based on job postings observed on MyCareersFuture, one posting does not necessarily represent one unique vacancy.</p>
+    <div class="dashboard-controls">
+        <div class="filters dashboard-filters">
+          <label class="filter" id="recruiter-label">
+            Recruiter postings
+            <button class="toggle-btn is-on" id="recruiter-toggle" type="button" aria-pressed="true">
+              <span class="toggle-track"><span class="toggle-knob"></span></span>
+              <span id="recruiter-toggle-label">Included</span>
+            </button>
+          </label>
+          <label class="filter" id="count-mode-label">
+            Count by
+            <select id="count-mode" aria-label="Count by">
+              <option value="posts">Job posts</option>
+              <option value="new">New jobs</option>
+            </select>
+          </label>
+        </div>
+        <span class="dashboard-controls-note">Setting applies to all analysis below</span>
+      </div>
+    <div class="metric-group-title signal-title">Market signal</div>
+    <section class="ticker" id="market-ticker" aria-live="polite"></section>
+    <div class="takeaway"><div class="eyebrow">Market takeaway</div><p class="ticker-insight" id="market-ticker-insight" aria-live="polite"></p></div>
+    <div class="grid"><section class="panel"><div class="panel-head"><h3 id="trend-title">Total job posts by month</h3><span>All job functions</span></div><svg class="chart" id="trend-chart" role="img" aria-label="Line chart of total job posts by month"></svg></section><section class="panel"><div class="panel-head"><h3 id="job-function-trend-title">Top 5 job function trends</h3><span>By total post volume</span></div><svg class="chart" id="job-function-trend-chart" role="img" aria-label="Multi-line chart of the top 5 job functions by monthly job posts"></svg><div class="trend-legend" id="job-function-trend-legend"></div></section></div>
+    <section class="panel job-function-summary"><div class="panel-head"><h3 id="job-function-ranking-title">Job functions by job posts</h3><span>Across all recorded months</span></div><div class="table-wrap"><table class="table ranking-table"><thead><tr><th>#</th><th>Job function</th><th>Count</th><th>Share</th></tr></thead><tbody id="job-function-ranking"></tbody></table></div><div class="pagination"><button class="page-btn" id="job-function-prev">← Prev</button><span class="page-info" id="job-function-page-info">Page 1 of 5</span><button class="page-btn" id="job-function-next">Next →</button></div></section>
+    <section id="monthly-detail"><div class="monthly-heading"><div class="eyebrow">Monthly analysis</div><h2>Selected month, in detail.</h2><p>Choose a reporting period to update the snapshot and job function breakdown below.</p><div class="filters"><label class="filter">Reporting period <select id="month-select" aria-label="Reporting period"></select></label><label class="filter" id="recruiter-label-2">Recruiter postings <button class="toggle-btn is-on" id="recruiter-toggle-2" type="button" aria-pressed="true"><span class="toggle-track"><span class="toggle-knob"></span></span><span id="recruiter-toggle-label-2">Included</span></button></label><label class="filter" id="count-mode-label-2">Count by <select id="count-mode-2" aria-label="Count by"><option value="posts">Job posts</option><option value="new">New jobs</option></select></label></div></div>
+    <div class="metric-group-title">Monthly signal</div><section class="metrics three" aria-label="Monthly job-post metrics"><article class="metric"><span>Selected month</span><strong id="metric-month">—</strong><small id="metric-month-note">—</small></article><article class="metric"><span>Month-over-month</span><strong id="metric-mom">—</strong><small id="metric-mom-note">—</small></article><article class="metric"><span>Recruiter share</span><strong id="metric-recruiter-share">—</strong><small id="metric-recruiter-share-note">—</small></article></section>
+    <div class="metric-group-title">What stands out <span id="detail-insights-period"></span></div>
+    <div class="hero-insights detail-insights" id="detail-insights" aria-live="polite"></div>
+    <section class="panel wide"><div class="panel-head"><h3 id="monthly-job-function-title">Job posts by job function</h3><span>Monthly breakdown</span></div><div class="table-wrap"><table class="table"><thead><tr><th>Job function</th><th id="table-month-1">—</th><th id="table-month-2">—</th><th>Change</th></tr></thead><tbody id="job-function-table"></tbody></table></div><div class="pagination"><button class="page-btn" id="detail-prev">← Prev</button><span class="page-info" id="detail-page-info">Page 1 of 5</span><button class="page-btn" id="detail-next">Next →</button></div></section></section>
+    <section id="roles"><div class="section-head"><div><div class="eyebrow">Role analysis</div><h2>Which roles are employers posting for?</h2></div><p>Switch between post counts and the share of classified posts for each role. Focus on a job function to see job-function-specific examples. Each classified posting is assigned to a single role.</p></div><div class="filters responsibility-filter"><label class="filter">Reporting period <select id="responsibility-month-select" aria-label="Role reporting period"></select></label><label class="filter">Job function focus <select id="job-function-select" aria-label="Job function focus"></select></label><label class="filter">Display as <select id="responsibility-view-select" aria-label="Role display mode"><option value="count">Post count</option><option value="percent">Percentage of posts</option></select></label></div><div class="resp-layout has-detail" id="resp-layout"><section class="panel"><div class="panel-head"><h3>Top 10 roles by job posts</h3><span id="overall-resp-period">All recorded months</span></div><div class="resp-head" aria-hidden="true"><span></span><span>Role</span><span></span><span id="overall-resp-value-head">Share</span><span>MoM</span></div><ol class="ranking resp" id="overall-responsibilities"></ol></section><aside class="responsibility-detail" id="responsibility-detail" aria-live="polite"><h3 id="detail-title">Example roles</h3><div id="detail-copy"><p class="detail-empty">Select a role to see example postings here.</p></div></aside></div></section>
+    
+    
+    <section id="limitations"><div class="section-head"><div><div class="eyebrow">Limitations</div><h2>What the data can and cannot tell you.</h2></div></div>
+      <div class="method-notes limitations-grid">
+        <article class="method-note"><h3>Early release</h3><p>This preview focuses on job-posting activity and role analysis. Additional dimensions may be added in future releases.</p></article>
+        <article class="method-note"><h3>Observed postings, not hires</h3><p>Posting counts measure observable job-posting activity. They do not directly measure hires, vacancies filled, or employment outcomes.</p></article>
+        <article class="method-note"><h3>Postings are not always unique jobs</h3><p>Jobs may be reposted, duplicated, or listed in multiple places. Observed posting volume may therefore differ from the number of unique hiring needs.</p></article>
+        <article class="method-note"><h3>Role classification is provisional</h3><p>Roles are extracted and grouped using local large language models and an experimental taxonomy. Some postings may be assigned to neighbouring or incorrect roles, particularly where occupations share similar skills and responsibilities. <strong>Role-level results may change in future releases.</strong></p></article>
+        <article class="method-note"><h3>Recruiter postings affect the signal</h3><p>Recruitment agencies may post on behalf of other employers and can contribute substantially to observed volume. The recruiter filter is provided to make this effect visible.</p></article>
+        <article class="method-note"><h3>Limited observation window</h3><p>This release covers <strong>June–August 2026</strong> and reflects only observable postings during this period. It should not be interpreted as a complete picture of the Singapore labour market.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell footer">Job Market Pulse</div></footer>
+  <div class="tip" id="tip" role="status"></div>
+  <script src="dashboard-data.js"></script>
+  <script>
+  (() => {
+    const data = window.JOB_MARKET_DATA || {};
+
+    const $ = id => document.getElementById(id);
+
+    const monthSelect = $('month-select');
+    const responsibilityMonthSelect = $('responsibility-month-select');
+    const jobFunctionSelect = $('job-function-select');
+    const responsibilityViewSelect = $('responsibility-view-select');
+    const toolMonthSelect = $('tool-month-select');
+    const toolJobFunctionSelect = $('tool-job-function-select');
+    const toolViewSelect = $('tool-view-select');
+    const recruiterToggle = $('recruiter-toggle');
+    const recruiterToggleLabel = $('recruiter-toggle-label');
+    const countModeSelect = $('count-mode');
+    const recruiterToggle2 = $('recruiter-toggle-2');
+    const countModeSelect2 = $('count-mode-2');
+
+    const jobPostsSummary = data.job_posts_summary || null;
+    const jobPosts = jobPostsSummary ? [] : (data.job_posts || []);
+    const jobFunctionRows = data.job_function_monthly || [];
+    const responsibilityRows = data.role_monthly_overall || data.responsibility_monthly_overall || [];
+    const responsibilityJobFunctionRows =
+      data.role_job_function_monthly || data.responsibility_job_function_monthly || [];
+    // Exact share denominators, precomputed from the full aggregates
+    // before top-N truncation. Falls back to summing the shipped rows
+    // when a legacy payload without totals is loaded.
+    const roleTotals = data.role_monthly_totals || [];
+    const roleJobFunctionTotals = data.role_job_function_totals || [];
+    const toolRows = data.tool_monthly || [];
+    const toolJobFunctionRows = data.tool_job_function_monthly || [];
+    const hasTools = toolRows.length > 0;
+
+    const fmt = n =>
+      new Intl.NumberFormat('en-SG').format(
+        Number(n || 0)
+      );
+
+    const pct = (current, previous) =>
+      previous
+        ? ((current - previous) / previous) * 100
+        : null;
+
+    const monthLabel = value => {
+      if (value === 'all') {
+        return 'All recorded months';
+      }
+
+      return new Intl.DateTimeFormat(
+        'en-SG',
+        {
+          month: 'long',
+          year: 'numeric',
+          timeZone: 'UTC',
+        }
+      ).format(
+        new Date(
+          value + '-01T00:00:00Z'
+        )
+      );
+    };
+
+    const monthShort = value =>
+      new Intl.DateTimeFormat(
+        'en-SG',
+        {
+          month: 'long',
+          timeZone: 'UTC',
+        }
+      ).format(
+        new Date(
+          value + '-01T00:00:00Z'
+        )
+      );
+
+    const monthTick = value =>
+      new Intl.DateTimeFormat(
+        'en-SG',
+        {
+          month: 'short',
+          year: 'numeric',
+          timeZone: 'UTC',
+        }
+      ).format(
+        new Date(
+          value + '-01T00:00:00Z'
+        )
+      );
+
+    const months = [
+      ...new Set(
+        jobFunctionRows
+          .map(row => row.month)
+          .filter(Boolean)
+      ),
+    ].sort();
+
+    const jobFunctions = [
+      ...new Set(
+        jobFunctionRows
+          .map(row => row.job_function)
+          .filter(Boolean)
+      ),
+    ].sort();
+
+    const jobFunctionIndex = new Map(
+      jobFunctionRows.map(row => [
+        `${row.month}|||${row.job_function}`,
+        row,
+      ])
+    );
+
+    const responsibilityIndex = new Map(
+      responsibilityRows.map(row => [
+        `${row.month}|||${row.partition}`,
+        row,
+      ])
+    );
+
+    const responsibilityJobFunctionIndex = new Map(
+      responsibilityJobFunctionRows.map(row => [
+        `${row.month}|||${row.job_function}|||${row.partition}`,
+        row,
+      ])
+    );
+
+    // --------------------------------------------------------
+    // Global view state
+    // --------------------------------------------------------
+
+    let includeRecruiters = true;
+    let countMode = 'posts';
+    let jobFunctionPage = 0;
+    let detailPage = 0;
+    // Detail-panel example pagination: one example per page so long
+    // role texts never elongate the panel.
+    let roleExampleItems = [];
+    let roleExamplePage = 0;
+    let toolExampleItems = [];
+    let toolExamplePage = 0;
+
+    // --------------------------------------------------------
+    // Helpers
+    // --------------------------------------------------------
+
+    function setText(id, value) {
+      const node = $(id);
+      if (node) {
+        node.textContent = value;
+      }
+    }
+
+    function selectedJobFunctionMetric(row) {
+      if (!row) {
+        return 0;
+      }
+
+      if (countMode === 'new') {
+        return Number(
+          includeRecruiters
+            ? row.new_job_count
+            : row.new_non_recruiter_job_count
+        ) || 0;
+      }
+
+      return Number(
+        includeRecruiters
+          ? row.posting_count
+          : row.non_recruiter_posting_count
+      ) || 0;
+    }
+
+    function getJobFunctionRow(
+      jobFunction,
+      month
+    ) {
+      return jobFunctionIndex.get(
+        `${month}|||${jobFunction}`
+      );
+    }
+
+    function jobFunctionMetric(
+      jobFunction,
+      month
+    ) {
+      return selectedJobFunctionMetric(
+        getJobFunctionRow(
+          jobFunction,
+          month
+        )
+      );
+    }
+
+    function totalJobFunctionMetric(
+      jobFunction = 'all',
+      month = 'all'
+    ) {
+      let total = 0;
+
+      for (const row of jobFunctionRows) {
+
+        if (
+          jobFunction !== 'all'
+          && row.job_function !== jobFunction
+        ) {
+          continue;
+        }
+
+        if (
+          month !== 'all'
+          && row.month !== month
+        ) {
+          continue;
+        }
+
+        total += selectedJobFunctionMetric(
+          row
+        );
+      }
+
+      return total;
+    }
+
+    function currentMonthForMoM() {
+      return monthSelect.value;
+    }
+
+    function currentResponsibilityPeriod() {
+      return responsibilityMonthSelect.value;
+    }
+
+    function currentJobFunction() {
+      return jobFunctionSelect.value;
+    }
+
+    function priorMonthOf(
+      period
+    ) {
+      if (
+        period === 'all'
+      ) {
+        return null;
+      }
+
+      const index =
+        months.indexOf(period);
+
+      return index > 0
+        ? months[index - 1]
+        : null;
+    }
+
+    function makeOptions() {
+
+      const sortedMonths =
+        [...months].sort().reverse();
+
+      const monthOptions =
+        sortedMonths
+          .map(
+            month =>
+              `<option value="${month}">${monthLabel(month)}</option>`
+          )
+          .join('');
+
+      monthSelect.innerHTML =
+        monthOptions;
+
+      responsibilityMonthSelect.innerHTML =
+        monthOptions
+        + '<option value="all">All recorded months</option>';
+
+      jobFunctionSelect.innerHTML =
+        '<option value="all">All job functions</option>'
+        + jobFunctions
+          .map(
+            jobFunction =>
+              `<option value="${jobFunction}">${jobFunction}</option>`
+          )
+          .join('');
+
+      if (toolMonthSelect) {
+        toolMonthSelect.innerHTML =
+          monthOptions
+          + '<option value="all">All recorded months</option>';
+      }
+
+      if (toolJobFunctionSelect) {
+        toolJobFunctionSelect.innerHTML =
+          '<option value="all">All job functions</option>'
+          + jobFunctions
+            .map(
+              jobFunction =>
+                `<option value="${jobFunction}">${jobFunction}</option>`
+            )
+            .join('');
+      }
+    }
+
+    // --------------------------------------------------------
+    // Overall dataset metrics
+    // Uses the pre-aggregated job_posts_summary (total posts deduped by
+    // uuid + posting date, distinct UUIDs, recruiter posts on the
+    // deduped set) so the browser never downloads the raw
+    // per-posting rows. Falls back to data.job_posts when present.
+    // --------------------------------------------------------
+
+    function dedupedJobPosts(rows) {
+      const seen = new Set();
+      let recruiters = 0;
+      let fallback = false;
+      rows.forEach((row, index) => {
+        const date =
+          row.posting_date
+          ?? row.metadata__newPostingDate
+          ?? row.newPostingDate
+          ?? row.postingDate
+          ?? null;
+        const key =
+          row.uuid && date != null
+            ? `${row.uuid}|||${String(date)}`
+            : `__row__${index}`;
+        if (typeof row.uuid === 'undefined' && date == null) {
+          fallback = true;
+        }
+        if (seen.has(key)) {
+          return;
+        }
+        seen.add(key);
+        if (row.is_recruiter) {
+          recruiters += 1;
+        }
+      });
+      return { total: fallback ? rows.length : seen.size, recruiters };
+    }
+
+    function renderOverallMetrics() {
+
+      const dedupedFallback =
+        jobPostsSummary
+          ? null
+          : dedupedJobPosts(jobPosts);
+
+      const totalPosts =
+        jobPostsSummary
+          ? Number(jobPostsSummary.total_posts) || 0
+          : dedupedFallback.total;
+
+      const uniqueJobs =
+        jobPostsSummary
+          ? Number(jobPostsSummary.unique_jobs) || 0
+          : new Set(
+              jobPosts
+                .map(row => row.uuid)
+                .filter(Boolean)
+            ).size;
+
+      const recruiterPosts =
+        jobPostsSummary
+          ? Number(jobPostsSummary.recruiter_posts) || 0
+          : dedupedFallback.recruiters;
+
+      const recruiterRatio =
+        totalPosts
+          ? (
+              recruiterPosts
+              / totalPosts
+            ) * 100
+          : 0;
+
+      setText(
+        'hero-total-posts',
+        fmt(totalPosts)
+      );
+
+      setText(
+        'hero-unique-jobs',
+        fmt(uniqueJobs)
+      );
+
+      setText(
+        'hero-recruiter-posts',
+        fmt(recruiterPosts)
+      );
+
+      setText(
+        'hero-recruiter-share',
+        `${recruiterRatio.toFixed(1)}%`
+      );
+    }
+
+    // --------------------------------------------------------
+    // Hero
+    // The hero is a static dataset snapshot: what the dataset is,
+    // not a market claim. It never responds to the controls.
+    // --------------------------------------------------------
+
+    function renderHero() {
+
+      const latest =
+        months.at(-1);
+
+      setText(
+        'hero-job-function-count',
+        String(jobFunctions.length)
+      );
+
+      setText(
+        'hero-range',
+        `Preview · Singapore job market · ${
+          months.length > 1
+            ? `${monthShort(months[0])}–${monthLabel(months.at(-1))}`
+            : monthLabel(months[0])
+        }`
+      );
+
+      setText(
+        'hero-glance-eyebrow',
+        `${monthLabel(latest)} · Dataset at a glance`
+      );
+
+      setText(
+        'hero-glance-foot',
+        `MyCareersFuture · ${
+          months.length > 1
+            ? `${monthShort(months[0])}–${monthLabel(months.at(-1))}`
+            : monthLabel(months[0])
+        }`
+      );
+
+      setText(
+        'hero-updated',
+        `Last updated ${monthLabel(latest)}`
+      );
+    }
+
+    // --------------------------------------------------------
+    // Market signal ticker
+    // All four analytical lenses for the latest month, generated
+    // from the data. Independent of the dashboard controls.
+    // --------------------------------------------------------
+
+    function lensTotal(
+      mode,
+      incl,
+      month
+    ) {
+
+      let total = 0;
+
+      for (const row of jobFunctionRows) {
+
+        if (row.month !== month) {
+          continue;
+        }
+
+        const value =
+          mode === 'new'
+            ? (
+              incl
+                ? row.new_job_count
+                : row.new_non_recruiter_job_count
+            )
+            : (
+              incl
+                ? row.posting_count
+                : row.non_recruiter_posting_count
+            );
+
+        total += Number(value) || 0;
+      }
+
+      return total;
+    }
+
+    function renderTicker() {
+
+      const latest =
+        months.at(-1);
+
+      const previous =
+        months.length > 1
+          ? months.at(-2)
+          : null;
+
+      const lenses = [
+        {
+          label: 'All posts',
+          phrase: 'overall postings',
+          mode: 'posts',
+          incl: true,
+        },
+        {
+          label: 'Excl. recruiters',
+          phrase: 'excluding recruiter posts',
+          mode: 'posts',
+          incl: false,
+        },
+        {
+          label: 'New jobs',
+          phrase: 'new jobs',
+          mode: 'new',
+          incl: true,
+        },
+        {
+          label: 'New, excl. recruiters',
+          phrase: 'new jobs excluding recruiters',
+          mode: 'new',
+          incl: false,
+        },
+      ];
+
+      const dirOf = change =>
+        change === null || Math.abs(change) < 0.05
+          ? 'flat'
+          : change > 0
+            ? 'up'
+            : 'down';
+
+      const results =
+        lenses.map(
+          lens => {
+
+            const value =
+              lensTotal(
+                lens.mode,
+                lens.incl,
+                latest
+              );
+
+            const previousValue =
+              previous
+                ? lensTotal(
+                    lens.mode,
+                    lens.incl,
+                    previous
+                  )
+                : 0;
+
+            const change =
+              previous
+                ? pct(
+                    value,
+                    previousValue
+                  )
+                : null;
+
+            return {
+              ...lens,
+              value,
+              change,
+              dir: dirOf(change),
+            };
+          }
+        );
+
+      $('market-ticker').innerHTML =
+        results
+          .map(
+            lens => {
+
+              const arrow =
+                lens.change === null
+                  ? '•'
+                  : lens.change > 0
+                    ? '▲'
+                    : lens.change < 0
+                      ? '▼'
+                      : '•';
+
+              const tone =
+                lens.change === null
+                  ? ''
+                  : lens.change > 0
+                    ? 'up'
+                    : lens.change < 0
+                      ? 'down'
+                      : '';
+
+              const changeText =
+                lens.change === null
+                  ? '—'
+                  : `${
+                      lens.change >= 0
+                        ? '+'
+                        : ''
+                    }${lens.change.toFixed(1)}% MoM`;
+
+              return `
+                <div class="ticker-item">
+                  <span>${lens.label} · ${monthTick(latest)}</span>
+                  <strong>${fmt(lens.value)}</strong>
+                  <small class="${tone}">${changeText} ${arrow}</small>
+                </div>
+              `;
+            }
+          )
+          .join('');
+
+      renderTickerInsight(
+        results,
+        latest,
+        previous
+      );
+    }
+
+    function renderTickerInsight(
+      results,
+      latest,
+      previous
+    ) {
+
+      const node =
+        $('market-ticker-insight');
+
+      if (!node) {
+        return;
+      }
+
+      if (!previous) {
+        node.textContent =
+          `First month in data: ${monthLabel(latest)}. No prior month to compare.`;
+
+        return;
+      }
+
+      const byLabel = {};
+
+      for (const lens of results) {
+        byLabel[lens.label] = lens;
+      }
+
+      const overall =
+        byLabel['All posts'];
+
+      const excl =
+        byLabel['Excl. recruiters'];
+
+      const fresh =
+        byLabel['New jobs'];
+
+      const freshExcl =
+        byLabel['New, excl. recruiters'];
+
+      const abs = change =>
+        `${Math.abs(change).toFixed(1)}%`;
+
+      const past = dir =>
+        dir === 'up'
+          ? 'rose'
+          : dir === 'down'
+            ? 'fell'
+            : 'held steady';
+
+      let insight =
+        overall.dir === 'flat'
+          ? `Overall postings held steady in ${monthLabel(latest)}`
+          : `Overall postings ${past(overall.dir)} ${abs(overall.change)} in ${monthLabel(latest)}`;
+
+      if (
+        fresh.dir !== 'flat'
+        && fresh.dir !== overall.dir
+      ) {
+
+        insight +=
+          `, but new job activity ${past(fresh.dir)} ${abs(fresh.change)}`;
+
+        if (
+          freshExcl.dir === fresh.dir
+          && freshExcl.dir !== 'flat'
+        ) {
+
+          insight +=
+            fresh.dir === 'up'
+              ? `. The increase remains strong even when recruiter postings are excluded, with new jobs up ${abs(freshExcl.change)}.`
+              : `. The decline persists even when recruiter postings are excluded, with new jobs down ${abs(freshExcl.change)}.`;
+
+        } else if (
+          freshExcl.dir !== 'flat'
+        ) {
+
+          insight +=
+            `. Excluding recruiter postings reverses that: new jobs ${past(freshExcl.dir)} ${abs(freshExcl.change)}.`;
+
+        } else {
+
+          insight +=
+            `. Excluding recruiter postings, new jobs held steady.`;
+        }
+
+      } else if (
+        excl.dir !== 'flat'
+        && excl.dir !== overall.dir
+      ) {
+
+        insight +=
+          `. Excluding recruiter posts tells a different story: the market ${past(excl.dir)} ${abs(excl.change)}.`;
+
+      } else {
+
+        insight += '.';
+      }
+
+      node.textContent =
+        insight;
+    }
+
+    // --------------------------------------------------------
+    // Historical total trend
+    // --------------------------------------------------------
+
+    function renderTrend() {
+
+      const svg =
+        $('trend-chart');
+
+      const values =
+        months.map(
+          month => ({
+            month,
+            count:
+              totalJobFunctionMetric(
+                'all',
+                month
+              ),
+          })
+        );
+
+      const box =
+        svg.getBoundingClientRect();
+
+      const w =
+        Math.max(
+          320,
+          box.width
+        );
+
+      const h = 262;
+
+      const left = 43;
+      const right = 16;
+      const top = 20;
+      const bottom = 46;
+
+      const iw =
+        w - left - right;
+
+      const ih =
+        h - top - bottom;
+
+      const max =
+        Math.max(
+          ...values.map(
+            row => row.count
+          ),
+          1
+        ) * 1.12;
+
+      const x = i =>
+        left
+        + (
+          values.length === 1
+            ? iw / 2
+            : i * iw / (
+                values.length - 1
+              )
+        );
+
+      const y = value =>
+        top
+        + ih
+        - value / max * ih;
+
+      const points =
+        values
+          .map(
+            (row, i) =>
+              `${x(i)},${y(row.count)}`
+          )
+          .join(' ');
+
+      const area =
+        `${left},${top + ih} `
+        + points
+        + ` ${left + iw},${top + ih}`;
+
+      svg.setAttribute(
+        'viewBox',
+        `0 0 ${w} ${h}`
+      );
+
+      svg.innerHTML = `
+        <line class="axis"
+          x1="${left}"
+          y1="${top + ih}"
+          x2="${left + iw}"
+          y2="${top + ih}"/>
+
+        <line class="axis"
+          x1="${left}"
+          y1="${top}"
+          x2="${left}"
+          y2="${top + ih}"/>
+
+        <text
+          x="${left}"
+          y="${top - 4}"
+        >${fmt(max / 1.12)}</text>
+
+        <polygon
+          class="trend-area"
+          points="${area}"
+        />
+
+        <polyline
+          class="trend-line"
+          points="${points}"
+        />
+
+        ${values.map(
+          (row, i) =>
+            `
+              <circle
+                class="trend-dot"
+                cx="${x(i)}"
+                cy="${y(row.count)}"
+                r="5"
+                data-value="${monthLabel(row.month)}: ${fmt(row.count)} ${
+                  countMode === 'new'
+                    ? 'new jobs'
+                    : includeRecruiters
+                      ? 'job posts'
+                      : 'non-recruiter posts'
+                }"
+              />
+
+              <text
+                x="${x(i)}"
+                y="${h - 30}"
+                text-anchor="end"
+                transform="rotate(-35 ${x(i)} ${h - 30})"
+              >${monthTick(row.month)}</text>
+
+              <text
+                x="${x(i)}"
+                y="${y(row.count) - 12}"
+                text-anchor="middle"
+              >${fmt(row.count)}</text>
+            `
+        ).join('')}
+      `;
+
+      attachTips(svg);
+    }
+
+    // --------------------------------------------------------
+    // Job function trend
+    // --------------------------------------------------------
+
+    function renderJobFunctionTrend() {
+
+      const svg =
+        $('job-function-trend-chart');
+
+      const legend =
+        $('job-function-trend-legend');
+
+      const topJobFunctions =
+        jobFunctions
+          .map(
+            jobFunction => ({
+              jobFunction,
+              total:
+                totalJobFunctionMetric(
+                  jobFunction,
+                  'all'
+                ),
+            })
+          )
+          .sort(
+            (a, b) =>
+              b.total - a.total
+          )
+          .slice(0, 5);
+
+      const values =
+        topJobFunctions.map(
+          row => ({
+            ...row,
+            series:
+              months.map(
+                month =>
+                  jobFunctionMetric(
+                    row.jobFunction,
+                    month
+                  )
+              ),
+          })
+        );
+
+      const colors = [
+        '#075e54',
+        '#1d7874',
+        '#3b82a0',
+        '#5167a8',
+        '#7257a5',
+        '#9a4f84',
+        '#bd5b69',
+        '#d77a52',
+        '#c59b38',
+        '#7a8f3a',
+      ];
+
+      const box =
+        svg.getBoundingClientRect();
+
+      const w =
+        Math.max(
+          320,
+          box.width
+        );
+
+      const h = 262;
+
+      const left = 45;
+      const right = 14;
+      const top = 20;
+      const bottom = 46;
+
+      const iw =
+        w - left - right;
+
+      const ih =
+        h - top - bottom;
+
+      const max =
+        Math.max(
+          ...values.flatMap(
+            row => row.series
+          ),
+          1
+        ) * 1.12;
+
+      const x = i =>
+        left
+        + (
+          months.length === 1
+            ? iw / 2
+            : i * iw / (
+                months.length - 1
+              )
+        );
+
+      const y = value =>
+        top
+        + ih
+        - value / max * ih;
+
+      svg.setAttribute(
+        'viewBox',
+        `0 0 ${w} ${h}`
+      );
+
+      svg.innerHTML = `
+        <line class="axis"
+          x1="${left}"
+          y1="${top + ih}"
+          x2="${left + iw}"
+          y2="${top + ih}"/>
+
+        <line class="axis"
+          x1="${left}"
+          y1="${top}"
+          x2="${left}"
+          y2="${top + ih}"/>
+
+        <text
+          x="${left}"
+          y="${top - 4}"
+        >${fmt(max / 1.12)}</text>
+
+        ${values.map(
+          (row, index) => {
+
+            const points =
+              row.series
+                .map(
+                  (value, i) =>
+                    `${x(i)},${y(value)}`
+                )
+                .join(' ');
+
+            return `
+              <polyline
+                class="trend-multi-line"
+                stroke="${colors[index]}"
+                points="${points}"
+              />
+
+              ${row.series.map(
+                (value, i) =>
+                  `
+                    <circle
+                      class="trend-multi-dot"
+                      fill="${colors[index]}"
+                      cx="${x(i)}"
+                      cy="${y(value)}"
+                      r="3.5"
+                      data-value="${
+                        row.jobFunction
+                      } · ${
+                        monthLabel(
+                          months[i]
+                        )
+                      }: ${fmt(value)} ${
+                        countMode === 'new'
+                          ? 'new jobs'
+                          : includeRecruiters
+                            ? 'posts'
+                            : 'non-recruiter posts'
+                      }"
+                    />
+                  `
+              ).join('')}
+            `;
+          }
+        ).join('')}
+
+        ${months.map(
+          (month, i) =>
+            `
+              <text
+                x="${x(i)}"
+                y="${h - 30}"
+                text-anchor="end"
+                transform="rotate(-35 ${x(i)} ${h - 30})"
+              >${monthTick(month)}</text>
+            `
+        ).join('')}
+      `;
+
+      legend.innerHTML =
+        values.map(
+          (row, index) =>
+            `
+              <span>
+                <i style="background:${colors[index]}"></i>
+                ${row.jobFunction}
+              </span>
+            `
+        ).join('');
+
+      attachTips(svg);
+    }
+
+    // --------------------------------------------------------
+    // Job function ranking + monthly table
+    // --------------------------------------------------------
+
+    function jobFunctionChanges(
+      prior,
+      current
+    ) {
+      return jobFunctions
+        .map(
+          name => {
+            const a =
+              jobFunctionMetric(
+                name,
+                prior
+              );
+
+            const b =
+              jobFunctionMetric(
+                name,
+                current
+              );
+
+            return {
+              name,
+              a,
+              b,
+              countDelta:
+                b - a,
+              delta:
+                pct(b, a),
+            };
+          }
+        )
+        .sort(
+          (a, b) =>
+            b.countDelta
+            - a.countDelta
+        );
+    }
+
+    function signed(n) {
+      return `${
+        n >= 0 ? '+' : ''
+      }${fmt(n)}`;
+    }
+
+    function signedPct(d) {
+      return d === null ||
+        d === undefined
+        ? '—'
+        : `${
+            d >= 0 ? '+' : ''
+          }${d.toFixed(1)}%`;
+    }
+
+    function renderJobFunctionViews() {
+
+      const allRows =
+        jobFunctions
+          .map(
+            jobFunction => ({
+              jobFunction,
+              label: jobFunction,
+              count:
+                totalJobFunctionMetric(
+                  jobFunction,
+                  'all'
+                ),
+            })
+          )
+          .sort(
+            (a, b) =>
+              b.count - a.count
+          );
+
+      const pageSize = 10;
+
+      const pageCount =
+        Math.max(
+          1,
+          Math.ceil(
+            allRows.length / pageSize
+          )
+        );
+
+      jobFunctionPage =
+        Math.min(
+          Math.max(
+            jobFunctionPage,
+            0
+          ),
+          pageCount - 1
+        );
+
+      const pageRows =
+        allRows.slice(
+          jobFunctionPage * pageSize,
+          jobFunctionPage * pageSize + pageSize
+        );
+
+      const globalMax =
+        Math.max(
+          ...allRows.map(
+            row => row.count
+          ),
+          1
+        );
+
+      const marketTotal =
+        totalJobFunctionMetric(
+          'all',
+          'all'
+        );
+
+      const maxShare =
+        marketTotal
+          ? Math.max(
+              ...allRows.map(
+                row =>
+                  row.count
+                  / marketTotal
+              ),
+              .001
+            )
+          : 1;
+
+      $('job-function-ranking').innerHTML =
+        pageRows
+          .map(
+            (row, index) => {
+
+              const rank =
+                jobFunctionPage * pageSize
+                + index
+                + 1;
+
+              const share =
+                marketTotal
+                  ? row.count
+                    / marketTotal
+                  : 0;
+
+              const intensity =
+                marketTotal
+                  ? share / maxShare
+                  : 1;
+
+              const color =
+                marketTotal
+                  ? `hsl(${
+                      205
+                      - intensity * 60
+                    },58%,${
+                      50
+                      - intensity * 13
+                    }%)`
+                  : '#075e54';
+
+              return `
+                <tr>
+                  <td>${String(rank).padStart(2, '0')}</td>
+                  <td>${row.label}</td>
+                  <td><span class="bar-cell"><span class="track"><span class="fill" style="width:${row.count / globalMax * 100}%;background:${color}"></span></span><span class="bar-count">${fmt(row.count)}</span></span></td>
+                  <td>${(share * 100).toFixed(1)}%</td>
+                </tr>
+              `;
+            }
+          )
+          .join('');
+
+      setText(
+        'job-function-ranking-title',
+        countMode === 'new'
+          ? 'Job functions by new jobs'
+          : 'Job functions by job posts'
+      );
+
+      setText(
+        'job-function-page-info',
+        `Page ${jobFunctionPage + 1} of ${pageCount}`
+      );
+
+      $('job-function-prev').disabled =
+        jobFunctionPage === 0;
+
+      $('job-function-next').disabled =
+        jobFunctionPage >= pageCount - 1;
+
+      const {
+        prior,
+        current,
+      } =
+        comparisonPair();
+
+      const first =
+        prior || current;
+
+      const second =
+        current;
+
+      setText(
+        'table-month-1',
+        monthLabel(first)
+      );
+
+      setText(
+        'table-month-2',
+        monthLabel(second)
+      );
+
+      const changes =
+        jobFunctionChanges(
+          first,
+          second
+        );
+
+      const ranked =
+        [...changes].sort(
+          (a, b) =>
+            b.b - a.b
+        );
+
+      const detailPageSize = 10;
+
+      const detailPageCount =
+        Math.max(
+          1,
+          Math.ceil(
+            ranked.length / detailPageSize
+          )
+        );
+
+      detailPage =
+        Math.min(
+          Math.max(
+            detailPage,
+            0
+          ),
+          detailPageCount - 1
+        );
+
+      $('job-function-table').innerHTML =
+        ranked
+          .slice(
+            detailPage * detailPageSize,
+            detailPage * detailPageSize + detailPageSize
+          )
+          .map(
+            row => {
+
+              const deltaClass =
+                row.delta === null ||
+                row.delta === undefined
+                  ? ''
+                  : row.delta >= 0
+                    ? 'change-pos'
+                    : 'change-neg';
+
+              return `
+                <tr>
+                  <td>${row.name}</td>
+                  <td>${fmt(row.a)}</td>
+                  <td>
+                    ${fmt(row.b)}
+                    <span class="cell-change">
+                      [${signed(row.countDelta)}]
+                    </span>
+                  </td>
+                  <td class="${deltaClass}">
+                    ${signedPct(row.delta)}
+                  </td>
+                </tr>
+              `;
+            }
+          )
+          .join('');
+
+      setText(
+        'detail-page-info',
+        `Page ${detailPage + 1} of ${detailPageCount}`
+      );
+
+      $('detail-prev').disabled =
+        detailPage === 0;
+
+      $('detail-next').disabled =
+        detailPage >= detailPageCount - 1;
+
+      renderInsights(
+        jobFunctionChanges(
+          first,
+          second
+        ),
+        prior,
+        current,
+        'detail-insights-period',
+        'detail-insights'
+      );
+
+      // Hero numbers + insights are rendered by renderHero() with the
+      // fixed default view (latest month, recruiters included, job posts).
+    }
+
+    function comparisonPair() {
+
+      const current =
+        months.includes(
+          monthSelect.value
+        )
+          ? monthSelect.value
+          : months.at(-1);
+
+      const index =
+        months.indexOf(current);
+
+      return {
+        prior:
+          index > 0
+            ? months[index - 1]
+            : null,
+        current,
+      };
+    }
+
+    // --------------------------------------------------------
+    // Ranking renderer
+    // --------------------------------------------------------
+
+    // --------------------------------------------------------
+    // Hero insights
+    // --------------------------------------------------------
+
+    function renderInsights(
+      changes,
+      prior,
+      current,
+      periodId = 'insights-period',
+      statsId = 'insight-stats'
+    ) {
+
+      const cur =
+        monthLabel(current);
+
+      setText(
+        periodId,
+        prior
+          ? `${monthLabel(prior)} → ${cur}`
+          : cur
+      );
+
+      const stats =
+        $(statsId);
+
+      const stat = (
+        label,
+        name,
+        detail,
+        tone
+      ) =>
+        `
+          <div class="insight-stat">
+            <span>${label}</span>
+            <strong>${name}</strong>
+            <small${
+              tone
+                ? ` class="${tone}"`
+                : ''
+            }>${detail}</small>
+          </div>
+        `;
+
+      if (!prior) {
+        stats.innerHTML =
+          stat(
+            'Trend',
+            'First month in data',
+            'No prior month to compare'
+          );
+
+        return;
+      }
+
+      const positives =
+        changes.filter(
+          r => r.countDelta > 0
+        );
+
+      const negatives =
+        changes.filter(
+          r => r.countDelta < 0
+        );
+
+      const fastestGrowth =
+        positives.filter(
+          r => r.delta !== null && r.delta !== undefined
+        );
+
+      const largestDecline =
+        negatives.filter(
+          r => r.delta !== null && r.delta !== undefined
+        );
+
+      const inc =
+        positives.length
+          ? positives.reduce(
+              (a, b) =>
+                b.countDelta > a.countDelta ? b : a
+            )
+          : null;
+
+      const dec =
+        negatives.length
+          ? negatives.reduce(
+              (a, b) =>
+                b.countDelta < a.countDelta ? b : a
+            )
+          : null;
+
+      const fastest =
+        fastestGrowth.length
+          ? fastestGrowth.reduce(
+              (a, b) =>
+                b.delta > a.delta ? b : a
+            )
+          : null;
+
+      const steepest =
+        largestDecline.length
+          ? largestDecline.reduce(
+              (a, b) =>
+                b.delta < a.delta ? b : a
+            )
+          : null;
+
+      const unit =
+        countMode === 'new'
+          ? 'jobs'
+          : 'posts';
+
+      const cards = [];
+
+      cards.push(
+        inc
+          ? stat(
+              'Biggest increase',
+              inc.name,
+              `${signed(inc.countDelta)} ${unit} · ${signedPct(inc.delta)}`,
+              'up'
+            )
+          : stat(
+              'Biggest increase',
+              'None',
+              'No increases'
+            )
+      );
+
+      cards.push(
+        fastest
+          ? stat(
+              'Fastest growth',
+              fastest.name,
+              `${signedPct(fastest.delta)} · ${signed(fastest.countDelta)} ${unit}`,
+              'up'
+            )
+          : stat(
+              'Fastest growth',
+              'None',
+              'No increases'
+            )
+      );
+
+      cards.push(
+        dec
+          ? stat(
+              'Biggest decrease',
+              dec.name,
+              `${signed(dec.countDelta)} ${unit} · ${signedPct(dec.delta)}`,
+              'down'
+            )
+          : stat(
+              'Biggest decrease',
+              'None',
+              'No decreases'
+            )
+      );
+
+      cards.push(
+        steepest
+          ? stat(
+              'Largest decline',
+              steepest.name,
+              `${signedPct(steepest.delta)} · ${signed(steepest.countDelta)} ${unit}`,
+              'down'
+            )
+          : stat(
+              'Largest decline',
+              'None',
+              'No decreases'
+            )
+      );
+
+      stats.innerHTML =
+        cards.join('');
+    }
+
+    // --------------------------------------------------------
+    // Role helpers
+    // --------------------------------------------------------
+
+    function selectedResponsibilityMetric(
+      row
+    ) {
+
+      if (!row) {
+        return 0;
+      }
+
+      if (countMode === 'new') {
+
+        return Number(
+          includeRecruiters
+            ? row.new_job_count
+            : row.new_non_recruiter_job_count
+        ) || 0;
+      }
+
+      return Number(
+        includeRecruiters
+          ? row.posting_count
+          : row.non_recruiter_posting_count
+      ) || 0;
+    }
+
+    function aggregateResponsibilityRows(
+      rows
+    ) {
+
+      const map = new Map();
+
+      for (const row of rows) {
+
+        const key =
+          row.partition;
+
+        if (!map.has(key)) {
+
+          map.set(
+            key,
+            {
+              partition:
+                row.partition,
+              label:
+                row.label,
+              count: 0,
+            }
+          );
+        }
+
+        map.get(key).count +=
+          selectedResponsibilityMetric(
+            row
+          );
+      }
+
+      return [
+        ...map.values(),
+      ].sort(
+        (a, b) =>
+          b.count - a.count
+      );
+    }
+
+    function responsibilityStatements(
+      partition,
+      jobFunction = 'all'
+    ) {
+
+      const key =
+        Number(partition);
+
+      const scopeRows =
+        jobFunction === 'all'
+          ? responsibilityRows
+          : responsibilityJobFunctionRows.filter(
+              row =>
+                row.job_function === jobFunction
+            );
+
+      const candidates =
+        scopeRows.filter(
+          row =>
+            row.partition === key
+        );
+
+      const period =
+        currentResponsibilityPeriod();
+
+      candidates.sort(
+        (a, b) =>
+          (
+            a.month === period
+              ? 0
+              : 1
+          )
+          - (
+            b.month === period
+              ? 0
+              : 1
+          )
+      );
+
+      for (
+        const row of candidates
+      ) {
+
+        let statements =
+          row.example_roles || row.example_statements;
+
+        if (
+          typeof statements ===
+          'string'
+        ) {
+
+          try {
+            statements =
+              JSON.parse(
+                statements
+              );
+          } catch {
+            statements =
+              [statements];
+          }
+        }
+
+        if (
+          Array.isArray(
+            statements
+          )
+        ) {
+
+          const cleaned =
+            statements
+              .filter(
+                sentence =>
+                  typeof sentence
+                  === 'string'
+                  && sentence.trim()
+              )
+              .map(
+                sentence =>
+                  sentence.trim()
+              );
+
+          if (
+            cleaned.length
+          ) {
+            return cleaned;
+          }
+        }
+      }
+
+      return [];
+    }
+
+    function totalResponsibilityMetric(
+      period,
+      jobFunction
+    ) {
+
+      const totals =
+        jobFunction === 'all'
+          ? roleTotals
+          : roleJobFunctionTotals;
+
+      const targetRows =
+        jobFunction === 'all'
+          ? responsibilityRows
+          : responsibilityJobFunctionRows;
+
+      return (totals.length ? totals : targetRows).reduce(
+        (sum, row) => {
+
+          if (
+            period !== 'all'
+            && row.month !== period
+          ) {
+            return sum;
+          }
+
+          if (
+            jobFunction !== 'all'
+            && row.job_function !== jobFunction
+          ) {
+            return sum;
+          }
+
+          return (
+            sum
+            + selectedResponsibilityMetric(
+                row
+              )
+          );
+        },
+        0
+      );
+    }
+
+    // --------------------------------------------------------
+    // Role ranking
+    // --------------------------------------------------------
+
+    function renderRespRanking(
+      id,
+      rows,
+      denominator,
+      priorDenominator,
+      viewMode,
+      partitionAttr = 'data-responsibility-partition'
+    ) {
+
+      const max =
+        Math.max(
+          ...rows.map(
+            row => row.count
+          ),
+          1
+        );
+
+      const maxShare =
+        denominator
+          ? Math.max(
+              ...rows.map(
+                row =>
+                  row.count
+                  / denominator
+              ),
+              .001
+            )
+          : 1;
+
+      $(id).innerHTML =
+        rows
+          .slice(0, 10)
+          .map(
+            (row, index) => {
+
+              const share =
+                denominator
+                  ? row.count
+                    / denominator
+                  : 0;
+
+              const intensity =
+                denominator
+                  ? share / maxShare
+                  : 1;
+
+              const color =
+                `hsl(${
+                  205
+                  - intensity * 60
+                },58%,${
+                  50
+                  - intensity * 13
+                }%)`;
+
+              let mom =
+                '—';
+
+              let momClass =
+                '';
+
+              if (
+                priorDenominator
+                && row.prev !== null
+                && row.prev !== undefined
+              ) {
+
+                if (
+                  viewMode ===
+                  'percent'
+                ) {
+
+                  const pp =
+                    (
+                      share
+                      - row.prev
+                        / priorDenominator
+                    ) * 100;
+
+                  mom =
+                    `${
+                      pp > 0
+                        ? '+'
+                        : ''
+                    }${pp.toFixed(1)} pp`;
+
+                  momClass =
+                    pp > 0
+                      ? 'up'
+                      : pp < 0
+                        ? 'down'
+                        : '';
+
+                } else {
+
+                  const delta =
+                    row.count
+                    - row.prev;
+
+                  mom =
+                    `${
+                      delta > 0
+                        ? '+'
+                        : ''
+                    }${fmt(delta)}`;
+
+                  momClass =
+                    delta > 0
+                      ? 'up'
+                      : delta < 0
+                        ? 'down'
+                        : '';
+                }
+              }
+
+              const value =
+                viewMode ===
+                'percent'
+                  ? `${
+                      (
+                        share * 100
+                      ).toFixed(1)
+                    }%`
+                  : fmt(row.count);
+
+              return `
+                <li
+                  class="responsibility-row"
+                  role="button"
+                  tabindex="0"
+                  ${partitionAttr}="${row.partition}"
+                  data-responsibility-label="${String(
+                    row.label
+                  ).replace(
+                    /"/g,
+                    '&quot;'
+                  )}"
+                >
+                  <span class="rank">
+                    ${String(index + 1).padStart(2, '0')}
+                  </span>
+
+                  <span class="rank-name">
+                    ${row.label}
+                  </span>
+
+                  <span class="track">
+                    <span
+                      class="fill"
+                      style="
+                        width:${row.count / max * 100}%;
+                        background:${color}
+                      "
+                    ></span>
+                  </span>
+
+                  <span class="rank-value">
+                    ${value}
+                  </span>
+
+                  <span class="mom-value ${momClass}">
+                    ${mom}
+                  </span>
+                </li>
+              `;
+            }
+          )
+          .join('');
+    }
+
+    // --------------------------------------------------------
+    // Roles
+    // --------------------------------------------------------
+
+    function renderResponsibilities() {
+
+      const period =
+        currentResponsibilityPeriod();
+
+      const jobFunction =
+        currentJobFunction();
+
+      const viewMode =
+        responsibilityViewSelect.value;
+
+      const prior =
+        priorMonthOf(period);
+
+      // -----------------------------------------------
+      // Single role ranking: overall by default,
+      // job function specific once a job function is selected.
+      // -----------------------------------------------
+
+      const baseRaw =
+        jobFunction === 'all'
+          ? responsibilityRows
+          : responsibilityJobFunctionRows.filter(
+              row =>
+                row.job_function === jobFunction
+            );
+
+      const overallRaw =
+        period === 'all'
+          ? baseRaw
+          : baseRaw.filter(
+              row =>
+                row.month === period
+            );
+
+      const overallRows =
+        aggregateResponsibilityRows(
+          overallRaw
+        );
+
+      const overallDenominator =
+        totalResponsibilityMetric(
+          period,
+          jobFunction
+        );
+
+      const priorOverallDenominator =
+        prior
+          ? totalResponsibilityMetric(
+              prior,
+              jobFunction
+            )
+          : null;
+
+      if (prior) {
+
+        const previousOverall =
+          aggregateResponsibilityRows(
+            baseRaw.filter(
+              row =>
+                row.month === prior
+            )
+          );
+
+        const previousMap =
+          new Map(
+            previousOverall.map(
+              row => [
+                row.partition,
+                row.count,
+              ]
+            )
+          );
+
+        for (
+          const row of overallRows
+        ) {
+          row.prev =
+            previousMap.get(
+              row.partition
+            );
+        }
+      }
+
+      renderRespRanking(
+        'overall-responsibilities',
+        overallRows,
+        overallDenominator,
+        priorOverallDenominator,
+        viewMode
+      );
+
+      setText(
+        'overall-resp-period',
+        jobFunction === 'all'
+          ? monthLabel(period)
+          : `${jobFunction} · ${monthLabel(period)}`
+      );
+
+      setText(
+        'overall-resp-value-head',
+        viewMode === 'percent'
+          ? 'Share'
+          : countMode === 'new'
+            ? 'Jobs'
+            : 'Posts'
+      );
+
+      syncDetailHeights();
+
+    }
+
+    // --------------------------------------------------------
+    // Role detail
+    // --------------------------------------------------------
+
+    function syncDetailHeights() {
+      const pairs = [
+        [
+          'resp-layout',
+          'responsibility-detail',
+        ],
+        [
+          'tool-layout',
+          'tool-detail',
+        ],
+      ];
+
+      for (const [layoutId, detailId] of pairs) {
+        const layout = $(layoutId);
+        const detail = $(detailId);
+
+        if (!layout || !detail) {
+          continue;
+        }
+
+        if (window.innerWidth <= 800) {
+          detail.style.maxHeight = '';
+          continue;
+        }
+
+        const panel =
+          layout.querySelector('section.panel');
+
+        if (!panel) {
+          continue;
+        }
+
+        const height = panel.offsetHeight;
+
+        if (height > 0) {
+          detail.style.maxHeight = `${height}px`;
+        }
+      }
+    }
+
+    function detailExamplesHtml(
+      items,
+      page,
+      scope,
+      emptyText
+    ) {
+
+      if (!items.length) {
+        return emptyText;
+      }
+
+      const total =
+        items.length;
+
+      const current =
+        Math.min(
+          Math.max(page, 0),
+          total - 1
+        );
+
+      let html =
+        '<ul>'
+        + `<li>${items[current]}</li>`
+        + '</ul>';
+
+      if (total > 1) {
+        html +=
+          '<div class="detail-pager">'
+          + `<button class="page-btn" type="button" data-examples-prev="${scope}"${
+              current === 0 ? ' disabled' : ''
+            }>← Prev</button>`
+          + `<span class="page-info">${current + 1} of ${total}</span>`
+          + `<button class="page-btn" type="button" data-examples-next="${scope}"${
+              current === total - 1 ? ' disabled' : ''
+            }>Next →</button>`
+          + '</div>';
+      }
+
+      return html;
+    }
+
+    function turnDetailPage(
+      scope,
+      delta
+    ) {
+
+      const isTool =
+        scope === 'tool';
+
+      const items =
+        isTool
+          ? toolExampleItems
+          : roleExampleItems;
+
+      if (items.length < 2) {
+        return;
+      }
+
+      const copyId =
+        isTool
+          ? 'tool-detail-copy'
+          : 'detail-copy';
+
+      const node =
+        $(copyId);
+
+      if (!node) {
+        return;
+      }
+
+      const page =
+        Math.min(
+          Math.max(
+            (
+              isTool
+                ? toolExamplePage
+                : roleExamplePage
+            ) + delta,
+            0
+          ),
+          items.length - 1
+        );
+
+      if (isTool) {
+        toolExamplePage = page;
+      } else {
+        roleExamplePage = page;
+      }
+
+      node.innerHTML =
+        detailExamplesHtml(
+          items,
+          page,
+          scope,
+          isTool
+            ? 'Example sentence text is not available.'
+            : 'Example roles are not available.'
+        );
+    }
+
+    function showResponsibilityDetail(
+      partition,
+      label
+    ) {
+
+      const detail =
+        $('responsibility-detail');
+
+      const layout =
+        $('resp-layout');
+
+      const examples =
+        responsibilityStatements(
+          partition,
+          currentJobFunction()
+        );
+
+      setText(
+        'detail-title',
+        label
+      );
+
+      const copyNode =
+        $('detail-copy');
+
+      if (copyNode) {
+
+        const escapeHtml = sentence =>
+          String(sentence)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+
+        roleExampleItems =
+          examples.map(
+            sentence =>
+              `“${escapeHtml(sentence)}”`
+          );
+
+        roleExamplePage = 0;
+
+        copyNode.innerHTML =
+          detailExamplesHtml(
+            roleExampleItems,
+            roleExamplePage,
+            'role',
+            'Example roles are not available.'
+          );
+      }
+
+      if (detail) {
+        detail.hidden = false;
+      }
+
+      if (layout) {
+        layout.classList.add('has-detail');
+      }
+    }
+
+    // --------------------------------------------------------
+    // Tools
+    // Same shape as roles (month / partition / label /
+    // four-way counts / example roles). The section stays in
+    // its coming-soon state until the tool marts land in
+    // dashboard-data.js. Tool rows reuse renderRespRanking with a
+    // data-tool-partition attribute so clicks route to the tool
+    // detail panel; they keep the shared data-responsibility-label
+    // attribute for the display name.
+    // --------------------------------------------------------
+
+    function selectedToolMetric(
+      row
+    ) {
+
+      if (!row) {
+        return 0;
+      }
+
+      if (countMode === 'new') {
+
+        return Number(
+          includeRecruiters
+            ? row.new_job_count
+            : row.new_non_recruiter_job_count
+        ) || 0;
+      }
+
+      return Number(
+        includeRecruiters
+          ? row.posting_count
+          : row.non_recruiter_posting_count
+      ) || 0;
+    }
+
+    function aggregateToolRows(
+      rows
+    ) {
+
+      const map = new Map();
+
+      for (const row of rows) {
+
+        const key =
+          row.partition;
+
+        if (!map.has(key)) {
+
+          map.set(
+            key,
+            {
+              partition:
+                row.partition,
+              label:
+                row.label,
+              count: 0,
+            }
+          );
+        }
+
+        map.get(key).count +=
+          selectedToolMetric(
+            row
+          );
+      }
+
+      return [
+        ...map.values(),
+      ].sort(
+        (a, b) =>
+          b.count - a.count
+      );
+    }
+
+    function currentToolPeriod() {
+      return toolMonthSelect
+        ? toolMonthSelect.value
+        : 'all';
+    }
+
+    function currentToolJobFunction() {
+      return toolJobFunctionSelect
+        ? toolJobFunctionSelect.value
+        : 'all';
+    }
+
+    function toolStatements(
+      partition,
+      jobFunction = 'all'
+    ) {
+
+      const key =
+        Number(partition);
+
+      const scopeRows =
+        jobFunction === 'all'
+          ? toolRows
+          : toolJobFunctionRows.filter(
+              row =>
+                row.job_function === jobFunction
+            );
+
+      const candidates =
+        scopeRows.filter(
+          row =>
+            row.partition === key
+        );
+
+      const period =
+        currentToolPeriod();
+
+      candidates.sort(
+        (a, b) =>
+          (
+            a.month === period
+              ? 0
+              : 1
+          )
+          - (
+            b.month === period
+              ? 0
+              : 1
+          )
+      );
+
+      for (
+        const row of candidates
+      ) {
+
+        let statements =
+          row.example_roles || row.example_statements;
+
+        if (
+          typeof statements ===
+          'string'
+        ) {
+
+          try {
+            statements =
+              JSON.parse(
+                statements
+              );
+          } catch {
+            statements =
+              [statements];
+          }
+        }
+
+        if (
+          Array.isArray(
+            statements
+          )
+        ) {
+
+          const cleaned =
+            statements
+              .filter(
+                sentence =>
+                  typeof sentence
+                  === 'string'
+                  && sentence.trim()
+              )
+              .map(
+                sentence =>
+                  sentence.trim()
+              );
+
+          if (
+            cleaned.length
+          ) {
+            return cleaned;
+          }
+        }
+      }
+
+      return [];
+    }
+
+    function totalToolMetric(
+      period,
+      jobFunction
+    ) {
+
+      const targetRows =
+        jobFunction === 'all'
+          ? toolRows
+          : toolJobFunctionRows;
+
+      return targetRows.reduce(
+        (sum, row) => {
+
+          if (
+            period !== 'all'
+            && row.month !== period
+          ) {
+            return sum;
+          }
+
+          if (
+            jobFunction !== 'all'
+            && row.job_function !== jobFunction
+          ) {
+            return sum;
+          }
+
+          return (
+            sum
+            + selectedToolMetric(
+                row
+              )
+          );
+        },
+        0
+      );
+    }
+
+    function renderTools() {
+
+      if (!hasTools) {
+        return;
+      }
+
+      if (
+        !toolMonthSelect
+        || !toolJobFunctionSelect
+        || !toolViewSelect
+      ) {
+        return;
+      }
+
+      const period =
+        currentToolPeriod();
+
+      const jobFunction =
+        currentToolJobFunction();
+
+      const viewMode =
+        toolViewSelect.value;
+
+      const prior =
+        priorMonthOf(period);
+
+      const baseRaw =
+        jobFunction === 'all'
+          ? toolRows
+          : toolJobFunctionRows.filter(
+              row =>
+                row.job_function === jobFunction
+            );
+
+      const currentRaw =
+        period === 'all'
+          ? baseRaw
+          : baseRaw.filter(
+              row =>
+                row.month === period
+            );
+
+      const toolRanked =
+        aggregateToolRows(
+          currentRaw
+        );
+
+      const denominator =
+        totalToolMetric(
+          period,
+          jobFunction
+        );
+
+      const priorDenominator =
+        prior
+          ? totalToolMetric(
+              prior,
+              jobFunction
+            )
+          : null;
+
+      if (prior) {
+
+        const previousRanked =
+          aggregateToolRows(
+            baseRaw.filter(
+              row =>
+                row.month === prior
+            )
+          );
+
+        const previousMap =
+          new Map(
+            previousRanked.map(
+              row => [
+                row.partition,
+                row.count,
+              ]
+            )
+          );
+
+        for (
+          const row of toolRanked
+        ) {
+          row.prev =
+            previousMap.get(
+              row.partition
+            );
+        }
+      }
+
+      renderRespRanking(
+        'tool-responsibilities',
+        toolRanked,
+        denominator,
+        priorDenominator,
+        viewMode,
+        'data-tool-partition'
+      );
+
+      setText(
+        'tool-resp-period',
+        jobFunction === 'all'
+          ? monthLabel(period)
+          : `${jobFunction} · ${monthLabel(period)}`
+      );
+
+      setText(
+        'tool-resp-value-head',
+        viewMode === 'percent'
+          ? 'Share'
+          : countMode === 'new'
+            ? 'Jobs'
+            : 'Posts'
+      );
+
+      syncDetailHeights();
+    }
+
+    function showToolDetail(
+      partition,
+      label
+    ) {
+
+      const detail =
+        $('tool-detail');
+
+      if (!detail) {
+        return;
+      }
+
+      const layout =
+        $('tool-layout');
+
+      const examples =
+        toolStatements(
+          partition,
+          currentToolJobFunction()
+        );
+
+      setText(
+        'tool-detail-title',
+        label
+      );
+
+      const copyNode =
+        $('tool-detail-copy');
+
+      if (copyNode) {
+
+        const escapeHtml = sentence =>
+          String(sentence)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+
+        toolExampleItems =
+          examples.map(
+            sentence =>
+              `“${escapeHtml(sentence)}”`
+          );
+
+        toolExamplePage = 0;
+
+        copyNode.innerHTML =
+          detailExamplesHtml(
+            toolExampleItems,
+            toolExamplePage,
+            'tool',
+            'Example sentence text is not available.'
+          );
+      }
+
+      if (detail) {
+        detail.hidden = false;
+      }
+
+      if (layout) {
+        layout.classList.add('has-detail');
+      }
+    }
+
+    // --------------------------------------------------------
+    // Tooltips
+    // --------------------------------------------------------
+
+    function attachTips(
+      root
+    ) {
+
+      root
+        .querySelectorAll(
+          '[data-value]'
+        )
+        .forEach(
+          node => {
+
+            node.addEventListener(
+              'mouseenter',
+              event =>
+                showTip(
+                  event,
+                  node.dataset.value
+                )
+            );
+
+            node.addEventListener(
+              'mousemove',
+              event =>
+                moveTip(event)
+            );
+
+            node.addEventListener(
+              'mouseleave',
+              hideTip
+            );
+          }
+        );
+    }
+
+    function showTip(
+      event,
+      text
+    ) {
+
+      $('tip').textContent =
+        text;
+
+      $('tip').classList.add(
+        'visible'
+      );
+
+      moveTip(event);
+    }
+
+    function moveTip(
+      event
+    ) {
+
+      $('tip').style.left =
+        (
+          event.clientX + 13
+        ) + 'px';
+
+      $('tip').style.top =
+        (
+          event.clientY + 13
+        ) + 'px';
+    }
+
+    function moveTipAbove(
+      event
+    ) {
+
+      $('tip').style.left =
+        event.clientX + 'px';
+
+      $('tip').style.top =
+        (
+          event.clientY - 8
+        ) + 'px';
+    }
+
+    function hideTip() {
+
+      $('tip').classList.remove(
+        'visible'
+      );
+    }
+
+    // --------------------------------------------------------
+    // Month selector
+    // --------------------------------------------------------
+
+    function renderMetrics() {
+
+      const single =
+        currentMonthForMoM();
+
+      const monthIndex =
+        months.indexOf(
+          single
+        );
+
+      const prior =
+        monthIndex > 0
+          ? months[
+              monthIndex - 1
+            ]
+          : null;
+
+      const selected =
+        totalJobFunctionMetric(
+          'all',
+          single
+        );
+
+      const priorTotal =
+        prior
+          ? totalJobFunctionMetric(
+              'all',
+              prior
+            )
+          : 0;
+
+      const change =
+        prior
+          ? pct(
+              selected,
+              priorTotal
+            )
+          : null;
+
+      setText(
+        'metric-month',
+        fmt(selected)
+      );
+
+      setText(
+        'metric-month-note',
+        countMode === 'new'
+          ? `${monthLabel(single)} · New jobs`
+          : `${monthLabel(single)} · ${
+              includeRecruiters
+                ? 'Recruiter posts included'
+                : 'Recruiter posts excluded'
+            }`
+      );
+
+      setText(
+        'metric-mom',
+        change === null
+          ? '—'
+          : `${
+              change >= 0
+                ? '+'
+                : ''
+            }${change.toFixed(1)}%`
+      );
+
+      $('metric-mom').className =
+        change === null
+          ? ''
+          : change >= 0
+            ? 'up'
+            : 'down';
+
+      setText(
+        'metric-mom-note',
+        prior
+          ? `Compared with ${monthLabel(prior)}`
+          : 'No prior month in data'
+      );
+
+      // Recruiter share always uses the full market (recruiters included),
+      // so it responds to the posts/new jobs toggle but never to the
+      // recruiter toggle.
+
+      const monthShare = target => {
+
+        const targetRows =
+          jobFunctionRows.filter(
+            row =>
+              row.month === target
+          );
+
+        const denominator =
+          targetRows.reduce(
+            (sum, row) =>
+              sum
+              + (
+                Number(
+                  countMode === 'new'
+                    ? row.new_job_count
+                    : row.posting_count
+                ) || 0
+              ),
+            0
+          );
+
+        const recruiter =
+          targetRows.reduce(
+            (sum, row) =>
+              sum
+              + (
+                Number(
+                  countMode === 'new'
+                    ? row.new_recruiter_job_count
+                    : row.recruiter_posting_count
+                ) || 0
+              ),
+            0
+          );
+
+        return denominator
+          ? recruiter / denominator * 100
+          : null;
+      };
+
+      const share =
+        monthShare(single);
+
+      const priorShare =
+        prior
+          ? monthShare(prior)
+          : null;
+
+      const shareDelta =
+        share !== null
+        && priorShare !== null
+          ? share - priorShare
+          : null;
+
+      const shareNode =
+        $('metric-recruiter-share');
+
+      if (shareNode) {
+
+        shareNode.innerHTML =
+          share === null
+            ? '—'
+            : share.toFixed(1) + '%'
+              + (
+                shareDelta === null
+                  ? ''
+                  : ` <span class="metric-delta ${
+                      shareDelta > 0
+                        ? 'up'
+                        : shareDelta < 0
+                          ? 'down'
+                          : ''
+                    }">${shareDelta > 0 ? '+' : ''}${shareDelta.toFixed(1)} pp</span>`
+              );
+      }
+
+      setText(
+        'metric-recruiter-share-note',
+        `${
+          countMode === 'new'
+            ? 'Of new jobs'
+            : 'Of job posts'
+        } ${monthLabel(single)}${
+          prior
+            ? ` vs ${monthLabel(prior)}`
+            : ''
+        }`
+      );
+    }
+
+    // --------------------------------------------------------
+    // Recruiter / count controls
+    // --------------------------------------------------------
+
+    function syncRecruiterToggle(
+      button,
+      labelId
+    ) {
+
+      if (!button) {
+        return;
+      }
+
+      button.classList.toggle(
+        'is-on',
+        includeRecruiters
+      );
+
+      button.setAttribute(
+        'aria-pressed',
+        String(
+          includeRecruiters
+        )
+      );
+
+      setText(
+        labelId,
+        includeRecruiters
+          ? 'Included'
+          : 'Excluded'
+      );
+    }
+
+    function renderFilterState() {
+
+      syncRecruiterToggle(
+        recruiterToggle,
+        'recruiter-toggle-label'
+      );
+
+      syncRecruiterToggle(
+        recruiterToggle2,
+        'recruiter-toggle-label-2'
+      );
+
+      if (countModeSelect) {
+        countModeSelect.value =
+          countMode;
+      }
+
+      if (countModeSelect2) {
+        countModeSelect2.value =
+          countMode;
+      }
+    }
+
+    // --------------------------------------------------------
+    // Main render
+    // --------------------------------------------------------
+
+    function render() {
+
+      renderFilterState();
+
+      setText(
+        'trend-title',
+        countMode === 'new'
+          ? 'New jobs by month'
+          : 'Total job posts by month'
+      );
+
+      setText(
+        'job-function-trend-title',
+        countMode === 'new'
+          ? 'Top 5 new job trends'
+          : 'Top 5 job function trends'
+      );
+
+      setText(
+        'monthly-job-function-title',
+        countMode === 'new'
+          ? 'New jobs by job function'
+          : 'Job posts by job function'
+      );
+
+      renderOverallMetrics();
+      renderHero();
+      renderTicker();
+      renderMetrics();
+      renderTrend();
+      renderJobFunctionTrend();
+      renderJobFunctionViews();
+      renderResponsibilities();
+      renderTools();
+    }
+
+    // --------------------------------------------------------
+    // Network background
+    // --------------------------------------------------------
+
+    const net =
+      $('net');
+
+    const ctx =
+      net.getContext('2d');
+
+    const dots =
+      Array.from(
+        {
+          length: 62,
+        },
+        () => ({
+          x: Math.random(),
+          y: Math.random(),
+          vx:
+            (
+              Math.random()
+              - .5
+            ) * .00013,
+          vy:
+            (
+              Math.random()
+              - .5
+            ) * .00013,
+          r:
+            Math.random()
+            * 1.5
+            + .45,
+        })
+      );
+
+    function drawNetwork() {
+
+      const scale =
+        devicePixelRatio || 1;
+
+      const w =
+        innerWidth;
+
+      const h =
+        innerHeight;
+
+      if (
+        net.width !==
+        w * scale
+        || net.height !==
+        h * scale
+      ) {
+
+        net.width =
+          w * scale;
+
+        net.height =
+          h * scale;
+
+        net.style.width =
+          w + 'px';
+
+        net.style.height =
+          h + 'px';
+      }
+
+      ctx.setTransform(
+        scale,
+        0,
+        0,
+        scale,
+        0,
+        0
+      );
+
+      ctx.clearRect(
+        0,
+        0,
+        w,
+        h
+      );
+
+      for (
+        const dot of dots
+      ) {
+
+        dot.x += dot.vx;
+        dot.y += dot.vy;
+
+        if (
+          dot.x < 0
+          || dot.x > 1
+        ) {
+          dot.vx *= -1;
+        }
+
+        if (
+          dot.y < 0
+          || dot.y > 1
+        ) {
+          dot.vy *= -1;
+        }
+
+        dot.x =
+          Math.max(
+            0,
+            Math.min(
+              1,
+              dot.x
+            )
+          );
+
+        dot.y =
+          Math.max(
+            0,
+            Math.min(
+              1,
+              dot.y
+            )
+          );
+      }
+
+      for (
+        let i = 0;
+        i < dots.length;
+        i++
+      ) {
+
+        for (
+          let j = i + 1;
+          j < dots.length;
+          j++
+        ) {
+
+          const a =
+            dots[i];
+
+          const b =
+            dots[j];
+
+          const dx =
+            (
+              a.x - b.x
+            ) * w;
+
+          const dy =
+            (
+              a.y - b.y
+            ) * h;
+
+          const d =
+            Math.hypot(
+              dx,
+              dy
+            );
+
+          if (
+            d < 140
+          ) {
+
+            ctx.strokeStyle =
+              `rgba(11,107,97,${
+                .22
+                * (
+                  1
+                  - d / 140
+                )
+              })`;
+
+            ctx.lineWidth = 1;
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+              a.x * w,
+              a.y * h
+            );
+
+            ctx.lineTo(
+              b.x * w,
+              b.y * h
+            );
+
+            ctx.stroke();
+          }
+        }
+      }
+
+      for (
+        const dot of dots
+      ) {
+
+        ctx.fillStyle =
+          'rgba(11,107,97,.35)';
+
+        ctx.beginPath();
+
+        ctx.arc(
+          dot.x * w,
+          dot.y * h,
+          dot.r,
+          0,
+          Math.PI * 2
+        );
+
+        ctx.fill();
+      }
+
+      requestAnimationFrame(
+        drawNetwork
+      );
+    }
+
+    // --------------------------------------------------------
+    // Initialisation
+    // --------------------------------------------------------
+
+    makeOptions();
+
+    const latest =
+      months.at(-1);
+
+    monthSelect.value =
+      latest;
+
+    responsibilityMonthSelect.value =
+      latest;
+
+    jobFunctionSelect.value =
+      'all';
+
+    responsibilityViewSelect.value =
+      'percent';
+
+    if (toolMonthSelect) {
+      toolMonthSelect.value =
+        latest;
+    }
+
+    if (toolJobFunctionSelect) {
+      toolJobFunctionSelect.value =
+        'all';
+    }
+
+    if (toolViewSelect) {
+      toolViewSelect.value =
+        'percent';
+    }
+
+    const toolsLive =
+      $('tools-live');
+
+    if (toolsLive) {
+      toolsLive.hidden =
+        !hasTools;
+    }
+
+    const toolsSoon =
+      $('tools-soon');
+
+    if (toolsSoon) {
+      toolsSoon.hidden =
+        hasTools;
+    }
+
+    if (
+      recruiterToggle
+    ) {
+
+      recruiterToggle.addEventListener(
+        'click',
+        () => {
+
+          includeRecruiters =
+            !includeRecruiters;
+
+          render();
+        }
+      );
+    }
+
+    if (
+      countModeSelect
+    ) {
+
+      countModeSelect.addEventListener(
+        'change',
+        () => {
+
+          countMode =
+            countModeSelect.value;
+
+          render();
+        }
+      );
+    }
+
+    if (
+      recruiterToggle2
+    ) {
+
+      recruiterToggle2.addEventListener(
+        'click',
+        () => {
+
+          includeRecruiters =
+            !includeRecruiters;
+
+          render();
+        }
+      );
+    }
+
+    if (
+      countModeSelect2
+    ) {
+
+      countModeSelect2.addEventListener(
+        'change',
+        () => {
+
+          countMode =
+            countModeSelect2.value;
+
+          render();
+        }
+      );
+    }
+
+    function attachLabelTip(
+      node,
+      text
+    ) {
+
+      if (!node) {
+        return;
+      }
+
+      node.addEventListener(
+        'mouseenter',
+        event => {
+
+          $('tip').classList.add(
+            'wide'
+          );
+
+          showTip(
+            event,
+            text
+          );
+        }
+      );
+
+      node.addEventListener(
+        'mousemove',
+        moveTipAbove
+      );
+
+      node.addEventListener(
+        'mouseleave',
+        () => {
+
+          $('tip').classList.remove(
+            'wide'
+          );
+
+          hideTip();
+        }
+      );
+    }
+
+    attachLabelTip(
+      $('count-mode-label'),
+      'Job posts counts every posting observed in the month, including reposts. New jobs counts only newly observed jobs.'
+    );
+
+    attachLabelTip(
+      $('recruiter-label'),
+      'Included counts every posting. Excluded hides postings from recruitment agencies.'
+    );
+
+    attachLabelTip(
+      $('count-mode-label-2'),
+      'Job posts counts every posting observed in the month, including reposts. New jobs counts only newly observed jobs.'
+    );
+
+    attachLabelTip(
+      $('recruiter-label-2'),
+      'Included counts every posting. Excluded hides postings from recruitment agencies.'
+    );
+
+    monthSelect.addEventListener(
+      'change',
+      render
+    );
+
+    responsibilityMonthSelect.addEventListener(
+      'change',
+      renderResponsibilities
+    );
+
+    jobFunctionSelect.addEventListener(
+      'change',
+      renderResponsibilities
+    );
+
+    responsibilityViewSelect.addEventListener(
+      'change',
+      renderResponsibilities
+    );
+
+    if (
+      toolMonthSelect
+    ) {
+      toolMonthSelect.addEventListener(
+        'change',
+        renderTools
+      );
+    }
+
+    if (
+      toolJobFunctionSelect
+    ) {
+      toolJobFunctionSelect.addEventListener(
+        'change',
+        renderTools
+      );
+    }
+
+    if (
+      toolViewSelect
+    ) {
+      toolViewSelect.addEventListener(
+        'change',
+        renderTools
+      );
+    }
+
+    $('job-function-prev').addEventListener(
+      'click',
+      () => {
+
+        jobFunctionPage -= 1;
+
+        renderJobFunctionViews();
+      }
+    );
+
+    $('job-function-next').addEventListener(
+      'click',
+      () => {
+
+        jobFunctionPage += 1;
+
+        renderJobFunctionViews();
+      }
+    );
+
+    $('detail-prev').addEventListener(
+      'click',
+      () => {
+
+        detailPage -= 1;
+
+        renderJobFunctionViews();
+      }
+    );
+
+    $('detail-next').addEventListener(
+      'click',
+      () => {
+
+        detailPage += 1;
+
+        renderJobFunctionViews();
+      }
+    );
+
+    document.addEventListener(
+      'click',
+      event => {
+
+        const pagerPrev =
+          event.target.closest(
+            '[data-examples-prev]'
+          );
+
+        if (pagerPrev) {
+
+          turnDetailPage(
+            pagerPrev.dataset.examplesPrev,
+            -1
+          );
+
+          return;
+        }
+
+        const pagerNext =
+          event.target.closest(
+            '[data-examples-next]'
+          );
+
+        if (pagerNext) {
+
+          turnDetailPage(
+            pagerNext.dataset.examplesNext,
+            1
+          );
+
+          return;
+        }
+
+        const row =
+          event.target.closest(
+            '[data-responsibility-partition]'
+          );
+
+        if (row) {
+
+          showResponsibilityDetail(
+            row.dataset
+              .responsibilityPartition,
+            row.dataset
+              .responsibilityLabel
+          );
+
+          return;
+        }
+
+        const toolRow =
+          event.target.closest(
+            '[data-tool-partition]'
+          );
+
+        if (!toolRow) {
+          return;
+        }
+
+        showToolDetail(
+          toolRow.dataset
+            .toolPartition,
+          toolRow.dataset
+            .responsibilityLabel
+        );
+      }
+    );
+
+    document.addEventListener(
+      'keydown',
+      event => {
+
+        if (
+          event.key !== 'Enter'
+          && event.key !== ' '
+        ) {
+          return;
+        }
+
+        const row =
+          event.target.closest(
+            '[data-responsibility-partition]'
+          );
+
+        if (row) {
+
+          event.preventDefault();
+
+          showResponsibilityDetail(
+            row.dataset
+              .responsibilityPartition,
+            row.dataset
+              .responsibilityLabel
+          );
+
+          return;
+        }
+
+        const toolRow =
+          event.target.closest(
+            '[data-tool-partition]'
+          );
+
+        if (!toolRow) {
+          return;
+        }
+
+        event.preventDefault();
+
+        showToolDetail(
+          toolRow.dataset
+            .toolPartition,
+          toolRow.dataset
+            .responsibilityLabel
+        );
+      }
+    );
+
+    const resizeObserver =
+      new ResizeObserver(
+        () => {
+
+          renderTrend();
+          renderJobFunctionTrend();
+        }
+      );
+
+    resizeObserver.observe(
+      $('trend-chart')
+    );
+
+    resizeObserver.observe(
+      $('job-function-trend-chart')
+    );
+
+    window.addEventListener(
+      'resize',
+      syncDetailHeights
+    );
+
+    const aboutToggle =
+      $('about-toggle');
+
+    const aboutDropdown =
+      $('about-dropdown');
+
+    const aboutPanel =
+      $('about-panel');
+
+    if (
+      aboutToggle
+      && aboutDropdown
+      && aboutPanel
+    ) {
+
+      aboutToggle.addEventListener(
+        'click',
+        () => {
+
+          const open =
+            aboutDropdown.classList.toggle(
+              'open'
+            );
+
+          aboutToggle.setAttribute(
+            'aria-expanded',
+            String(open)
+          );
+        }
+      );
+
+      aboutPanel
+        .querySelectorAll('a')
+        .forEach(
+          link =>
+            link.addEventListener(
+              'click',
+              () => {
+
+                aboutDropdown.classList.remove(
+                  'open'
+                );
+
+                aboutToggle.setAttribute(
+                  'aria-expanded',
+                  'false'
+                );
+              }
+            )
+        );
+
+      document.addEventListener(
+        'click',
+        event => {
+
+          if (
+            !event.target.closest(
+              '.dropdown'
+            )
+          ) {
+
+            aboutDropdown.classList.remove(
+              'open'
+            );
+
+            aboutToggle.setAttribute(
+              'aria-expanded',
+              'false'
+            );
+          }
+        }
+      );
+
+      document.addEventListener(
+        'keydown',
+        event => {
+
+          if (
+            event.key === 'Escape'
+          ) {
+
+            aboutDropdown.classList.remove(
+              'open'
+            );
+
+            aboutToggle.setAttribute(
+              'aria-expanded',
+              'false'
+            );
+          }
+        }
+      );
+    }
+
+    drawNetwork();
+    render();
+    requestAnimationFrame(syncDetailHeights);
+  })();
+</script>
+
+</body>
+</html>

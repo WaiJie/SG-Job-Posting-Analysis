@@ -5,7 +5,7 @@ Job Market Pulse is an experimental analysis of the Singapore job market built f
 
 The project starts with a simple question:
 
-> **What jobs are employers actually posting for?**
+> **What type of job roles are employers actually posting ?**
 
 Answering that question is harder than simply counting job titles.
 

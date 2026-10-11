@@ -78,7 +78,7 @@ The job-function categories therefore reflect how postings are classified on MyC
 
 ## What the dashboard shows
 
-The current preview covers **June–August 2026** and provides several views of the job market.
+The current preview covers **June–September 2026** and provides several views of the job market.
 
 ### Market overview
 
@@ -120,9 +120,25 @@ Users can:
 * Compare role shares
 * Examine month-over-month changes
 * Focus on a particular job function
-* Inspect examples of postings assigned to a role
+* Search for a specific role, including roles outside the top of the ranking
+* Read the example postings assigned to that role
 
 This layer is intended to provide a more detailed view of **what kinds of work are actually being advertised**.
+
+### Tools analysis
+
+Explore the tools and technologies extracted from job postings, broken down by job function.
+
+Users can:
+
+* View the most frequently posted tools
+* Compare tool shares across job functions
+* Examine month-over-month changes
+* Focus on a particular job function
+* Search for a specific tool, including tools outside the top of the ranking
+* See the top roles mentioning that tool, shown as share bars with counts and shares
+
+Tool counts represent **tool mentions** — a posting may mention several tools, so tool shares are expressed as a share of all tool mentions rather than a share of postings. The role breakdown for a tool follows the selected reporting period; it spans all job functions.
 
 ---
 
@@ -169,18 +185,18 @@ For example, a fall in total postings does not necessarily mean that underlying 
 ## Current dataset
 
 **Source:** MyCareersFuture
-**Coverage:** June–August 2026
+**Coverage:** June–September 2026
 **Geography:** Singapore
 **Job functions:** 43
 
-Across all recorded months (June–August 2026):
+Across all recorded months (June–September 2026):
 
-| Metric               | Jun–Aug 2026 |
+| Metric               | Jun–Sep 2026 |
 | -------------------- | -----------: |
-| Total posts observed |      301,156 |
-| Unique jobs          |      274,083 |
-| Recruiter posts      |      102,022 |
-| Recruiter share      |        33.9% |
+| Total posts observed |      417,300 |
+| Unique jobs          |      368,912 |
+| Recruiter posts      |      144,217 |
+| Recruiter share      |        34.6% |
 
 The figures represent **observable job-posting activity** rather than an estimate of the entire Singapore labour market.
 
@@ -198,6 +214,9 @@ The current release focuses on:
 * New-job activity
 * Automated role grouping
 * Role-level market analysis
+* Role search with example postings
+* Tool-level market analysis
+* Tool search with role totals
 
 The **role taxonomy is currently the main area for improvement**. Future iterations will test alternative clustering and grouping approaches to improve how well the resulting role groups represent the underlying types of work.
 
@@ -229,7 +248,7 @@ Recruitment agencies may post on behalf of other employers and can contribute su
 
 ### Limited observation window
 
-This release covers **June–August 2026** and reflects only observable postings during this period. It should not be interpreted as a complete picture of the Singapore labour market.
+This release covers **June–September 2026** and reflects only observable postings during this period. It should not be interpreted as a complete picture of the Singapore labour market.
 
 ---
 

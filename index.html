@@ -15,31 +15,53 @@
     .shell{width:min(1180px,calc(100% - 40px));margin:auto}.eyebrow{font:11px "DM Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
     header{position:sticky;top:0;z-index:5;border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent);background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(12px)}.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:17px;font-weight:800;letter-spacing:-.05em;text-decoration:none;color:var(--ink)}.brand i{display:inline-block;width:10px;height:10px;background:var(--lime);border-radius:50%;margin-right:8px}.nav a:not(.brand){color:var(--muted);text-decoration:none;font-size:13px;font-weight:700}.nav a:not(.brand):hover{color:var(--green)}.links{display:flex;gap:24px;align-items:center}.dropdown{position:relative}.dropdown-toggle{background:none;border:0;color:var(--muted);font:700 13px/1.5 Manrope,Arial,sans-serif;padding:0;cursor:pointer;white-space:nowrap}.dropdown-toggle:hover{color:var(--green)}.dropdown-panel{position:absolute;top:calc(100% + 8px);right:0;min-width:180px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;display:none;z-index:20}.dropdown.open .dropdown-panel{display:block}.dropdown-panel a{display:block;padding:9px 12px;border-radius:8px}.dropdown-panel a:hover{background:var(--mint)}@media(hover:hover){.dropdown:hover .dropdown-panel{display:block}}
     .hero{min-height:530px;display:grid;align-items:center;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-150px;top:-80px;background:var(--mint);z-index:0}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;column-gap:55px;row-gap:14px;align-items:center;padding:76px 0}.hero h1{font-size:clamp(42px,6vw,76px);letter-spacing:-.075em;line-height:.98;margin:15px 0 20px;max-width:690px}.hero h1 em{display:inline-block;font-style:normal;color:var(--green);margin-left:.12em}.hero p{font-size:17px;color:var(--muted);max-width:600px;margin:0}.button{display:inline-flex;margin-top:30px;padding:13px 19px;border-radius:7px;background:var(--green);color:#fff;text-decoration:none;font-weight:800;font-size:13px}.button:hover{background:#064b43}.hero-card{background:color-mix(in srgb,var(--surface) 90%,transparent);padding:29px;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);transform:rotate(2deg)}.hero-card h2{font-size:18px;margin:4px 0 22px;letter-spacing:-.04em}.hero-updated{grid-column:2;margin:0;font:11px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:right}
-    main{padding:55px 0 92px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}.section-head h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.065em;line-height:1;margin:7px 0 0}.section-head p{margin:0;max-width:500px;color:var(--muted);font-size:13px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.filter{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--muted)}select{appearance:none;border:1px solid var(--line);border-radius:7px;background:var(--surface);padding:10px 32px 10px 11px;color:var(--ink);font:700 13px Manrope,Arial,sans-serif;background-image:linear-gradient(45deg,transparent 50%,var(--green) 50%),linear-gradient(135deg,var(--green) 50%,transparent 50%);background-position:calc(100% - 15px) 15px,calc(100% - 10px) 15px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;cursor:pointer}
+    main{padding:55px 0 92px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}.section-head h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.065em;line-height:1;margin:7px 0 0}.section-head p{margin:0;max-width:500px;color:var(--muted);font-size:13px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.filter{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--muted)}.filter-search{flex:1 0 100%}select{appearance:none;border:1px solid var(--line);border-radius:7px;background:var(--surface);padding:10px 32px 10px 11px;color:var(--ink);font:700 13px Manrope,Arial,sans-serif;background-image:linear-gradient(45deg,transparent 50%,var(--green) 50%),linear-gradient(135deg,var(--green) 50%,transparent 50%);background-position:calc(100% - 15px) 15px,calc(100% - 10px) 15px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;cursor:pointer}.search-input{border:1px solid var(--line);border-radius:7px;background:var(--surface);padding:10px 11px;color:var(--ink);font:700 13px Manrope,Arial,sans-serif;min-width:210px}.search-input:focus{outline:2px solid var(--green);outline-offset:1px}.search-input::placeholder{color:var(--muted);font-weight:600}
     .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}.metric{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:19px 18px}.metric span{display:block;color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.metric strong{display:block;font:800 clamp(24px,3vw,35px) Manrope,Arial,sans-serif;letter-spacing:-.05em;margin:8px 0 4px}.metric small{font-size:11px;color:var(--muted)}.metric-delta{font-size:12px;font-weight:800;white-space:nowrap}.up{color:var(--green)!important}.down{color:#b44532!important}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:23px;min-width:0}.panel h3{font-size:16px;letter-spacing:-.035em;margin:0}.panel-head{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:18px}.panel-head span{font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:right}.chart{width:100%;height:262px;display:block}.chart text{font-family:Manrope,Arial,sans-serif;fill:var(--muted);font-size:11px}.axis{stroke:var(--line);stroke-width:1}.trend-area{fill:var(--mint);opacity:.8}.trend-line{fill:none;stroke:var(--green);stroke-width:3}.trend-dot{fill:var(--surface);stroke:var(--green);stroke-width:3}.trend-multi-line{fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}.trend-multi-dot{stroke:var(--surface);stroke-width:2}.trend-legend{display:flex;flex-wrap:wrap;gap:7px 13px;margin-top:2px;justify-content:center}.trend-legend span{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--muted)}.trend-legend i{width:8px;height:8px;border-radius:50%;display:inline-block}.bar{fill:var(--green)}.bar:hover{fill:var(--orange)}.bar-light{fill:var(--blue)}.bar-label{font-size:10px!important}.tip{pointer-events:none;position:fixed;opacity:0;background:var(--ink);color:white;border-radius:5px;padding:7px 9px;font:700 11px Manrope,Arial,sans-serif;z-index:20;transition:opacity .12s}.tip.visible{opacity:1}.tip.wide{white-space:normal;max-width:260px;line-height:1.5}
-    .ranking{list-style:none;padding:0;margin:0}.ranking li{display:grid;grid-template-columns:22px minmax(120px,1fr) minmax(70px,1.5fr) 70px;gap:10px;align-items:center;padding:9px 0;border-top:1px solid #edf0ea}.responsibility-row{cursor:pointer}.responsibility-row:hover{background:rgba(207,232,218,.35)}.rank{font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}.rank-name{font-size:12px;font-weight:700;line-height:1.3}.track{height:8px;background:#edf0ea;overflow:hidden;border-radius:4px}.fill{display:block;height:100%;background:var(--bar-color,var(--green));border-radius:4px}.rank-value{text-align:right;font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}.ranking.resp li{grid-template-columns:22px minmax(110px,1.2fr) minmax(60px,1fr) 64px 64px}.resp-head{display:grid;grid-template-columns:22px minmax(110px,1.2fr) minmax(60px,1fr) 64px 64px;gap:10px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;padding:0 0 8px}.resp-head span:nth-child(n+4){text-align:right}.mom-value{text-align:right;font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}
+    .ranking{list-style:none;padding:0;margin:0}.ranking li{display:grid;grid-template-columns:22px minmax(120px,1fr) minmax(70px,1.5fr) 70px;gap:10px;align-items:center;padding:9px 0;border-top:1px solid #edf0ea}.responsibility-row{cursor:pointer;user-select:none}.responsibility-row:hover{background:rgba(207,232,218,.35)}.rank{font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}.rank-name{font-size:12px;font-weight:700;line-height:1.3}.track{height:8px;background:#edf0ea;overflow:hidden;border-radius:4px}.fill{display:block;height:100%;background:var(--bar-color,var(--green));border-radius:4px}.rank-value{text-align:right;font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}.ranking.resp li{grid-template-columns:22px minmax(110px,1.2fr) minmax(60px,1fr) 64px 64px}.resp-head{display:grid;grid-template-columns:22px minmax(110px,1.2fr) minmax(60px,1fr) 64px 64px;gap:10px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;padding:0 0 8px}.resp-head span:nth-child(n+4){text-align:right}.mom-value{text-align:right;font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}
     .wide{margin-bottom:16px}.table-wrap{overflow-x:auto}.table{width:100%;border-collapse:collapse;font-size:12px}.table th{font:10px "DM Mono",monospace;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:0 11px 10px}.table td{padding:11px;border-top:1px solid #edf0ea}.table td:not(:first-child),.table th:not(:first-child){text-align:right}.table td:first-child{font-weight:700}.cell-change{font:700 10px Manrope,Arial,sans-serif;color:var(--muted);white-space:nowrap;margin-left:4px}.change-pos{color:var(--green);font-weight:800}.change-neg{color:#b44532;font-weight:800}.note{margin:18px 0 0;color:var(--muted);font-size:11px}.footer{padding:26px 0;border-top:1px solid var(--line);font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;text-align:center}
-    #roles,#tools,#methodology,#monthly-detail,#limitations{margin-top:64px;padding-top:18px}#roles,#tools,#methodology,#monthly-detail,#limitations{scroll-margin-top:84px}#dashboard{scroll-margin-top:47px}#monthly-detail .monthly-heading{margin-top:0}
-    #tools .tool-grid{grid-template-columns:1fr 1fr}.tool-card p{margin:8px 0 0;color:var(--muted);font-size:13px}.tool-tag{display:inline-block;margin-top:17px;padding:5px 9px;border-radius:5px;background:var(--mint);color:var(--green);font:10px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.06em}
+    #roles,#tools,#methodology,#monthly-detail,#limitations{margin-top:64px;padding-top:18px}#roles,#tools,#methodology,#monthly-detail,#limitations{scroll-margin-top:84px}#overall{scroll-margin-top:47px}#monthly-detail .monthly-heading{margin-top:0}
+    
     .methodology-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;margin-top:28px}.limitations-grid{grid-template-columns:1fr 1fr}.method-flow{display:flex;flex-direction:column;align-items:center}.method-step{width:min(100%,430px);padding:15px 20px;text-align:center;background:color-mix(in srgb,var(--mint) 42%,var(--surface));border:1px solid color-mix(in srgb,var(--green) 24%,var(--line));border-radius:10px;color:var(--ink);font:600 13px "DM Mono",monospace;letter-spacing:.09em}.method-arrow{height:29px;display:flex;align-items:center;justify-content:center;color:var(--green);font:700 22px Manrope,Arial,sans-serif}.method-notes{display:grid;gap:12px}.method-note{padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:13px}.method-note .eyebrow{margin-bottom:8px}.method-note h3{margin:0;font-size:17px;letter-spacing:-.04em}.method-note p{margin:8px 0 0;color:var(--muted);font-size:13px}.method-note ul{margin:13px 0 0;padding-left:18px;color:var(--muted);font-size:12px}.method-note li+li{margin-top:5px}.method-note-meta{margin-top:14px;padding-top:10px;border-top:1px solid var(--line);color:var(--muted);font:italic 11px Manrope,Arial,sans-serif;letter-spacing:0;text-transform:none}
     .metric-group-title{margin:26px 0 10px;font:11px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.metric-group-title:first-of-type{margin-top:0}.metrics.two{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .overall-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:16px;align-items:start}.overall-layout .metric-group-title{margin-top:0}.job-function-summary{margin-top:16px}.hero-big{margin-top:14px}.hero-card .hero-big{text-align:center}.hero-big-num{font:800 clamp(34px,4vw,46px) Manrope,Arial,sans-serif;letter-spacing:-.06em;line-height:1;color:var(--ink)}.hero-big-num.up{color:var(--green)}.hero-big-num.down{color:#b44532}.hero-big-label{margin-top:4px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.hero-divide{border:none;border-top:1px solid var(--line);margin:16px 0 12px}.hero-insights-head{display:flex;justify-content:space-between;gap:10px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.hero-insights{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.hero-insights .insight-stat:only-child{grid-column:1/-1}.hero-insights .insight-stat{padding:9px 12px}.hero-insights .insight-stat small.up{color:var(--green)}.hero-insights .insight-stat small.down{color:#b44532}.detail-insights{margin-bottom:16px}.detail-insights .insight-stat{background:var(--surface)}.signal-title{margin-top:0}.ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}.takeaway{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:14px 18px;margin:0 0 24px}.takeaway .eyebrow{margin-bottom:8px;color:var(--muted)}.ticker-insight{margin:0;color:var(--ink);font-size:13px}.ticker-item{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:14px 16px}.ticker-item span{display:block;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.ticker-item strong{display:block;font-size:24px;font-weight:800;letter-spacing:-.04em;margin:6px 0 2px}.ticker-item small{font-size:11px;font-weight:700;color:var(--muted)}.glance-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;margin-top:16px}.glance-metric{padding:14px 16px;text-align:center}.glance-metric strong{font-size:clamp(20px,2.4vw,28px)}.hero-glance-foot{margin-top:14px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:center}.metrics-soon{margin-bottom:16px}.metrics-soon p{margin:8px 0 0;color:var(--muted);font-size:13px}.insight-stat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px}.insight-stat span{display:block;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.insight-stat strong{display:block;font-size:13px;margin:4px 0 2px;letter-spacing:-.02em}.insight-stat small{font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}.expand-btn{display:block;width:100%;margin-top:12px;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--green);font:700 12px Manrope,Arial,sans-serif;cursor:pointer}.expand-btn:hover{background:var(--mint)}.pagination{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.page-btn{padding:8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--green);font:700 12px Manrope,Arial,sans-serif;cursor:pointer}.page-btn:disabled{opacity:.4;cursor:default}.page-btn:not(:disabled):hover{background:var(--mint)}.page-info{font:11px "DM Mono",monospace;color:var(--muted)}.ranking-table th:nth-child(2),.ranking-table td:nth-child(2){text-align:left}.ranking-table .track{display:block;min-width:80px}.bar-cell{display:flex;align-items:center;gap:10px}.bar-cell .track{flex:1}.bar-count{font:700 11px Manrope,Arial,sans-serif;color:var(--muted);white-space:nowrap}
+    .overall-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:16px;align-items:start}.overall-layout .metric-group-title{margin-top:0}.job-function-summary{margin-top:16px}.hero-big{margin-top:14px}.hero-card .hero-big{text-align:center}.hero-big-num{font:800 clamp(34px,4vw,46px) Manrope,Arial,sans-serif;letter-spacing:-.06em;line-height:1;color:var(--ink)}.hero-big-num.up{color:var(--green)}.hero-big-num.down{color:#b44532}.hero-big-label{margin-top:4px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.hero-divide{border:none;border-top:1px solid var(--line);margin:16px 0 12px}.hero-insights-head{display:flex;justify-content:space-between;gap:10px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.hero-insights{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.hero-insights .insight-stat:only-child{grid-column:1/-1}.hero-insights .insight-stat{padding:9px 12px}.hero-insights .insight-stat small.up{color:var(--green)}.hero-insights .insight-stat small.down{color:#b44532}.detail-insights{margin-bottom:16px}.detail-insights .insight-stat{background:var(--surface)}.signal-title{margin-top:0}.ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}#market-ticker{grid-template-columns:repeat(5,1fr)}.takeaway{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:14px 18px;margin:0 0 24px}.takeaway .eyebrow{margin-bottom:8px;color:var(--muted)}.ticker-insight{margin:0;color:var(--ink);font-size:13px}.ticker-item{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:14px 16px}.ticker-item span{display:block;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.ticker-item strong{display:block;font-size:24px;font-weight:800;letter-spacing:-.04em;margin:6px 0 2px}.ticker-item small{font-size:11px;font-weight:700;color:var(--muted)}.glance-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;margin-top:16px}.glance-metric{padding:14px 16px;text-align:center}.glance-metric strong{font-size:clamp(20px,2.4vw,28px)}.hero-glance-foot{margin-top:14px;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:center}.metrics-soon{margin-bottom:16px}.metrics-soon p{margin:8px 0 0;color:var(--muted);font-size:13px}.insight-stat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px}.insight-stat span{display:block;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.insight-stat strong{display:block;font-size:13px;margin:4px 0 2px;letter-spacing:-.02em}.insight-stat small{font:700 11px Manrope,Arial,sans-serif;color:var(--muted)}.expand-btn{display:block;width:100%;margin-top:12px;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--green);font:700 12px Manrope,Arial,sans-serif;cursor:pointer}.expand-btn:hover{background:var(--mint)}.pagination{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.page-btn{padding:8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--green);font:700 12px Manrope,Arial,sans-serif;cursor:pointer}.page-btn:disabled{opacity:.4;cursor:default}.page-btn:not(:disabled):hover{background:var(--mint)}.page-info{font:11px "DM Mono",monospace;color:var(--muted)}.ranking-table th:nth-child(2),.ranking-table td:nth-child(2){text-align:left}.ranking-table .track{display:block;min-width:80px}.bar-cell{display:flex;align-items:center;gap:10px}.bar-cell .track{flex:1}.bar-count{font:700 11px Manrope,Arial,sans-serif;color:var(--muted);white-space:nowrap}
     .monthly-heading{margin:64px 0 22px}.monthly-heading h2{font-size:clamp(25px,3.5vw,36px);letter-spacing:-.06em;line-height:1;margin:7px 0 0}.monthly-heading p{margin:10px 0 0;color:var(--muted);font-size:13px;max-width:560px}.monthly-heading .filters{margin:18px 0 0}
-    .responsibility-detail{margin-top:16px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:13px;max-height:640px;overflow:hidden;display:flex;flex-direction:column}.responsibility-detail h3{flex:none}#detail-copy,#tool-detail-copy{overflow-y:auto;min-height:0;scrollbar-gutter:stable}.resp-layout{display:grid;gap:16px;grid-template-columns:1fr;margin-top:16px;align-items:start}.resp-layout.has-detail{grid-template-columns:1.15fr .85fr}.resp-layout .responsibility-detail{margin-top:0}#detail-copy ul{list-style:disc;margin:8px 0 0;padding-left:20px}#detail-copy li{font-size:13px;color:var(--ink);margin-top:6px}#detail-copy li:first-child{margin-top:0}#detail-copy .detail-empty{color:var(--muted);font-style:italic}.responsibility-detail[hidden]{display:none}.responsibility-detail h3{font-size:15px;margin:0 0 5px}.responsibility-detail p{font-size:12px;color:var(--muted);margin:0}.responsibility-detail strong{color:var(--ink)}.detail-pager{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.detail-pager .page-btn{padding:6px 12px;font-size:11px}.detail-pager .page-info{font-size:11px}
-    @media(max-width:800px){.hero-grid,.grid,.overall-layout,.methodology-grid{grid-template-columns:1fr}.hero{min-height:auto}.hero-grid{padding:65px 0}.hero-card{transform:none}.hero-updated{grid-column:1}.metrics{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{margin-top:17px}.links{gap:12px;max-width:70vw;overflow-x:auto;scrollbar-width:none}.links a:nth-child(2){display:inline}}@media(max-width:480px){.shell{width:min(100% - 28px,1180px)}.nav{height:60px}.links a{font-size:11px}.hero h1{font-size:43px}.hero-insights{grid-template-columns:1fr}.metrics{gap:8px}.metric{padding:14px}.ranking li{grid-template-columns:19px minmax(98px,1fr) minmax(45px,1fr) 52px;gap:7px}.rank-name{font-size:11px}.rank-value{font-size:10px}.ranking.resp li,.resp-head{grid-template-columns:18px minmax(84px,1.2fr) minmax(40px,.8fr) 52px 52px;gap:7px}.panel{padding:17px}#roles,#tools,#methodology,#monthly-detail,#limitations{scroll-margin-top:72px}#dashboard{scroll-margin-top:35px}}
+    .responsibility-detail{margin-top:16px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:13px;max-height:640px;overflow:hidden;display:flex;flex-direction:column}.responsibility-detail h3{flex:none}.detail-copy-host,.detail-copy-host{overflow-y:auto;min-height:0;scrollbar-gutter:stable}.resp-layout{display:grid;gap:16px;grid-template-columns:1fr;margin-top:16px;align-items:start}.resp-layout.has-detail{grid-template-columns:.85fr 1.15fr}.resp-layout .responsibility-detail{margin-top:0}.detail-copy-host ul,.detail-copy-host ul{list-style:disc;margin:8px 0 0;padding-left:20px}.detail-copy-host li,.detail-copy-host li{font-size:13px;color:var(--ink);margin-top:6px}.detail-copy-host li:first-child,.detail-copy-host li:first-child{margin-top:0}.detail-copy-host .detail-empty,.detail-copy-host .detail-empty{color:var(--muted);font-style:italic}.responsibility-detail[hidden]{display:none}.responsibility-detail h3{font-size:15px;margin:0 0 5px}.responsibility-detail p{font-size:12px;color:var(--muted);margin:0}.responsibility-detail strong{color:var(--ink)}.detail-pager{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.detail-pager .page-btn{padding:6px 12px;font-size:11px}.detail-pager .page-info{font-size:11px}
+    #detail-note,#tool-detail-note{flex:none;margin-bottom:10px}
+    .detail-copy-host ul.role-totals,.detail-copy-host ul.role-totals{list-style:none;padding-left:0}
+    .detail-copy-host ul.role-totals li,.detail-copy-host ul.role-totals li{display:grid;grid-template-columns:minmax(78px,1.1fr) minmax(40px,1fr) 112px;gap:9px;align-items:center;margin-top:8px}
+    .detail-copy-host ul.role-totals li:first-child,.detail-copy-host ul.role-totals li:first-child{margin-top:0}
+    .detail-copy-host .role-total-name,.detail-copy-host .role-total-name{font-size:12px;font-weight:700;line-height:1.3}
+    .detail-copy-host .role-total-count,.detail-copy-host .role-total-count{display:grid;grid-template-columns:52px 10px 42px;gap:4px;align-items:baseline;font:11px "DM Mono",monospace;color:var(--muted);white-space:nowrap}
+    .detail-copy-host .role-total-count .rtc-n,.detail-copy-host .role-total-count .rtc-n{text-align:right}
+    .detail-copy-host .role-total-count .rtc-d,.detail-copy-host .role-total-count .rtc-d{text-align:center}
+    .detail-copy-host .role-total-count .rtc-s,.detail-copy-host .role-total-count .rtc-s{text-align:right}
+    .detail-copy-host .role-total-more,.detail-copy-host .role-total-more{margin:10px 0 0;font-size:12px;color:var(--muted)}
+    .detail-subhead{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--line);font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .detail-subhead:first-child{margin-top:0;padding-top:0;border-top:0}
+    .hist-value{font:700 9px Manrope,Arial,sans-serif;fill:var(--muted)}
+    .hist-tick{font:700 10px Manrope,Arial,sans-serif;fill:var(--muted)}
+    .hist-axis-label{font:10px "DM Mono",monospace;fill:var(--muted)}
+.chart .hist-marker-mean{font:800 10px Manrope,Arial,sans-serif;fill:var(--orange)}
+.chart .hist-marker-median{font:800 10px Manrope,Arial,sans-serif;fill:var(--blue)}
+.hist-overlay{font:800 11px Manrope,Arial,sans-serif;fill:var(--ink)}
+    .ranking li.detail-empty{display:block;border-top:1px solid #edf0ea;padding:14px 0;color:var(--muted);font-style:italic;font-size:12px}
+    .responsibility-row.is-selected{background:rgba(207,232,218,.55)}
+    @media(max-width:800px){.hero-grid,.grid,.overall-layout,.methodology-grid{grid-template-columns:1fr}.hero{min-height:auto}.hero-grid{padding:65px 0}.hero-card{transform:none}.hero-updated{grid-column:1}.metrics{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{margin-top:17px}.links{gap:12px;max-width:70vw;overflow-x:auto;scrollbar-width:none}.links a:nth-child(2){display:inline}}@media(max-width:480px){.shell{width:min(100% - 28px,1180px)}.nav{height:60px}.links a{font-size:11px}.hero h1{font-size:43px}.hero-insights{grid-template-columns:1fr}.metrics{gap:8px}.metric{padding:14px}.ranking li{grid-template-columns:19px minmax(98px,1fr) minmax(45px,1fr) 52px;gap:7px}.rank-name{font-size:11px}.rank-value{font-size:10px}.ranking.resp li,.resp-head{grid-template-columns:18px minmax(84px,1.2fr) minmax(40px,.8fr) 52px 52px;gap:7px}.panel{padding:17px}#roles,#tools,#methodology,#monthly-detail,#limitations{scroll-margin-top:72px}#overall{scroll-margin-top:35px}}
 
     .dashboard-controls{display:flex;align-items:center;gap:16px;margin:0 0 14px}.dashboard-filters{margin-bottom:0;justify-content:flex-start}.dashboard-controls-note{margin-left:auto;font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.dashboard-head{margin-bottom:10px}.dashboard-note{margin:0 0 18px;color:var(--muted);font-size:12px;max-width:660px}.toggle-btn{display:inline-flex;align-items:center;gap:8px;border:0;background:none;padding:0;color:var(--ink);font:700 12px Manrope,Arial,sans-serif;cursor:pointer}.toggle-track{position:relative;width:34px;height:19px;border-radius:10px;background:#c8d1cd;border:1px solid var(--line);display:inline-block;transition:.15s}.toggle-knob{position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.15);transition:.15s}.toggle-btn.is-on .toggle-track{background:var(--green);border-color:var(--green)}.toggle-btn.is-on .toggle-knob{left:17px}.panel.bare{background:none;border:0;box-shadow:none;padding:0}
 @media(max-width:800px){.dashboard-filters{justify-content:flex-start}.dashboard-controls{display:block;text-align:left}.dashboard-controls-note{display:block;margin:8px 0 0}.metrics-head{display:block}.metrics-head .dashboard-controls{margin-top:10px}.metrics.three{grid-template-columns:repeat(2,minmax(0,1fr))}.ticker{grid-template-columns:repeat(2,1fr)}.resp-layout.has-detail{grid-template-columns:1fr}.limitations-grid{grid-template-columns:1fr}.dropdown{position:static}.dropdown-toggle{display:none}.dropdown-panel{display:contents}}
-  </style>
+    .tab-bar{display:flex;gap:4px;margin:0 0 20px;border-bottom:1px solid var(--line)}.tab-btn{border:1px solid var(--line);border-bottom:none;border-radius:10px 10px 0 0;background:color-mix(in srgb,var(--line) 40%,var(--paper));padding:9px 18px;font:700 12px Manrope,Arial,sans-serif;color:var(--muted);cursor:pointer;position:relative;margin-bottom:-1px;transition:.15s}.tab-btn:hover{color:var(--ink)}.tab-btn.is-active{background:var(--surface);color:var(--ink);border-bottom:1px solid var(--surface)}.tab-panel[hidden]{display:none}.rank-share{color:var(--muted);font:700 11px Manrope,Arial,sans-serif;text-align:right}#tab-roles .ranking li{grid-template-columns:22px minmax(120px,1fr) minmax(70px,1.5fr) 70px 56px}.tab-subheader{font-size:clamp(15px,1.6vw,17px);letter-spacing:.02em;line-height:1.2;margin:0 0 14px;color:var(--green);font-weight:700}.tab-subheader-period{font-weight:500;font-size:12px;color:var(--muted);margin-left:6px}#tab-roles>.note,#mtab-roles>.note{margin:0 0 20px}.top-list-head{display:grid;grid-template-columns:22px minmax(120px,1fr) minmax(70px,1.5fr) 70px 56px;gap:10px;padding:0 0 10px;border-bottom:1px solid var(--line);font:10px "DM Mono",monospace;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+  .detail-copy-host{overflow:visible;min-height:0}.detail-tab-bar{display:flex;gap:4px;margin:0 0 12px;border-bottom:1px solid var(--line);flex:none}.detail-tab-btn{border:1px solid var(--line);border-bottom:none;border-radius:9px 9px 0 0;padding:6px 11px;font:600 11px Manrope,Arial,sans-serif;color:var(--muted);background:color-mix(in srgb,var(--line) 40%,var(--paper));cursor:pointer}.detail-tab-btn.is-active{background:var(--surface);color:var(--ink);margin-bottom:-1px;border-bottom:1px solid var(--surface)}.detail-tab-panel{flex:1;min-height:0;overflow-y:auto;scrollbar-gutter:stable}.detail-tab-panel[hidden]{display:none}
+</style></style>
 </head>
 <body>
   <canvas id="net" aria-hidden="true"></canvas>
-  <header><nav class="shell nav"><a class="brand" href="#top"><i></i>Job Market Pulse</a><div class="links"><a href="#dashboard">Dashboard</a><a href="#monthly-detail">Monthly analysis</a><a href="#roles">Role analysis</a><a href="#limitations">Limitations</a></div></nav></header>
-  <section class="hero" id="top"><div class="shell hero-grid"><div><div class="eyebrow" id="hero-range">Preview · Singapore job market</div><h1>See where <em>work is moving.</em></h1><p>Explore monthly job-posting activity across <span id="hero-job-function-count">43</span> job functions, then see the roles most often advertised in those postings, organised into an automated taxonomy.</p><a class="button" href="#dashboard">Explore the dashboard ↓</a></div><aside class="hero-card" aria-label="Dataset at a glance" aria-live="polite"><div class="eyebrow" id="hero-glance-eyebrow">Dataset at a glance</div><div class="glance-grid"><div class="metric glance-metric"><span>Total posts observed</span><strong id="hero-total-posts">—</strong></div><div class="metric glance-metric"><span>Unique jobs</span><strong id="hero-unique-jobs">—</strong></div><div class="metric glance-metric"><span>Recruiter posts</span><strong id="hero-recruiter-posts">—</strong></div><div class="metric glance-metric"><span>Recruiter share</span><strong id="hero-recruiter-share">—</strong></div></div><hr class="hero-divide"><div class="hero-glance-foot" id="hero-glance-foot">MyCareersFuture</div></aside><div class="hero-updated" id="hero-updated">Last updated August 2026</div></div></section>
-  <main class="shell" id="dashboard">
+  <header><nav class="shell nav"><a class="brand" href="#top"><i></i>Job Market Pulse</a><div class="links"><a href="#overall">Overview</a><a href="#monthly-detail">Monthly analysis</a><a href="#roles">Role analysis</a><a href="#tools">Tools analysis</a><a href="#limitations">Limitations</a></div></nav></header>
+  <section class="hero" id="top"><div class="shell hero-grid"><div><div class="eyebrow" id="hero-range">Preview · Singapore job market</div><h1>See where <em>work is moving.</em></h1><p>Explore monthly job-posting activity across <span id="hero-job-function-count">43</span> job functions, then see the roles most often advertised in those postings, organised into an automated taxonomy.</p><a class="button" href="#overall">Explore the dashboard ↓</a></div><aside class="hero-card" aria-label="Dataset at a glance" aria-live="polite"><div class="eyebrow" id="hero-glance-eyebrow">Dataset at a glance</div><div class="glance-grid"><div class="metric glance-metric"><span>Total posts observed</span><strong id="hero-total-posts">—</strong></div><div class="metric glance-metric"><span>Unique jobs</span><strong id="hero-unique-jobs">—</strong></div><div class="metric glance-metric"><span>Recruiter posts</span><strong id="hero-recruiter-posts">—</strong></div><div class="metric glance-metric"><span>Recruiter share</span><strong id="hero-recruiter-share">—</strong></div></div><hr class="hero-divide"><div class="hero-glance-foot" id="hero-glance-foot">MyCareersFuture</div></aside></div></section>
+  <main class="shell" id="overall">
     <div class="section-head dashboard-head">
-      <div><div class="eyebrow">Dashboard</div><h2>Job postings, made legible.</h2></div>
+      <div><div class="eyebrow">Overview</div><h2>The whole window, in one place.</h2></div>
     </div>
     <p class="dashboard-note">Explore the market with recruiter and new job filters. Figures are based on job postings observed on MyCareersFuture, one posting does not necessarily represent one unique vacancy.</p>
     <div class="dashboard-controls">
@@ -61,17 +83,72 @@
         </div>
         <span class="dashboard-controls-note">Setting applies to all analysis below</span>
       </div>
-    <div class="metric-group-title signal-title">Market signal</div>
+    <div class="tab-bar" role="tablist" aria-label="Overview sections">
+      <button class="tab-btn is-active" id="tab-btn-trends" type="button" role="tab" aria-selected="true" aria-controls="tab-trends">Posting Trends</button>
+      <button class="tab-btn" id="tab-btn-breakdown" type="button" role="tab" aria-selected="false" aria-controls="tab-breakdown">Job Functions</button>
+      <button class="tab-btn" id="tab-btn-roles" type="button" role="tab" aria-selected="false" aria-controls="tab-roles">Roles and Tools</button>
+      <button class="tab-btn" id="tab-btn-pay" type="button" role="tab" aria-selected="false" aria-controls="tab-pay">Pay &amp; experience</button>
+    </div>
+    <div class="tab-panel" id="tab-trends" role="tabpanel" aria-labelledby="tab-btn-trends">
+    <h2 class="tab-subheader">Post Counts</h2>
+    <section class="ticker" id="overall-ticker" aria-live="polite"></section>
+    <div class="grid"><section class="panel"><div class="panel-head"><h3 id="trend-title">Total job posts by month</h3><span>All job functions</span></div><svg class="chart" id="trend-chart" role="img" aria-label="Line chart of total job posts by month"></svg></section><section class="panel"><div class="panel-head"><h3 id="job-function-trend-title">Top 5 job function trends</h3><span>By total post volume</span></div><svg class="chart" id="job-function-trend-chart" role="img" aria-label="Multi-line chart of the top 5 job functions by monthly job posts"></svg><div class="trend-legend" id="job-function-trend-legend"></div></section></div>
+    </div>
+    <div class="tab-panel" id="tab-breakdown" role="tabpanel" aria-labelledby="tab-btn-breakdown" hidden>
+    <h2 class="tab-subheader">Job Functions</h2>
+    <section class="panel job-function-summary"><div class="panel-head"><h3 id="job-function-ranking-title">Top 10 Job functions by job posts</h3><span>Across all recorded months</span></div><div class="table-wrap"><table class="table ranking-table"><thead><tr><th>#</th><th>Job function</th><th>Count</th><th>Share</th></tr></thead><tbody id="job-function-ranking"></tbody></table></div><div class="pagination"><button class="page-btn" id="job-function-prev">← Prev</button><span class="page-info" id="job-function-page-info">Page 1 of 5</span><button class="page-btn" id="job-function-next">Next →</button></div></section>
+    </div>
+    <div class="tab-panel" id="tab-roles" role="tabpanel" aria-labelledby="tab-btn-roles" hidden>
+    <h2 class="tab-subheader">Roles And Tools</h2>
+    <p class="note">A role groups jobs with similar titles, responsibilities, and requirements. A tool is a specific software, language, or platform named in the job ad (e.g. Python, Microsoft Excel, or AWS).</p>
+    <div class="grid"><section class="panel"><div class="panel-head"><h3 id="overall-top-roles-title">Top 10 Roles by job posts</h3><span>Across all recorded months</span></div><div class="top-list-head" aria-hidden="true"><span>#</span><span>Role</span><span></span><span>Count</span><span>Share</span></div><ol class="ranking" id="overall-top-roles"></ol></section><section class="panel"><div class="panel-head"><h3 id="overall-top-tools-title">Top 10 Tools by job posts</h3><span>Across all recorded months</span></div><div class="top-list-head" aria-hidden="true"><span>#</span><span>Tool</span><span></span><span>Count</span><span>Share</span></div><ol class="ranking" id="overall-top-tools"></ol></section></div>
+    <p class="note">For details, refer to the Role analysis and Tools analysis sections.</p>
+    </div>
+    <div class="tab-panel" id="tab-pay" role="tabpanel" aria-labelledby="tab-btn-pay" hidden>
+    <h2 class="tab-subheader">Pay &amp; Experience</h2>
+    <div class="grid">
+      <section class="panel"><div class="panel-head"><h3>Salary distribution</h3><span id="salary-dist-note">—</span></div><svg class="chart" id="salary-dist-chart" role="img" aria-label="Histogram of advertised monthly salary midpoints, with mean and median marked"></svg><p class="note" id="salary-dist-stats">—</p></section>
+      <section class="panel"><div class="panel-head"><h3>Experience asked</h3><span id="exp-dist-note">—</span></div><svg class="chart" id="exp-dist-chart" role="img" aria-label="Histogram of minimum years of experience asked, with mean and median marked"></svg><p class="note" id="exp-dist-stats">—</p></section>
+    </div>
+    <section class="panel"><div class="panel-head"><h3 id="pay-jf-title">Median pay by job function</h3><span>Across all recorded months</span></div><div class="table-wrap"><table class="table"><thead><tr><th>Job function</th><th>Postings with salary</th><th>Median (mid)</th><th>P25–P75</th><th>Median yrs exp.</th><th>Mean yrs exp.</th></tr></thead><tbody id="pay-jf-table"></tbody></table></div><div class="pagination"><button class="page-btn" id="pay-jf-prev">← Prev</button><span class="page-info" id="pay-jf-page-info">Page 1 of 1</span><button class="page-btn" id="pay-jf-next">Next →</button></div><p class="note" id="pay-jf-note">Monthly basic salary only (SGD 500–30,000), experience 0–40 years. Postings can carry several job functions, so job-function counts can exceed unique postings.</p></section>
+    </div>
+    <section id="monthly-detail"><div class="monthly-heading"><div class="eyebrow">Monthly analysis</div><h2>Selected month, in detail.</h2><p>Choose a reporting period to update the snapshot and job function breakdown below.</p><div class="filters"><label class="filter">Reporting period <select id="month-select" aria-label="Reporting period"></select></label><label class="filter" id="recruiter-label-2">Recruiter postings <button class="toggle-btn is-on" id="recruiter-toggle-2" type="button" aria-pressed="true"><span class="toggle-track"><span class="toggle-knob"></span></span><span id="recruiter-toggle-label-2">Included</span></button></label><label class="filter" id="count-mode-label-2">Count by <select id="count-mode-2" aria-label="Count by"><option value="posts">Job posts</option><option value="new">New jobs</option></select></label></div></div>
+    <div class="takeaway" id="month-warning" hidden><div class="eyebrow">Data caveat</div><p class="ticker-insight" id="month-warning-text" aria-live="polite"></p></div>
+    <div class="tab-bar" role="tablist" aria-label="Monthly analysis sections">
+      <button class="tab-btn is-active" id="mtab-btn-signals" type="button" role="tab" aria-selected="true" aria-controls="mtab-signals">Market Signal</button>
+      <button class="tab-btn" id="mtab-btn-breakdown" type="button" role="tab" aria-selected="false" aria-controls="mtab-breakdown">Job Functions</button>
+      <button class="tab-btn" id="mtab-btn-roles" type="button" role="tab" aria-selected="false" aria-controls="mtab-roles">Roles and Tools</button>
+      <button class="tab-btn" id="mtab-btn-pay" type="button" role="tab" aria-selected="false" aria-controls="mtab-pay">Pay &amp; Experience</button>
+    </div>
+    <div class="tab-panel" id="mtab-signals" role="tabpanel" aria-labelledby="mtab-btn-signals">
+    <h2 class="tab-subheader">Market Signal <span id="market-signal-month" class="tab-subheader-period">—</span></h2>
     <section class="ticker" id="market-ticker" aria-live="polite"></section>
     <div class="takeaway"><div class="eyebrow">Market takeaway</div><p class="ticker-insight" id="market-ticker-insight" aria-live="polite"></p></div>
-    <div class="grid"><section class="panel"><div class="panel-head"><h3 id="trend-title">Total job posts by month</h3><span>All job functions</span></div><svg class="chart" id="trend-chart" role="img" aria-label="Line chart of total job posts by month"></svg></section><section class="panel"><div class="panel-head"><h3 id="job-function-trend-title">Top 5 job function trends</h3><span>By total post volume</span></div><svg class="chart" id="job-function-trend-chart" role="img" aria-label="Multi-line chart of the top 5 job functions by monthly job posts"></svg><div class="trend-legend" id="job-function-trend-legend"></div></section></div>
-    <section class="panel job-function-summary"><div class="panel-head"><h3 id="job-function-ranking-title">Job functions by job posts</h3><span>Across all recorded months</span></div><div class="table-wrap"><table class="table ranking-table"><thead><tr><th>#</th><th>Job function</th><th>Count</th><th>Share</th></tr></thead><tbody id="job-function-ranking"></tbody></table></div><div class="pagination"><button class="page-btn" id="job-function-prev">← Prev</button><span class="page-info" id="job-function-page-info">Page 1 of 5</span><button class="page-btn" id="job-function-next">Next →</button></div></section>
-    <section id="monthly-detail"><div class="monthly-heading"><div class="eyebrow">Monthly analysis</div><h2>Selected month, in detail.</h2><p>Choose a reporting period to update the snapshot and job function breakdown below.</p><div class="filters"><label class="filter">Reporting period <select id="month-select" aria-label="Reporting period"></select></label><label class="filter" id="recruiter-label-2">Recruiter postings <button class="toggle-btn is-on" id="recruiter-toggle-2" type="button" aria-pressed="true"><span class="toggle-track"><span class="toggle-knob"></span></span><span id="recruiter-toggle-label-2">Included</span></button></label><label class="filter" id="count-mode-label-2">Count by <select id="count-mode-2" aria-label="Count by"><option value="posts">Job posts</option><option value="new">New jobs</option></select></label></div></div>
-    <div class="metric-group-title">Monthly signal</div><section class="metrics three" aria-label="Monthly job-post metrics"><article class="metric"><span>Selected month</span><strong id="metric-month">—</strong><small id="metric-month-note">—</small></article><article class="metric"><span>Month-over-month</span><strong id="metric-mom">—</strong><small id="metric-mom-note">—</small></article><article class="metric"><span>Recruiter share</span><strong id="metric-recruiter-share">—</strong><small id="metric-recruiter-share-note">—</small></article></section>
     <div class="metric-group-title">What stands out <span id="detail-insights-period"></span></div>
     <div class="hero-insights detail-insights" id="detail-insights" aria-live="polite"></div>
-    <section class="panel wide"><div class="panel-head"><h3 id="monthly-job-function-title">Job posts by job function</h3><span>Monthly breakdown</span></div><div class="table-wrap"><table class="table"><thead><tr><th>Job function</th><th id="table-month-1">—</th><th id="table-month-2">—</th><th>Change</th></tr></thead><tbody id="job-function-table"></tbody></table></div><div class="pagination"><button class="page-btn" id="detail-prev">← Prev</button><span class="page-info" id="detail-page-info">Page 1 of 5</span><button class="page-btn" id="detail-next">Next →</button></div></section></section>
-    <section id="roles"><div class="section-head"><div><div class="eyebrow">Role analysis</div><h2>Which roles are employers posting for?</h2></div><p>Switch between post counts and the share of classified posts for each role. Focus on a job function to see job-function-specific examples. Each classified posting is assigned to a single role.</p></div><div class="filters responsibility-filter"><label class="filter">Reporting period <select id="responsibility-month-select" aria-label="Role reporting period"></select></label><label class="filter">Job function focus <select id="job-function-select" aria-label="Job function focus"></select></label><label class="filter">Display as <select id="responsibility-view-select" aria-label="Role display mode"><option value="count">Post count</option><option value="percent">Percentage of posts</option></select></label></div><div class="resp-layout has-detail" id="resp-layout"><section class="panel"><div class="panel-head"><h3>Top 10 roles by job posts</h3><span id="overall-resp-period">All recorded months</span></div><div class="resp-head" aria-hidden="true"><span></span><span>Role</span><span></span><span id="overall-resp-value-head">Share</span><span>MoM</span></div><ol class="ranking resp" id="overall-responsibilities"></ol></section><aside class="responsibility-detail" id="responsibility-detail" aria-live="polite"><h3 id="detail-title">Example roles</h3><div id="detail-copy"><p class="detail-empty">Select a role to see example postings here.</p></div></aside></div></section>
+    </div>
+    <div class="tab-panel" id="mtab-breakdown" role="tabpanel" aria-labelledby="mtab-btn-breakdown" hidden>
+    <h2 class="tab-subheader">Job Functions</h2>
+    <section class="panel wide"><div class="panel-head"><h3 id="monthly-job-function-title">Top 10 Job functions by job posts</h3><span>Monthly breakdown</span></div><div class="table-wrap"><table class="table"><thead><tr><th>Job function</th><th id="table-month-1">—</th><th id="table-month-2">—</th><th>Change</th></tr></thead><tbody id="job-function-table"></tbody></table></div><div class="pagination"><button class="page-btn" id="detail-prev">← Prev</button><span class="page-info" id="detail-page-info">Page 1 of 5</span><button class="page-btn" id="detail-next">Next →</button></div></section>
+    </div>
+    <div class="tab-panel" id="mtab-roles" role="tabpanel" aria-labelledby="mtab-btn-roles" hidden>
+    <h2 class="tab-subheader">Roles and Tools</h2>
+    <p class="note">A role groups jobs with similar titles, responsibilities, and requirements. A tool is a specific software, language, or platform named in the job ad (e.g. Python, Microsoft Excel, or AWS).</p>
+    <div class="grid"><section class="panel"><div class="panel-head"><h3 id="monthly-top-roles-title">Top 10 Roles by job posts</h3><span id="monthly-top-roles-period">—</span></div><ol class="ranking" id="monthly-top-roles"></ol></section><section class="panel"><div class="panel-head"><h3 id="monthly-top-tools-title">Top 10 Tools by job posts</h3><span id="monthly-top-tools-period">—</span></div><ol class="ranking" id="monthly-top-tools"></ol></section></div>
+    <p class="note">For details, refer to the Role analysis and Tools analysis sections.</p>
+    </div>
+    <div class="tab-panel" id="mtab-pay" role="tabpanel" aria-labelledby="mtab-btn-pay" hidden>
+    <h2 class="tab-subheader">Pay &amp; Experience</h2>
+    <div class="grid">
+      <section class="panel"><div class="panel-head"><h3>Salary distribution</h3><span id="monthly-sal-dist-note">—</span></div><svg class="chart" id="monthly-salary-dist-chart" role="img" aria-label="Histogram of advertised monthly salary midpoints for the selected month, with mean and median marked"></svg><p class="note" id="monthly-sal-dist-stats">—</p></section>
+      <section class="panel"><div class="panel-head"><h3>Experience asked</h3><span id="monthly-exp-dist-note">—</span></div><svg class="chart" id="monthly-exp-dist-chart" role="img" aria-label="Histogram of minimum years of experience asked for the selected month, with mean and median marked"></svg><p class="note" id="monthly-exp-dist-stats">—</p></section>
+    </div>
+    <section class="panel wide"><div class="panel-head"><h3 id="monthly-pay-jf-title">Median pay by job function</h3><span id="monthly-pay-jf-month">—</span></div><div class="table-wrap"><table class="table"><thead><tr><th>Job function</th><th>Postings with salary</th><th>Median (mid)</th><th>P25–P75</th><th>Median yrs exp.</th><th>Mean yrs exp.</th></tr></thead><tbody id="monthly-pay-jf-table"></tbody></table></div><div class="pagination"><button class="page-btn" id="monthly-pay-jf-prev">← Prev</button><span class="page-info" id="monthly-pay-jf-page-info">Page 1 of 1</span><button class="page-btn" id="monthly-pay-jf-next">Next →</button></div><p class="note" id="monthly-pay-jf-note">Monthly basic salary only (SGD 500–30,000), experience 0–40 years. Postings can carry several job functions, so job-function counts can exceed unique postings.</p></section>
+    </div>
+</section>
+    <section id="roles"><div class="section-head"><div><div class="eyebrow">Role analysis</div><h2>Which roles are employers posting for?</h2></div><p>Search for a role to jump straight to it and read example postings for it plus the tools those postings ask for, or browse the ranking, switch between post counts and the share of classified posts, and focus on a job function for job-function-specific examples. Each classified posting is assigned to a single role.</p></div><div class="filters responsibility-filter"><label class="filter filter-search">Search role <input class="search-input" id="role-search" type="search" placeholder="e.g. accountant" autocomplete="off" aria-label="Search a role"></label><label class="filter">Reporting period <select id="responsibility-month-select" aria-label="Role reporting period"></select></label><label class="filter">Job function focus <select id="job-function-select" aria-label="Job function focus"></select></label><label class="filter">Display as <select id="responsibility-view-select" aria-label="Role display mode"><option value="count">Post count</option><option value="percent">Percentage of posts</option></select></label></div><div class="resp-layout has-detail" id="resp-layout"><section class="panel"><div class="panel-head"><h3 id="overall-resp-title">Top 10 roles by job posts</h3><span id="overall-resp-period">All recorded months</span></div><div class="resp-head" aria-hidden="true"><span></span><span>Role</span><span></span><span id="overall-resp-value-head">Share</span><span>MoM</span></div><ol class="ranking resp" id="overall-responsibilities"></ol></section><aside class="responsibility-detail" id="responsibility-detail" aria-live="polite"><h3 id="detail-title">Role detail</h3><p id="detail-note"></p><div class="detail-tab-bar" role="tablist" aria-label="Role detail views"><button class="detail-tab-btn is-active" id="dtab-btn-tools" type="button" role="tab" aria-selected="true" aria-controls="dtab-tools">Top Tool Mentions</button><button class="detail-tab-btn" id="dtab-btn-examples" type="button" role="tab" aria-selected="false" aria-controls="dtab-examples">Role Examples</button></div><div class="detail-tab-panel" id="dtab-tools" role="tabpanel" aria-labelledby="dtab-btn-tools"><div class="detail-copy-host" id="detail-tools-copy"><p class="detail-empty">Select a role to see the tools it asks for here.</p></div></div><div class="detail-tab-panel" id="dtab-examples" role="tabpanel" aria-labelledby="dtab-btn-examples" hidden><div class="detail-copy-host" id="detail-copy"><p class="detail-empty">Select a role to see example postings here.</p></div></div></aside></div></section>
+
+    <section id="tools"><div class="section-head"><div><div class="eyebrow">Tools analysis</div><h2>Which tools are employers asking for?</h2></div><p>Search for a tool to jump straight to it and see which roles use it and which job functions ask for it, or browse the ranking, switch between post counts and each tool's share of all tool mentions, and focus on a job function for job-function-specific demand. A posting can mention several tools.</p></div><div id="tools-live" hidden><div class="filters responsibility-filter"><label class="filter filter-search">Search tool <input class="search-input" id="tool-search" type="search" placeholder="e.g. excel" autocomplete="off" aria-label="Search a tool"></label><label class="filter">Reporting period <select id="tool-month-select" aria-label="Tool reporting period"></select></label><label class="filter">Job function focus <select id="tool-job-function-select" aria-label="Tool job function focus"></select></label><label class="filter">Display as <select id="tool-view-select" aria-label="Tool display mode"><option value="count">Post count</option><option value="percent">Percentage of mentions</option></select></label></div><div class="resp-layout has-detail" id="tool-layout"><section class="panel"><div class="panel-head"><h3 id="tool-resp-title">Top 10 tools by job posts</h3><span id="tool-resp-period">All recorded months</span></div><div class="resp-head" aria-hidden="true"><span></span><span>Tool</span><span></span><span id="tool-resp-value-head">Share</span><span>MoM</span></div><ol class="ranking resp" id="tool-responsibilities"></ol></section><aside class="responsibility-detail" id="tool-detail" aria-live="polite"><h3 id="tool-detail-title">Tool detail</h3><p id="tool-detail-note"></p><div class="detail-tab-bar" role="tablist" aria-label="Tool detail views"><button class="detail-tab-btn is-active" id="tdtab-btn-roles" type="button" role="tab" aria-selected="true" aria-controls="tdtab-roles">Top Roles Mentioning</button><button class="detail-tab-btn" id="tdtab-btn-jf" type="button" role="tab" aria-selected="false" aria-controls="tdtab-jf">Job Functions</button></div><div class="detail-tab-panel" id="tdtab-roles" role="tabpanel" aria-labelledby="tdtab-btn-roles"><div class="detail-copy-host" id="tool-detail-copy"><p class="detail-empty">Select a tool to see the roles that use it here.</p></div></div><div class="detail-tab-panel" id="tdtab-jf" role="tabpanel" aria-labelledby="tdtab-btn-jf" hidden><div class="detail-copy-host" id="tool-detail-jf-copy"><p class="detail-empty">Select a tool to see the job functions that ask for it here.</p></div></div></aside></div></div></section>
     
     
     <section id="limitations"><div class="section-head"><div><div class="eyebrow">Limitations</div><h2>What the data can and cannot tell you.</h2></div></div>
@@ -81,7 +158,8 @@
         <article class="method-note"><h3>Postings are not always unique jobs</h3><p>Jobs may be reposted, duplicated, or listed in multiple places. Observed posting volume may therefore differ from the number of unique hiring needs.</p></article>
         <article class="method-note"><h3>Role classification is provisional</h3><p>Roles are extracted and grouped using local large language models and an experimental taxonomy. Some postings may be assigned to neighbouring or incorrect roles, particularly where occupations share similar skills and responsibilities. <strong>Role-level results may change in future releases.</strong></p></article>
         <article class="method-note"><h3>Recruiter postings affect the signal</h3><p>Recruitment agencies may post on behalf of other employers and can contribute substantially to observed volume. The recruiter filter is provided to make this effect visible.</p></article>
-        <article class="method-note"><h3>Limited observation window</h3><p>This release covers <strong>June–August 2026</strong> and reflects only observable postings during this period. It should not be interpreted as a complete picture of the Singapore labour market.</p></article>
+        <article class="method-note"><h3>Limited observation window</h3><p>This release covers <strong>June–September 2026</strong> and reflects only observable postings during this period. It should not be interpreted as a complete picture of the Singapore labour market. <strong>June 2026 is incomplete</strong>: duplicate job posts were not collected at the start of the window, so June volumes are understated.</p></article>
+        <article class="method-note"><h3>Pay and experience are indicative</h3><p>Salary figures use advertised <strong>monthly basic</strong> pay where stated, kept to SGD 500–30,000, reported as 25th percentile / median / 75th percentile of the minimum, midpoint and maximum advertised. Experience comes from the stated minimum years required, kept to 0–40 years. Postings without these fields are excluded, so pay and experience counts are smaller than posting counts. Postings can carry several job functions, so job-function figures count a posting once per tag and can exceed unique postings.</p></article>
       </div>
     </section>
   </main>
@@ -106,8 +184,11 @@
     const countModeSelect = $('count-mode');
     const recruiterToggle2 = $('recruiter-toggle-2');
     const countModeSelect2 = $('count-mode-2');
+    const roleSearch = $('role-search');
+    const toolSearch = $('tool-search');
 
     const jobPostsSummary = data.job_posts_summary || null;
+    const jobPostsMonthly = data.job_posts_monthly || [];
     const jobPosts = jobPostsSummary ? [] : (data.job_posts || []);
     const jobFunctionRows = data.job_function_monthly || [];
     const responsibilityRows = data.role_monthly_overall || data.responsibility_monthly_overall || [];
@@ -118,9 +199,112 @@
     // when a legacy payload without totals is loaded.
     const roleTotals = data.role_monthly_totals || [];
     const roleJobFunctionTotals = data.role_job_function_totals || [];
-    const toolRows = data.tool_monthly || [];
-    const toolJobFunctionRows = data.tool_job_function_monthly || [];
-    const hasTools = toolRows.length > 0;
+    // Tool analysis: the whole month x job-function x tool table,
+    // shipped as compact rows (month index, job-function index, tool
+    // label, six counts) against the two lookup arrays. Decoded once
+    // here so every tool helper reads the same field names as the role
+    // tables; the same rows as JSON objects would cost several times
+    // more. The build groups the mart's tool ids by label, so partition
+    // and label are the same string: one row per tool name, however
+    // many fragments the mart split it into.
+    const toolMonths = data.tool_months || [];
+    const toolJobFunctions = data.tool_job_functions || [];
+    const toolByJobFunctionRows = (data.tool_by_job_function || []).map(
+      row => ({
+        month: toolMonths[row[0]],
+        job_function: toolJobFunctions[row[1]],
+        partition: row[2],
+        label: row[2],
+        posting_count: row[3],
+        recruiter_posting_count: row[4],
+        non_recruiter_posting_count: row[5],
+        new_job_count: row[6],
+        new_recruiter_job_count: row[7],
+        new_non_recruiter_job_count: row[8],
+      })
+    );
+    // Role breakdown for the detail panel: month x role x tool rows,
+    // packed against the same month lookup plus role / tool label
+    // arrays. The source mart has no job-function column, so the
+    // breakdown -- like the note above it -- spans all job
+    // functions and follows the reporting period only.
+    const toolRoleLabels = data.tool_role_labels || [];
+    const toolRoleTools = data.tool_role_tools || [];
+    const toolRoleRowsByTool = new Map();
+
+    (data.tool_role_totals || []).forEach(row => {
+      const tool = toolRoleTools[row[2]];
+      let bucket = toolRoleRowsByTool.get(tool);
+      if (!bucket) {
+        bucket = [];
+        toolRoleRowsByTool.set(tool, bucket);
+      }
+      bucket.push({
+        month: toolMonths[row[0]],
+        role: toolRoleLabels[row[1]],
+        posting_count: row[3],
+        non_recruiter_posting_count: row[4],
+        new_job_count: row[5],
+        new_non_recruiter_job_count: row[6],
+      });
+    });
+    const hasTools = toolByJobFunctionRows.length > 0;
+    const TOOL_SEARCH_LIMIT = 20;
+    // Role analysis: the full role x job-function cross-tab (no top-N
+    // cut), so any role can be found by search and a selected role's
+    // job-function split always sums back to the role total. Examples
+    // cover every role, not only the ones in the truncated ranking.
+    const roleByJobFunctionRows = data.role_by_job_function || [];
+    const roleByJobFunctionTotals = data.role_by_job_function_totals || [];
+    const roleExampleIndex = data.role_examples || {};
+    const ROLE_SEARCH_LIMIT = 20;
+
+    // Pay and experience aggregates: overall rows are keyed by scope
+    // ("all" / "non_recruiter"); the job-function lists carry their
+    // scope on each row. Scope follows the recruiter toggle everywhere.
+    const salaryOverall = data.salary_overall || {};
+    const experienceOverall = data.experience_overall || {};
+    const salaryMonthly = data.salary_monthly || [];
+    const experienceMonthly = data.experience_monthly || [];
+    const salaryJobFunctionOverall = data.salary_job_function_overall || [];
+    const experienceJobFunctionOverall = data.experience_job_function_overall || [];
+    const salaryJobFunctionMonthly = data.salary_job_function_monthly || [];
+    const experienceJobFunctionMonthly = data.experience_job_function_monthly || [];
+    // New-jobs variants of the window aggregates: same shape, built
+    // from postings flagged as newly observed. The overview
+    // distribution charts switch to these when count mode is
+    // "New jobs".
+    const salaryOverallNew = data.salary_overall_new || {};
+    const experienceOverallNew = data.experience_overall_new || {};
+    // Salary distribution for the overview charts: fixed bin labels /
+    // edges plus per-scope counts. Experience charts reuse the bucket
+    // counts already on the experience rows.
+    const salaryBins = data.salary_bins || [];
+    const salaryHistogramOverall = data.salary_histogram_overall || [];
+    const salaryHistogramOverallNew = data.salary_histogram_overall_new || [];
+    const salaryHistogramMonthly = data.salary_histogram_monthly || [];
+
+    // Reverse index for the role detail panel: role label -> tool rows.
+    // Built from the same packed tool x role totals the tool detail
+    // panel reads, keyed the other way round.
+    const roleToolRowsByRole = new Map();
+
+    (data.tool_role_totals || []).forEach(row => {
+      const role = toolRoleLabels[row[1]];
+      let bucket = roleToolRowsByRole.get(role);
+      if (!bucket) {
+        bucket = [];
+        roleToolRowsByRole.set(role, bucket);
+      }
+      bucket.push({
+        month: toolMonths[row[0]],
+        tool: toolRoleTools[row[2]],
+        posting_count: row[3],
+        non_recruiter_posting_count: row[4],
+        new_job_count: row[5],
+        new_non_recruiter_job_count: row[6],
+      });
+    });
 
     const fmt = n =>
       new Intl.NumberFormat('en-SG').format(
@@ -215,6 +399,13 @@
       ])
     );
 
+    const roleLabelIndex = new Map(
+      roleByJobFunctionTotals.map(row => [
+        row.partition,
+        row.label,
+      ])
+    );
+
     // --------------------------------------------------------
     // Global view state
     // --------------------------------------------------------
@@ -223,12 +414,24 @@
     let countMode = 'posts';
     let jobFunctionPage = 0;
     let detailPage = 0;
+    // Pay-by-job-function tables: one page cursor each so the
+    // overall and monthly tables page independently.
+    let payJfPage = 0;
+    let monthlyPayJfPage = 0;
     // Detail-panel example pagination: one example per page so long
     // role texts never elongate the panel.
     let roleExampleItems = [];
     let roleExamplePage = 0;
-    let toolExampleItems = [];
-    let toolExamplePage = 0;
+    // Role analysis: the role whose detail panel (job-function split
+    // plus examples) is open. Re-rendered whenever the controls change
+    // so the counts in it never go stale.
+    let selectedRolePartition = null;
+    let selectedRoleLabel = null;
+
+    // Tool analysis: the tool whose detail panel is open, kept in sync
+    // with the highlighted row the same way the role selection is.
+    let selectedToolPartition = null;
+    let selectedToolLabel = null;
 
     // --------------------------------------------------------
     // Helpers
@@ -340,6 +543,33 @@
         ? months[index - 1]
         : null;
     }
+
+    // Pay and experience rows ship two scopes; which one applies
+    // follows the recruiter toggle like every other control.
+    function payScope() {
+      return includeRecruiters
+        ? 'all'
+        : 'non_recruiter';
+    }
+
+    const fmtMoney = value =>
+      value === null
+      || value === undefined
+      || Number.isNaN(Number(value))
+        ? '—'
+        : '$' + fmt(Math.round(Number(value)));
+
+    // Compact axis / bar-top labels: 148,223 -> 148k, 9,342 -> 9.3k.
+    const fmtCompact = value => {
+      const n = Number(value) || 0;
+      if (n >= 10000) {
+        return Math.round(n / 1000) + 'k';
+      }
+      if (n >= 1000) {
+        return (Math.round(n / 10) / 10) + 'k';
+      }
+      return fmt(n);
+    };
 
     function makeOptions() {
 
@@ -486,6 +716,20 @@
     // not a market claim. It never responds to the controls.
     // --------------------------------------------------------
 
+    // Label for the month after the newest data month — the usual
+    // publish month of a window that ends the month before.
+    function monthAfter(value) {
+
+      const [year, month] =
+        value.split('-').map(Number);
+
+      return monthLabel(
+        month === 12
+          ? `${year + 1}-01`
+          : `${year}-${String(month + 1).padStart(2, '0')}`
+      );
+    }
+
     function renderHero() {
 
       const latest =
@@ -497,38 +741,21 @@
       );
 
       setText(
-        'hero-range',
-        `Preview · Singapore job market · ${
-          months.length > 1
-            ? `${monthShort(months[0])}–${monthLabel(months.at(-1))}`
-            : monthLabel(months[0])
-        }`
-      );
-
-      setText(
         'hero-glance-eyebrow',
-        `${monthLabel(latest)} · Dataset at a glance`
+        `Last updated ${monthAfter(latest)} · Dataset at a glance`
       );
 
       setText(
         'hero-glance-foot',
-        `MyCareersFuture · ${
-          months.length > 1
-            ? `${monthShort(months[0])}–${monthLabel(months.at(-1))}`
-            : monthLabel(months[0])
-        }`
-      );
-
-      setText(
-        'hero-updated',
-        `Last updated ${monthLabel(latest)}`
+        'Source : MyCareersFuture'
       );
     }
 
     // --------------------------------------------------------
     // Market signal ticker
-    // All four analytical lenses for the latest month, generated
-    // from the data. Independent of the dashboard controls.
+    // All four analytical lenses for the month chosen in the
+    // monthly analysis selector, each compared with its prior
+    // month. Lives inside the monthly section and follows it.
     // --------------------------------------------------------
 
     function lensTotal(
@@ -564,15 +791,75 @@
       return total;
     }
 
+    // Whole-window version of the market signal for the Overview:
+    // deduped window totals for the four lenses plus each lens's
+    // share of all observed posts. Uses the posting-level summary
+    // (not job-function rows, which would count multi-tagged
+    // postings once per tag). Static — no control follows it.
+    function renderOverallTicker() {
+
+      const node =
+        $('overall-ticker');
+
+      if (!node) {
+        return;
+      }
+
+      const summary =
+        jobPostsSummary || {};
+
+      const allPosts =
+        Number(summary.total_posts) || 0;
+
+      const recruiterPosts =
+        Number(summary.recruiter_posts) || 0;
+
+      const newJobs =
+        Number(summary.new_jobs) || 0;
+
+      const newRecruiterJobs =
+        Number(summary.new_recruiter_jobs) || 0;
+
+      const entries = [
+        { label: 'All posts', value: allPosts },
+        {
+          label: 'Excl. recruiters',
+          value: Math.max(0, allPosts - recruiterPosts),
+        },
+        { label: 'New jobs', value: newJobs },
+        {
+          label: 'New, excl. recruiters',
+          value: Math.max(0, newJobs - newRecruiterJobs),
+        },
+      ];
+
+      node.innerHTML =
+        entries
+          .map(
+            entry => `
+              <div class="ticker-item">
+                <span>${entry.label}</span>
+                <strong>${fmt(entry.value)}</strong>
+                <small>${
+                  allPosts
+                    ? (entry.value / allPosts * 100).toFixed(1) + '% of all posts'
+                    : ''
+                }</small>
+              </div>
+            `
+          )
+          .join('');
+    }
+
     function renderTicker() {
 
       const latest =
-        months.at(-1);
+        months.includes(monthSelect.value)
+          ? monthSelect.value
+          : months.at(-1);
 
       const previous =
-        months.length > 1
-          ? months.at(-2)
-          : null;
+        priorMonthOf(latest);
 
       const lenses = [
         {
@@ -645,6 +932,75 @@
           }
         );
 
+      const shareOf = target => {
+
+        const targetRows =
+          jobFunctionRows.filter(
+            row =>
+              row.month === target
+          );
+
+        const denominator =
+          targetRows.reduce(
+            (sum, row) =>
+              sum
+              + (
+                Number(
+                  countMode === 'new'
+                    ? row.new_job_count
+                    : row.posting_count
+                ) || 0
+              ),
+            0
+          );
+
+        const recruiter =
+          targetRows.reduce(
+            (sum, row) =>
+              sum
+              + (
+                Number(
+                  countMode === 'new'
+                    ? row.new_recruiter_job_count
+                    : row.recruiter_posting_count
+                ) || 0
+              ),
+            0
+          );
+
+        return denominator
+          ? recruiter / denominator * 100
+          : null;
+      };
+
+      const share =
+        shareOf(latest);
+
+      const priorShare =
+        previous
+          ? shareOf(previous)
+          : null;
+
+      const shareDelta =
+        share !== null
+        && priorShare !== null
+          ? share - priorShare
+          : null;
+
+      setText('market-signal-month', monthLabel(latest));
+
+      const shareCard = `
+                <div class="ticker-item">
+                  <span>Recruiter share</span>
+                  <strong>${share === null ? '—' : share.toFixed(1) + '%'}</strong>
+                  <small class="${shareDelta === null ? '' : shareDelta > 0 ? 'up' : shareDelta < 0 ? 'down' : ''}">${
+                    shareDelta === null
+                      ? '—'
+                      : `${shareDelta > 0 ? '+' : ''}${shareDelta.toFixed(1)} pp`
+                  } ${shareDelta === null ? '' : shareDelta > 0 ? '▲' : shareDelta < 0 ? '▼' : '•'}</small>
+                </div>
+              `;
+
       $('market-ticker').innerHTML =
         results
           .map(
@@ -679,14 +1035,15 @@
 
               return `
                 <div class="ticker-item">
-                  <span>${lens.label} · ${monthTick(latest)}</span>
+                  <span>${lens.label}</span>
                   <strong>${fmt(lens.value)}</strong>
                   <small class="${tone}">${changeText} ${arrow}</small>
                 </div>
               `;
             }
           )
-          .join('');
+          .join('')
+        + shareCard;
 
       renderTickerInsight(
         results,
@@ -794,6 +1151,968 @@
 
       node.textContent =
         insight;
+    }
+
+    // --------------------------------------------------------
+    // Pay & experience panels
+    // Overall (whole window) and monthly views of the pre-aggregated
+    // salary / experience rows, plus the pay-by-job-function tables.
+    // Everything follows the recruiter toggle via payScope(); the
+    // overview distribution charts (bars, markers, coverage overlay
+    // and count captions) also follow the posts / new-jobs count
+    // mode via the *_new window rows.
+    // --------------------------------------------------------
+
+    function payJfRows(month) {
+
+      const scope = payScope();
+
+      const expRows =
+        (month
+          ? experienceJobFunctionMonthly.filter(
+              row => row.month === month && row.scope === scope
+            )
+          : experienceJobFunctionOverall.filter(
+              row => row.scope === scope
+            )
+        );
+
+      const expIndex = new Map(
+        expRows.map(row => [row.job_function, row])
+      );
+
+      const salaryRows =
+        month
+          ? salaryJobFunctionMonthly.filter(
+              row => row.month === month && row.scope === scope
+            )
+          : salaryJobFunctionOverall.filter(
+              row => row.scope === scope
+            );
+
+      return salaryRows
+        .map(sal => {
+
+          const exp = expIndex.get(sal.job_function) || null;
+
+          return {
+            job_function: sal.job_function,
+            posting_count: Number(sal.posting_count) || 0,
+            midMedian: sal.salary_mid_median,
+            midP25: sal.salary_mid_p25,
+            midP75: sal.salary_mid_p75,
+            expMedian: exp ? exp.exp_median : null,
+            expMean: exp ? exp.exp_mean : null,
+          };
+        })
+        .sort(
+          (a, b) =>
+            b.posting_count - a.posting_count
+            || a.job_function.localeCompare(b.job_function)
+        );
+    }
+
+    function payJfTableHtml(rows) {
+
+      if (!rows.length) {
+        return '<tr><td colspan="6">No pay data for this selection.</td></tr>';
+      }
+
+      return rows
+        .map(
+          row => `
+            <tr>
+              <td>${escapeLookupHtml(row.job_function)}</td>
+              <td>${fmt(row.posting_count)}</td>
+              <td>${fmtMoney(row.midMedian)}</td>
+              <td>${fmtMoney(row.midP25)}–${fmtMoney(row.midP75)}</td>
+              <td>${row.expMedian === null ? '—' : Number(row.expMedian).toFixed(1)}</td>
+              <td>${row.expMean === null ? '—' : Number(row.expMean).toFixed(1)}</td>
+            </tr>
+          `
+        )
+        .join('');
+    }
+
+    // Shared vertical-bar histogram for the overview pay / experience
+    // panels: one bar per shipped bin, count labels above each bar,
+    // and mean / median drawn as vertical marker lines with labels
+    // spread to opposite sides of their lines.
+    function histogramMarkerX(value, ranges, left, slot) {
+
+      if (
+        value === null
+        || value === undefined
+        || Number.isNaN(Number(value))
+        || !ranges.length
+      ) {
+        return null;
+      }
+
+      const v = Number(value);
+
+      for (let i = 0; i < ranges.length; i += 1) {
+
+        const [lo, hi] = ranges[i];
+
+        if (v < hi || i === ranges.length - 1) {
+
+          const frac =
+            hi > lo
+              ? Math.min(1, Math.max(0, (v - lo) / (hi - lo)))
+              : 0.5;
+
+          return left + (i + frac) * slot;
+        }
+      }
+
+      return null;
+    }
+
+    function renderHistogram(id, cfg) {
+
+      const svg =
+        $(id);
+
+      if (!svg) {
+        return;
+      }
+
+      const labels = cfg.labels || [];
+      const counts =
+        (cfg.counts || []).map(Number);
+      const ranges = cfg.ranges || [];
+
+      const box =
+        svg.getBoundingClientRect();
+
+      const w =
+        Math.max(320, box.width);
+
+      const h = 262;
+
+      const left = 48;
+      const right = 16;
+      const top = 34;
+      const bottom = 40;
+
+      const iw = w - left - right;
+      const ih = h - top - bottom;
+
+      const maxCount =
+        Math.max(...counts, 0);
+
+      if (
+        !labels.length
+        || !counts.length
+        || !maxCount
+      ) {
+        svg.innerHTML = '';
+        return;
+      }
+
+      // Count axis: round the scale up to a readable maximum that is
+      // at least 10% above the tallest bar, so bars never touch the
+      // marker labels sitting above the plot. Ticks / gridlines go
+      // at 0, half and max; the 0 gridline doubles as the baseline.
+      const niceCeil = value => {
+        const magnitude =
+          Math.pow(10, Math.floor(Math.log10(value)));
+        const norm = value / magnitude;
+        const steps = [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+        for (const step of steps) {
+          if (norm <= step + 1e-9) {
+            return step * magnitude;
+          }
+        }
+        return 10 * magnitude;
+      };
+
+      const scaleMax = niceCeil(maxCount * 1.1);
+
+      const yScale =
+        count => top + ih - count / scaleMax * ih;
+
+      const slot = iw / labels.length;
+      const barW = slot * 0.64;
+
+      const parts = [];
+
+      [0, scaleMax / 2, scaleMax].forEach(tick => {
+
+        const ty = yScale(tick);
+
+        parts.push(
+          `<line class="axis" x1="${left}" y1="${ty}" x2="${left + iw}" y2="${ty}"></line>`
+        );
+
+        parts.push(
+          `<text class="hist-axis-label" x="${left - 6}" y="${ty + 3}" text-anchor="end">${
+            fmtCompact(tick)
+          }</text>`
+        );
+      });
+
+      parts.push(
+        `<line class="axis" x1="${left}" y1="${top}" x2="${left}" y2="${top + ih}"></line>`
+      );
+
+      parts.push(
+        `<text class="hist-axis-label" transform="rotate(-90 14 ${top + ih / 2})" x="14" y="${top + ih / 2}" text-anchor="middle">Count</text>`
+      );
+
+      if (cfg.xTitle) {
+
+        parts.push(
+          `<text class="hist-axis-label" x="${left + iw / 2}" y="${top + ih + 34}" text-anchor="middle">${cfg.xTitle}</text>`
+        );
+      }
+
+      if (cfg.overlay) {
+
+        parts.push(
+          `<text class="hist-overlay" x="${w - right}" y="12" text-anchor="end">${cfg.overlay}</text>`
+        );
+      }
+
+      labels.forEach((label, i) => {
+
+        const count = counts[i] || 0;
+
+        const x =
+          left + i * slot + (slot - barW) / 2;
+
+        const barY =
+          yScale(count);
+
+        const barH =
+          count > 0
+            ? Math.max(2, top + ih - barY)
+            : 0;
+
+        parts.push(
+          `<rect class="bar" x="${x}" y="${barY}" width="${barW}" height="${barH}" rx="2">`
+          + `<title>${label}: ${fmt(count)}</title></rect>`
+        );
+
+        parts.push(
+          `<text class="hist-value" x="${x + barW / 2}" y="${barY - 5}" text-anchor="middle">${
+            fmtCompact(count)
+          }</text>`
+        );
+
+        parts.push(
+          `<text class="hist-tick" x="${left + i * slot + slot / 2}" y="${top + ih + 16}" text-anchor="middle">${label}</text>`
+        );
+      });
+
+      const meanX =
+        histogramMarkerX(cfg.mean, ranges, left, slot);
+
+      const medianX =
+        histogramMarkerX(cfg.median, ranges, left, slot);
+
+      // Labels are centred on their marker lines and stacked on two
+      // rows above the plot (mean on top, median below) so they never
+      // collide with each other or with the bars.
+      const drawMarker = (x, value, kind) => {
+
+        if (x === null || value === null || value === undefined) {
+          return;
+        }
+
+        const isMean = kind === 'mean';
+
+        const stroke =
+          isMean
+            ? 'var(--orange)'
+            : 'var(--blue)';
+
+        parts.push(
+          `<line x1="${x}" y1="${top}" x2="${x}" y2="${top + ih}" stroke="${stroke}" stroke-width="2"${
+            isMean
+              ? ''
+              : ' stroke-dasharray="5 4"'
+          }></line>`
+        );
+
+        const text =
+          `${isMean ? 'Mean' : 'Median'} ${cfg.fmtValue(value)}`;
+
+        parts.push(
+          `<text class="hist-marker-${kind}" x="${x}" y="${
+            isMean ? 12 : 24
+          }" text-anchor="middle" stroke="var(--surface)" stroke-width="3" paint-order="stroke" stroke-linejoin="round">${text}</text>`
+        );
+      };
+
+      drawMarker(meanX, cfg.mean, 'mean');
+      drawMarker(medianX, cfg.median, 'median');
+
+      svg.innerHTML =
+        parts.join('');
+    }
+
+    // Resize redraw for the overview charts: same scope, same rows,
+    // only the pixel geometry changes.
+    function renderHistograms() {
+      renderOverallPay();
+    }
+
+    function renderOverallPay() {
+
+      const scope = payScope();
+      const scopeLabel =
+        scope === 'all'
+          ? 'recruiters included'
+          : 'recruiter posts excluded';
+
+      const sal =
+        (
+          countMode === 'new'
+            ? salaryOverallNew[scope]
+            : null
+        )
+        || salaryOverall[scope]
+        || null;
+
+      const exp =
+        (
+          countMode === 'new'
+            ? experienceOverallNew[scope]
+            : null
+        )
+        || experienceOverall[scope]
+        || null;
+
+      setText(
+        'salary-dist-note',
+        `${scopeLabel} · monthly midpoint`
+      );
+
+      setText(
+        'exp-dist-note',
+        `${scopeLabel} · minimum years`
+      );
+
+      let salaryOverlay = null;
+      let expOverlay = null;
+
+      if (sal) {
+
+        // Coverage is a share of the postings currently in scope, so
+        // the denominator shrinks with the recruiter filter exactly
+        // like the numerator does. In "New jobs" mode both sides are
+        // newly observed postings only.
+        const summary = jobPostsSummary || {};
+
+        const totalPosts =
+          countMode === 'new'
+            ? Math.max(
+                0,
+                (Number(summary.new_jobs) || 0)
+                - (
+                    includeRecruiters
+                      ? 0
+                      : Number(summary.new_recruiter_jobs) || 0
+                  )
+              )
+            : Math.max(
+                0,
+                (Number(summary.total_posts) || 0)
+                - (
+                    includeRecruiters
+                      ? 0
+                      : Number(summary.recruiter_posts) || 0
+                  )
+              );
+
+        const coverage =
+          totalPosts
+            ? sal.posting_count / totalPosts * 100
+            : null;
+
+        setText(
+          'salary-dist-stats',
+          `${fmt(sal.posting_count)} postings with salary`
+        );
+
+        salaryOverlay =
+          coverage === null
+            ? null
+            : coverage.toFixed(1) + '% coverage';
+      }
+
+      const histogramSource =
+        countMode === 'new'
+          ? salaryHistogramOverallNew
+          : salaryHistogramOverall;
+
+      const salaryHist =
+        histogramSource.find(
+          row => row.scope === scope
+        ) || null;
+
+      renderHistogram(
+        'salary-dist-chart',
+        {
+          labels: salaryBins.map(bin => bin.label),
+          counts: salaryHist
+            ? salaryHist.bin_counts
+            : [],
+          ranges: salaryBins.map(bin => [bin.lo, bin.hi]),
+          mean: sal
+            ? sal.salary_mid_mean
+            : null,
+          median: sal
+            ? sal.salary_mid_median
+            : null,
+          fmtValue: value =>
+            '$' + fmt(Math.round(Number(value))),
+          xTitle: 'Salary range',
+          overlay: salaryOverlay,
+        }
+      );
+
+      if (exp) {
+
+        const early =
+          exp.posting_count
+            ? (
+                Number(exp.exp_zero_count)
+                + Number(exp.exp_1_2_count)
+              ) / exp.posting_count * 100
+            : null;
+
+        setText(
+          'exp-dist-stats',
+          `${fmt(exp.posting_count)} postings state experience`
+        );
+
+        expOverlay =
+          early === null
+            ? null
+            : early.toFixed(0) + '% ask 0–2 yrs';
+      }
+
+      renderHistogram(
+        'exp-dist-chart',
+        {
+          labels: ['0', '1–2', '3–4', '5–7', '8+'],
+          counts: exp
+            ? [
+                Number(exp.exp_zero_count) || 0,
+                Number(exp.exp_1_2_count) || 0,
+                Number(exp.exp_3_4_count) || 0,
+                Number(exp.exp_5_7_count) || 0,
+                Number(exp.exp_8_plus_count) || 0,
+              ]
+            : [],
+          ranges: [[0, 1], [1, 3], [3, 5], [5, 8], [8, 12]],
+          mean: exp
+            ? exp.exp_mean
+            : null,
+          median: exp
+            ? exp.exp_median
+            : null,
+          fmtValue: value =>
+            Number(value).toFixed(1) + ' yrs',
+          xTitle: 'Minimum years of experience',
+          overlay: expOverlay,
+        }
+      );
+
+      const rows =
+        payJfRows(null);
+
+      const pageSize = 10;
+
+      const pageCount =
+        Math.max(
+          1,
+          Math.ceil(rows.length / pageSize)
+        );
+
+      payJfPage =
+        Math.min(
+          Math.max(payJfPage, 0),
+          pageCount - 1
+        );
+
+      $('pay-jf-table').innerHTML =
+        payJfTableHtml(
+          rows.slice(
+            payJfPage * pageSize,
+            payJfPage * pageSize + pageSize
+          )
+        );
+
+      setText(
+        'pay-jf-page-info',
+        `Page ${payJfPage + 1} of ${pageCount}`
+      );
+
+      $('pay-jf-prev').disabled =
+        payJfPage === 0;
+
+      $('pay-jf-next').disabled =
+        payJfPage >= pageCount - 1;
+    }
+
+    function renderMonthlyPay() {
+
+      const month =
+        months.includes(monthSelect.value)
+          ? monthSelect.value
+          : months.at(-1);
+
+      setText(
+        'monthly-pay-jf-month',
+        monthLabel(month)
+      );
+
+      renderMonthlyHistograms();
+
+      const rows =
+        payJfRows(month);
+
+      const pageSize = 10;
+
+      const pageCount =
+        Math.max(
+          1,
+          Math.ceil(rows.length / pageSize)
+        );
+
+      monthlyPayJfPage =
+        Math.min(
+          Math.max(monthlyPayJfPage, 0),
+          pageCount - 1
+        );
+
+      $('monthly-pay-jf-table').innerHTML =
+        payJfTableHtml(
+          rows.slice(
+            monthlyPayJfPage * pageSize,
+            monthlyPayJfPage * pageSize + pageSize
+          )
+        );
+
+      setText(
+        'monthly-pay-jf-page-info',
+        `Page ${monthlyPayJfPage + 1} of ${pageCount}`
+      );
+
+      $('monthly-pay-jf-prev').disabled =
+        monthlyPayJfPage === 0;
+
+      $('monthly-pay-jf-next').disabled =
+        monthlyPayJfPage >= pageCount - 1;
+    }
+
+    // Distribution charts for the monthly Pay & Experience tab: same
+    // shapes as the overview charts, cut to the selected month and
+    // following the recruiter filter. The payload has no monthly
+    // new-jobs histograms, so these stay on post counts.
+
+    function renderMonthlyHistograms() {
+
+      const scope = payScope();
+      const scopeLabel =
+        scope === 'all'
+          ? 'recruiters included'
+          : 'recruiter posts excluded';
+
+      const month =
+        months.includes(monthSelect.value)
+          ? monthSelect.value
+          : months.at(-1);
+
+      const sal =
+        salaryMonthly.find(
+          row => row.month === month && row.scope === scope
+        ) || null;
+
+      const exp =
+        experienceMonthly.find(
+          row => row.month === month && row.scope === scope
+        ) || null;
+
+      setText(
+        'monthly-sal-dist-note',
+        `${monthLabel(month)} · ${scopeLabel} · monthly midpoint`
+      );
+
+      setText(
+        'monthly-exp-dist-note',
+        `${monthLabel(month)} · ${scopeLabel} · minimum years`
+      );
+
+      let salaryOverlay = null;
+      let expOverlay = null;
+
+      if (sal) {
+
+        // Deduped monthly totals from the build (job_posts_monthly):
+        // the same (uuid, posting_date) dedupe as the hero summary, so
+        // coverage reads against unique postings, not tag-summed
+        // job-function rows.
+        const monthlySummary =
+          jobPostsMonthly.find(
+            row => row.month === month
+          ) || null;
+
+        const totalPosts =
+          monthlySummary
+            ? scope === 'all'
+              ? monthlySummary.total_posts
+              : Math.max(
+                  0,
+                  monthlySummary.total_posts
+                  - monthlySummary.recruiter_posts
+                )
+            : 0;
+
+        const coverage =
+          totalPosts
+            ? sal.posting_count / totalPosts * 100
+            : null;
+
+        setText(
+          'monthly-sal-dist-stats',
+          `${fmt(sal.posting_count)} postings with salary`
+        );
+
+        salaryOverlay =
+          coverage === null
+            ? null
+            : coverage.toFixed(1) + '% coverage';
+      }
+
+      const salaryHist =
+        salaryHistogramMonthly.find(
+          row =>
+            row.month === month
+            && row.scope === scope
+        ) || null;
+
+      renderHistogram(
+        'monthly-salary-dist-chart',
+        {
+          labels: salaryBins.map(bin => bin.label),
+          counts: salaryHist
+            ? salaryHist.bin_counts
+            : [],
+          ranges: salaryBins.map(bin => [bin.lo, bin.hi]),
+          mean: sal
+            ? sal.salary_mid_mean
+            : null,
+          median: sal
+            ? sal.salary_mid_median
+            : null,
+          fmtValue: value =>
+            '$' + fmt(Math.round(Number(value))),
+          xTitle: 'Salary range',
+          overlay: salaryOverlay,
+        }
+      );
+
+      if (exp) {
+
+        const early =
+          exp.posting_count
+            ? (
+                Number(exp.exp_zero_count)
+                + Number(exp.exp_1_2_count)
+              ) / exp.posting_count * 100
+            : null;
+
+        setText(
+          'monthly-exp-dist-stats',
+          `${fmt(exp.posting_count)} postings state experience`
+        );
+
+        expOverlay =
+          early === null
+            ? null
+            : early.toFixed(0) + '% ask 0–2 yrs';
+      }
+
+      renderHistogram(
+        'monthly-exp-dist-chart',
+        {
+          labels: ['0', '1–2', '3–4', '5–7', '8+'],
+          counts: exp
+            ? [
+                Number(exp.exp_zero_count) || 0,
+                Number(exp.exp_1_2_count) || 0,
+                Number(exp.exp_3_4_count) || 0,
+                Number(exp.exp_5_7_count) || 0,
+                Number(exp.exp_8_plus_count) || 0,
+              ]
+            : [],
+          ranges: [[0, 1], [1, 3], [3, 5], [5, 8], [8, 12]],
+          mean: exp
+            ? exp.exp_mean
+            : null,
+          median: exp
+            ? exp.exp_median
+            : null,
+          fmtValue: value =>
+            Number(value).toFixed(1) + ' yrs',
+          xTitle: 'Minimum years of experience',
+          overlay: expOverlay,
+        }
+      );
+    }
+
+    // Shared row for the month's top-5 lists: rank, name, bar against
+    // the list's leader, value. Same colour ramp as the big rankings.
+    function topListRowHtml(index, name, count, max, shareText) {
+
+      const intensity =
+        max
+          ? count / max
+          : 1;
+
+      const color =
+        `hsl(${
+          205 - intensity * 60
+        },58%,${
+          50 - intensity * 13
+        }%)`;
+
+      return `
+        <li>
+          <span class="rank">${String(index + 1).padStart(2, '0')}</span>
+          <span class="rank-name">${escapeLookupHtml(name)}</span>
+          <span class="track"><span class="fill" style="width:${
+            max ? count / max * 100 : 0
+          }%;background:${color}"></span></span>
+          <span class="rank-value">${fmt(count)}</span>
+          ${
+            shareText
+              ? `<span class="rank-share">${shareText}</span>`
+              : '<span></span>'
+          }
+        </li>
+      `;
+    }
+
+    function renderMonthlyTopLists() {
+
+      const month =
+        months.includes(monthSelect.value)
+          ? monthSelect.value
+          : months.at(-1);
+
+      const suffix =
+        countMode === 'new'
+          ? 'new jobs'
+          : 'job posts';
+
+      setText('monthly-top-roles-period', monthLabel(month));
+      setText('monthly-top-tools-period', monthLabel(month));
+
+      // Roles: aggregate the shipped per-month role rows by label so
+      // one role split across entity ids still lists once.
+      const roleCounts = new Map();
+
+      for (const row of responsibilityRows) {
+
+        if (row.month !== month) {
+          continue;
+        }
+
+        const count =
+          selectedJobFunctionMetric(row);
+
+        if (!count) {
+          continue;
+        }
+
+        const name =
+          row.label || row.partition;
+
+        roleCounts.set(
+          name,
+          (roleCounts.get(name) || 0) + count
+        );
+      }
+
+      const topRoles =
+        [...roleCounts]
+          .map(([name, count]) => ({ name, count }))
+          .sort(
+            (a, b) =>
+              b.count - a.count
+              || a.name.localeCompare(b.name)
+          )
+          .slice(0, 10);
+
+      const rolesNode =
+        $('monthly-top-roles');
+
+      if (rolesNode) {
+
+        rolesNode.innerHTML =
+          topRoles.length
+            ? topRoles
+                .map(
+                  (row, index) =>
+                    topListRowHtml(
+                      index,
+                      row.name,
+                      row.count,
+                      topRoles[0].count
+                    )
+                )
+                .join('')
+            : '<li class="detail-empty">No roles recorded for this month.</li>';
+      }
+
+      const topTools =
+        hasTools
+          ? aggregateToolRows(
+              toolCrossTabRows(month, null, null)
+            ).slice(0, 10)
+          : [];
+
+      const toolsNode =
+        $('monthly-top-tools');
+
+      if (toolsNode) {
+
+        toolsNode.innerHTML =
+          topTools.length
+            ? topTools
+                .map(
+                  (row, index) =>
+                    topListRowHtml(
+                      index,
+                      row.label,
+                      row.count,
+                      topTools[0].count
+                    )
+                )
+                .join('')
+            : '<li class="detail-empty">No tools recorded for this month.</li>';
+      }
+
+      setText('monthly-top-roles-title', `Top ${topRoles.length} Roles by ${suffix}`);
+      setText('monthly-top-tools-title', `Top ${topTools.length} Tools by ${suffix}`);
+    }
+
+    // Whole-window version of the top lists for the Overview:
+    // same rows and helpers as the monthly block, aggregated over
+    // every month instead of one, capped at 10 with a pointer to
+    // the full Roles / Tools sections.
+    function renderOverallTopLists() {
+
+      const suffix =
+        countMode === 'new'
+          ? 'new jobs'
+          : 'job posts';
+
+      // Roles: aggregate the shipped per-month role rows by label so
+      // one role split across entity ids still lists once.
+      const roleCounts = new Map();
+
+      for (const row of responsibilityRows) {
+
+        const count =
+          selectedJobFunctionMetric(row);
+
+        if (!count) {
+          continue;
+        }
+
+        const name =
+          row.label || row.partition;
+
+        roleCounts.set(
+          name,
+          (roleCounts.get(name) || 0) + count
+        );
+      }
+
+      const roleTotal =
+        [...roleCounts.values()]
+          .reduce((sum, count) => sum + count, 0);
+
+      const topRoles =
+        [...roleCounts]
+          .map(([name, count]) => ({ name, count }))
+          .sort(
+            (a, b) =>
+              b.count - a.count
+              || a.name.localeCompare(b.name)
+          )
+          .slice(0, 10);
+
+      const rolesNode =
+        $('overall-top-roles');
+
+      if (rolesNode) {
+
+        rolesNode.innerHTML =
+          topRoles.length
+            ? topRoles
+                .map(
+                  (row, index) =>
+                    topListRowHtml(
+                      index,
+                      row.name,
+                      row.count,
+                      topRoles[0].count,
+                      roleTotal
+                        ? (row.count / roleTotal * 100).toFixed(1) + '%'
+                        : ''
+                    )
+                )
+                .join('')
+            : '<li class="detail-empty">No roles recorded.</li>';
+      }
+
+      const toolsAll =
+        hasTools
+          ? aggregateToolRows(
+              toolCrossTabRows('all', null, null)
+            )
+          : [];
+
+      const toolTotal =
+        toolsAll.reduce((sum, row) => sum + row.count, 0);
+
+      const topTools =
+        toolsAll.slice(0, 10);
+
+      const toolsNode =
+        $('overall-top-tools');
+
+      if (toolsNode) {
+
+        toolsNode.innerHTML =
+          topTools.length
+            ? topTools
+                .map(
+                  (row, index) =>
+                    topListRowHtml(
+                      index,
+                      row.label,
+                      row.count,
+                      topTools[0].count,
+                      toolTotal
+                        ? (row.count / toolTotal * 100).toFixed(1) + '%'
+                        : ''
+                    )
+                )
+                .join('')
+            : '<li class="detail-empty">No tools recorded.</li>';
+      }
+
+      setText('overall-top-roles-title', `Top ${topRoles.length} Roles by ${suffix}`);
+      setText('overall-top-tools-title', `Top ${topTools.length} Tools by ${suffix}`);
     }
 
     // --------------------------------------------------------
@@ -1317,9 +2636,11 @@
 
       setText(
         'job-function-ranking-title',
-        countMode === 'new'
-          ? 'Job functions by new jobs'
-          : 'Job functions by job posts'
+        `Top ${Math.min((jobFunctionPage + 1) * pageSize, allRows.length)} Job functions by ${
+          countMode === 'new'
+            ? 'new jobs'
+            : 'job posts'
+        }`
       );
 
       setText(
@@ -1421,6 +2742,15 @@
             }
           )
           .join('');
+
+      setText(
+        'monthly-job-function-title',
+        `Top ${Math.min((detailPage + 1) * detailPageSize, ranked.length)} Job functions by ${
+          countMode === 'new'
+            ? 'new jobs'
+            : 'job posts'
+        }`
+      );
 
       setText(
         'detail-page-info',
@@ -1723,7 +3053,7 @@
     ) {
 
       const key =
-        Number(partition);
+        String(partition);
 
       const scopeRows =
         jobFunction === 'all'
@@ -1736,7 +3066,7 @@
       const candidates =
         scopeRows.filter(
           row =>
-            row.partition === key
+            String(row.partition) === key
         );
 
       const period =
@@ -1862,7 +3192,9 @@
       denominator,
       priorDenominator,
       viewMode,
-      partitionAttr = 'data-responsibility-partition'
+      partitionAttr = 'data-responsibility-partition',
+      limit = 10,
+      interactive = true
     ) {
 
       const max =
@@ -1887,7 +3219,7 @@
 
       $(id).innerHTML =
         rows
-          .slice(0, 10)
+          .slice(0, limit)
           .map(
             (row, index) => {
 
@@ -1981,18 +3313,23 @@
                     }%`
                   : fmt(row.count);
 
-              return `
-                <li
-                  class="responsibility-row"
-                  role="button"
-                  tabindex="0"
-                  ${partitionAttr}="${row.partition}"
-                  data-responsibility-label="${String(
+              const rowAttrs = interactive
+                ? `role="button" tabindex="0" ${partitionAttr}="${row.partition}" data-responsibility-label="${String(
                     row.label
                   ).replace(
                     /"/g,
                     '&quot;'
-                  )}"
+                  )}"`
+                : '';
+
+              return `
+                <li
+                  class="${
+                    interactive
+                      ? 'responsibility-row'
+                      : ''
+                  }"
+                  ${rowAttrs}
                 >
                   <span class="rank">
                     ${String(index + 1).padStart(2, '0')}
@@ -2027,6 +3364,152 @@
     }
 
     // --------------------------------------------------------
+    // Role cross-tab helpers
+    // role_by_job_function is the whole month x job-function x
+    // role-cluster table, shipped without the top-N cut that the
+    // ranking payload applies. It backs two things the truncated
+    // arrays cannot: finding *any* role by search, and reading a
+    // selected role's demand back across job functions.
+    // --------------------------------------------------------
+
+    function escapeLookupHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function roleCrossTabRows(period, partition, jobFunction) {
+
+      return roleByJobFunctionRows.filter(
+        row =>
+          (
+            period === 'all'
+            || row.month === period
+          )
+          && (
+            !partition
+            || row.partition === partition
+          )
+          && (
+            !jobFunction
+            || row.job_function === jobFunction
+          )
+      );
+    }
+
+    function roleCrossTabTotal(period, partition) {
+
+      let total = 0;
+
+      for (const row of roleCrossTabRows(
+        period,
+        partition,
+        null
+      )) {
+
+        total +=
+          selectedResponsibilityMetric(row);
+      }
+
+      return total;
+    }
+
+    function roleCountsByPartition(
+      period,
+      jobFunction
+    ) {
+
+      const map = new Map();
+
+      for (const row of roleCrossTabRows(
+        period,
+        null,
+        jobFunction === 'all'
+          ? null
+          : jobFunction
+      )) {
+
+        let entry =
+          map.get(row.partition);
+
+        if (!entry) {
+
+          entry = {
+            partition: row.partition,
+            label: row.label,
+            count: 0,
+          };
+
+          map.set(row.partition, entry);
+        }
+
+        entry.count +=
+          selectedResponsibilityMetric(row);
+      }
+
+      return map;
+    }
+
+    function searchRoleRows(
+      period,
+      prior,
+      jobFunction,
+      query
+    ) {
+
+      const needle =
+        query.toLowerCase();
+
+      const current =
+        roleCountsByPartition(
+          period,
+          jobFunction
+        );
+
+      const previous =
+        prior
+          ? roleCountsByPartition(
+              prior,
+              jobFunction
+            )
+          : null;
+
+      const rows = [];
+
+      for (const entry of current.values()) {
+
+        if (
+          !entry.label
+            .toLowerCase()
+            .includes(needle)
+        ) {
+          continue;
+        }
+
+        rows.push({
+          partition: entry.partition,
+          label: entry.label,
+          count: entry.count,
+          prev: previous
+            ? previous.get(
+                entry.partition
+              )?.count ?? 0
+            : null,
+        });
+      }
+
+      rows.sort(
+        (a, b) =>
+          b.count - a.count
+          || a.label.localeCompare(b.label)
+      );
+
+      return rows;
+    }
+
+    // --------------------------------------------------------
     // Roles
     // --------------------------------------------------------
 
@@ -2049,26 +3532,10 @@
       // job function specific once a job function is selected.
       // -----------------------------------------------
 
-      const baseRaw =
-        jobFunction === 'all'
-          ? responsibilityRows
-          : responsibilityJobFunctionRows.filter(
-              row =>
-                row.job_function === jobFunction
-            );
-
-      const overallRaw =
-        period === 'all'
-          ? baseRaw
-          : baseRaw.filter(
-              row =>
-                row.month === period
-            );
-
-      const overallRows =
-        aggregateResponsibilityRows(
-          overallRaw
-        );
+      const query =
+        (
+          (roleSearch && roleSearch.value) || ''
+        ).trim();
 
       const overallDenominator =
         totalResponsibilityMetric(
@@ -2084,42 +3551,159 @@
             )
           : null;
 
-      if (prior) {
+      let overallRows;
 
-        const previousOverall =
+      if (query) {
+
+        // A typed query searches the full role x job-function
+        // cross-tab, so it can surface roles that sit outside the
+        // truncated top-30 ranking.
+        overallRows =
+          searchRoleRows(
+            period,
+            prior,
+            jobFunction,
+            query
+          );
+
+      } else {
+
+        const baseRaw =
+          jobFunction === 'all'
+            ? responsibilityRows
+            : responsibilityJobFunctionRows.filter(
+                row =>
+                  row.job_function === jobFunction
+              );
+
+        const overallRaw =
+          period === 'all'
+            ? baseRaw
+            : baseRaw.filter(
+                row =>
+                  row.month === period
+              );
+
+        overallRows =
           aggregateResponsibilityRows(
-            baseRaw.filter(
-              row =>
-                row.month === prior
-            )
+            overallRaw
           );
 
-        const previousMap =
-          new Map(
-            previousOverall.map(
-              row => [
-                row.partition,
-                row.count,
-              ]
-            )
-          );
+        if (prior) {
 
-        for (
-          const row of overallRows
-        ) {
-          row.prev =
-            previousMap.get(
-              row.partition
+          const previousOverall =
+            aggregateResponsibilityRows(
+              baseRaw.filter(
+                row =>
+                  row.month === prior
+              )
             );
+
+          const previousMap =
+            new Map(
+              previousOverall.map(
+                row => [
+                  row.partition,
+                  row.count,
+                ]
+              )
+            );
+
+          for (
+            const row of overallRows
+          ) {
+            row.prev =
+              previousMap.get(
+                row.partition
+              );
+          }
         }
       }
 
-      renderRespRanking(
-        'overall-responsibilities',
-        overallRows,
-        overallDenominator,
-        priorOverallDenominator,
-        viewMode
+      const rowLimit =
+        query
+          ? ROLE_SEARCH_LIMIT
+          : 10;
+
+      // The detail panel must always describe a row the list shows.
+      // A query, period or job-function change that pushes the open
+      // role out of the rendered window closes it rather than leaving
+      // a detail nobody can see a match for.
+      if (
+        selectedRolePartition
+        && !overallRows
+            .slice(0, rowLimit)
+            .some(
+              row =>
+                String(row.partition)
+                === selectedRolePartition
+            )
+      ) {
+        clearRoleDetail();
+      }
+
+      if (overallRows.length) {
+
+        renderRespRanking(
+          'overall-responsibilities',
+          overallRows,
+          overallDenominator,
+          priorOverallDenominator,
+          viewMode,
+          'data-responsibility-partition',
+          rowLimit
+        );
+
+        // Keep the open role marked while the query rewrites the
+        // list, so the detail panel still matches a highlighted row.
+        if (selectedRolePartition) {
+
+          const list =
+            $('overall-responsibilities');
+
+          if (list) {
+
+            list
+              .querySelectorAll(
+                '[data-responsibility-partition]'
+              )
+              .forEach(
+                node =>
+                  node.classList.toggle(
+                    'is-selected',
+                    node.dataset
+                      .responsibilityPartition
+                      === selectedRolePartition
+                  )
+              );
+          }
+        }
+
+      } else {
+
+        // Nothing to point at: put the detail panel back on its hint
+        // instead of showing a role the list cannot reach.
+        clearRoleDetail();
+
+        $('overall-responsibilities').innerHTML =
+          `<li class="detail-empty">${
+            query
+              ? `No roles match “${escapeLookupHtml(query)}”.`
+              : 'No roles recorded for this period.'
+          }</li>`;
+      }
+
+      setText(
+        'overall-resp-title',
+        query
+          ? overallRows.length > ROLE_SEARCH_LIMIT
+            ? `Roles matching “${query}” (${
+                fmt(overallRows.length)
+              }) · showing top ${ROLE_SEARCH_LIMIT}`
+            : `Roles matching “${query}” (${
+                fmt(overallRows.length)
+              })`
+          : 'Top 10 roles by job posts'
       );
 
       setText(
@@ -2137,6 +3721,16 @@
             ? 'Jobs'
             : 'Posts'
       );
+
+      // The open detail panel holds live counts (posts, share, MoM),
+      // so it is refreshed with the list whenever a control changes.
+      if (selectedRolePartition) {
+
+        showResponsibilityDetail(
+          selectedRolePartition,
+          selectedRoleLabel
+        );
+      }
 
       syncDetailHeights();
 
@@ -2166,11 +3760,6 @@
           continue;
         }
 
-        if (window.innerWidth <= 800) {
-          detail.style.maxHeight = '';
-          continue;
-        }
-
         const panel =
           layout.querySelector('section.panel');
 
@@ -2178,10 +3767,30 @@
           continue;
         }
 
-        const height = panel.offsetHeight;
+        // Start from natural sizes on both sides, then lock them to
+        // the taller one. A search makes the ranking far shorter or
+        // far taller than the detail card, and leaving them to their
+        // own heights left the two cards starting together but ending
+        // at different points.
+        panel.style.minHeight = '';
+        detail.style.height = '';
+        detail.style.maxHeight = 'none';
+
+        if (window.innerWidth <= 800) {
+          continue;
+        }
+
+        const height =
+          Math.max(
+            panel.offsetHeight,
+            detail.offsetHeight
+          );
 
         if (height > 0) {
-          detail.style.maxHeight = `${height}px`;
+
+          panel.style.minHeight = `${height}px`;
+          detail.style.height = `${height}px`;
+          detail.style.maxHeight = 'none';
         }
       }
     }
@@ -2228,61 +3837,144 @@
     }
 
     function turnDetailPage(
-      scope,
       delta
     ) {
 
-      const isTool =
-        scope === 'tool';
-
-      const items =
-        isTool
-          ? toolExampleItems
-          : roleExampleItems;
-
-      if (items.length < 2) {
+      if (roleExampleItems.length < 2) {
         return;
       }
 
-      const copyId =
-        isTool
-          ? 'tool-detail-copy'
-          : 'detail-copy';
-
       const node =
-        $(copyId);
+        $('detail-copy');
 
       if (!node) {
         return;
       }
 
-      const page =
-        Math.min(
-          Math.max(
-            (
-              isTool
-                ? toolExamplePage
-                : roleExamplePage
-            ) + delta,
-            0
-          ),
-          items.length - 1
-        );
+      const page = Math.min(
+        Math.max(roleExamplePage + delta, 0),
+        roleExampleItems.length - 1
+      );
 
-      if (isTool) {
-        toolExamplePage = page;
-      } else {
-        roleExamplePage = page;
-      }
+      roleExamplePage = page;
 
       node.innerHTML =
-        detailExamplesHtml(
-          items,
-          page,
-          scope,
-          isTool
-            ? 'Example sentence text is not available.'
-            : 'Example roles are not available.'
+        roleDetailHtml(page);
+    }
+
+    // Full role detail body: the example posting for the current page
+    // plus, when the role has tool rows, the share-bar list of tools
+    // asked for in it. Used by both the open handler and the example
+    // pager so paging through examples never drops the tools block.
+    function roleDetailHtml(page) {
+
+      return detailExamplesHtml(
+        roleExampleItems,
+        page,
+        'role',
+        'Example roles are not available.'
+      );
+    }
+
+    // --------------------------------------------------------
+    // Role detail: the example postings for the selected role plus
+    // its total under the current period / job-function / count
+    // filters. Everything else about the role already sits in the
+    // ranking on the left, so the panel stays out of its way.
+    // --------------------------------------------------------
+
+    function clearRoleDetail() {
+
+      if (!selectedRolePartition) {
+        return;
+      }
+
+      selectedRolePartition = null;
+      selectedRoleLabel = null;
+
+      roleExampleItems = [];
+      roleExamplePage = 0;
+
+      setText('detail-title', 'Role detail');
+      setText('detail-note', '');
+
+      activateDetailTab($('dtab-btn-tools'));
+
+      const copyNode =
+        $('detail-copy');
+
+      if (copyNode) {
+
+        copyNode.innerHTML =
+          '<p class="detail-empty">Select a role to see example postings here.</p>';
+      }
+
+      const toolsNode =
+        $('detail-tools-copy');
+
+      if (toolsNode) {
+
+        toolsNode.innerHTML =
+          '<p class="detail-empty">Select a role to see the tools it asks for here.</p>';
+      }
+
+      const list =
+        $('overall-responsibilities');
+
+      if (list) {
+
+        list
+          .querySelectorAll('.is-selected')
+          .forEach(
+            node =>
+              node.classList.remove('is-selected')
+          );
+      }
+    }
+
+    // Tools mentioned in postings for this role, summed over the
+    // current reporting period from the tool x role totals (which
+    // carry no job-function column, so the list spans all job
+    // functions) and counted under the recruiter / count-mode filters.
+    function roleToolEntries(
+      label,
+      period
+    ) {
+
+      const counts =
+        new Map();
+
+      for (
+        const row
+        of roleToolRowsByRole.get(label) || []
+      ) {
+
+        if (
+          period !== 'all'
+          && row.month !== period
+        ) {
+          continue;
+        }
+
+        const count =
+          selectedToolMetric(row);
+
+        if (!count) {
+          continue;
+        }
+
+        counts.set(
+          row.tool,
+          (counts.get(row.tool) || 0) + count
+        );
+      }
+
+      return [...counts.entries()]
+        .map(([tool, count]) => ({ role: tool, count }))
+        .sort(
+          (a, b) =>
+            b.count - a.count
+            || a.role.localeCompare(b.role)
         );
     }
 
@@ -2291,21 +3983,54 @@
       label
     ) {
 
+      selectedRolePartition =
+        String(partition);
+
+      selectedRoleLabel =
+        label;
+
       const detail =
         $('responsibility-detail');
 
       const layout =
         $('resp-layout');
 
-      const examples =
+      let examples =
         responsibilityStatements(
           partition,
           currentJobFunction()
         );
 
+      // The ranking payload is cut to the top 30, so a searched role
+      // can have no rows there. The examples index covers every role.
+      if (!examples.length) {
+
+        examples =
+          roleExampleIndex[
+            String(partition)
+          ] || [];
+      }
+
+      const period =
+        currentResponsibilityPeriod();
+
       setText(
         'detail-title',
         label
+      );
+
+      setText(
+        'detail-note',
+        `${monthLabel(period)} · ${fmt(
+          roleCrossTabTotal(
+            period,
+            String(partition)
+          )
+        )} ${
+          countMode === 'new'
+            ? 'new jobs'
+            : 'posts'
+        }`
       );
 
       const copyNode =
@@ -2323,17 +4048,52 @@
         roleExampleItems =
           examples.map(
             sentence =>
-              `“${escapeHtml(sentence)}”`
+              `\u201c${escapeHtml(sentence)}\u201d`
           );
 
         roleExamplePage = 0;
 
         copyNode.innerHTML =
-          detailExamplesHtml(
-            roleExampleItems,
-            roleExamplePage,
-            'role',
-            'Example roles are not available.'
+          roleDetailHtml(roleExamplePage);
+      }
+
+      const toolsNode =
+        $('detail-tools-copy');
+
+      if (toolsNode) {
+
+        const toolEntries =
+          selectedRoleLabel
+            ? roleToolEntries(
+                selectedRoleLabel,
+                period
+              )
+            : [];
+
+        toolsNode.innerHTML =
+          toolRoleTotalsHtml(
+            toolEntries,
+            'tools'
+          );
+      }
+
+      const list =
+        $('overall-responsibilities');
+
+      if (list) {
+
+        list
+          .querySelectorAll(
+            '[data-responsibility-partition]'
+          )
+          .forEach(
+            node =>
+              node.classList.toggle(
+                'is-selected',
+                node.dataset
+                  .responsibilityPartition
+                  === selectedRolePartition
+              )
           );
       }
 
@@ -2348,10 +4108,11 @@
 
     // --------------------------------------------------------
     // Tools
-    // Same shape as roles (month / partition / label /
-    // four-way counts / example roles). The section stays in
-    // its coming-soon state until the tool marts land in
-    // dashboard-data.js. Tool rows reuse renderRespRanking with a
+    // Same shape as roles (month / partition / label / four-way
+    // counts), read from the full tool x job-function cross-tab: the
+    // ranking, the search and the detail panel all count the same
+    // rows, so a searched tool ranks exactly where it would without a
+    // query. Tool rows reuse renderRespRanking with a
     // data-tool-partition attribute so clicks route to the tool
     // detail panel; they keep the shared data-responsibility-label
     // attribute for the display name.
@@ -2432,134 +4193,313 @@
         : 'all';
     }
 
-    function toolStatements(
-      partition,
-      jobFunction = 'all'
-    ) {
 
-      const key =
-        Number(partition);
+    function toolCrossTabRows(period, partition, jobFunction) {
 
-      const scopeRows =
-        jobFunction === 'all'
-          ? toolRows
-          : toolJobFunctionRows.filter(
-              row =>
-                row.job_function === jobFunction
-            );
-
-      const candidates =
-        scopeRows.filter(
-          row =>
-            row.partition === key
-        );
-
-      const period =
-        currentToolPeriod();
-
-      candidates.sort(
-        (a, b) =>
+      return toolByJobFunctionRows.filter(
+        row =>
           (
-            a.month === period
-              ? 0
-              : 1
+            period === 'all'
+            || row.month === period
           )
-          - (
-            b.month === period
-              ? 0
-              : 1
+          && (
+            !partition
+            || row.partition === partition
+          )
+          && (
+            !jobFunction
+            || row.job_function === jobFunction
           )
       );
-
-      for (
-        const row of candidates
-      ) {
-
-        let statements =
-          row.example_roles || row.example_statements;
-
-        if (
-          typeof statements ===
-          'string'
-        ) {
-
-          try {
-            statements =
-              JSON.parse(
-                statements
-              );
-          } catch {
-            statements =
-              [statements];
-          }
-        }
-
-        if (
-          Array.isArray(
-            statements
-          )
-        ) {
-
-          const cleaned =
-            statements
-              .filter(
-                sentence =>
-                  typeof sentence
-                  === 'string'
-                  && sentence.trim()
-              )
-              .map(
-                sentence =>
-                  sentence.trim()
-              );
-
-          if (
-            cleaned.length
-          ) {
-            return cleaned;
-          }
-        }
-      }
-
-      return [];
     }
 
+    function toolCrossTabTotal(period, partition) {
+
+      let total = 0;
+
+      for (const row of toolCrossTabRows(
+        period,
+        partition,
+        null
+      )) {
+
+        total +=
+          selectedToolMetric(row);
+      }
+
+      return total;
+    }
+
+    function toolCountsByPartition(
+      period,
+      jobFunction
+    ) {
+
+      const map = new Map();
+
+      for (const row of toolCrossTabRows(
+        period,
+        null,
+        jobFunction === 'all'
+          ? null
+          : jobFunction
+      )) {
+
+        let entry =
+          map.get(row.partition);
+
+        if (!entry) {
+
+          entry = {
+            partition: row.partition,
+            label: row.label,
+            count: 0,
+          };
+
+          map.set(row.partition, entry);
+        }
+
+        entry.count +=
+          selectedToolMetric(row);
+      }
+
+      return map;
+    }
+
+    function searchToolRows(
+      period,
+      prior,
+      jobFunction,
+      query
+    ) {
+
+      const needle =
+        query.toLowerCase();
+
+      const current =
+        toolCountsByPartition(
+          period,
+          jobFunction
+        );
+
+      const previous =
+        prior
+          ? toolCountsByPartition(
+              prior,
+              jobFunction
+            )
+          : null;
+
+      const rows = [];
+
+      for (const entry of current.values()) {
+
+        if (
+          !entry.label
+            .toLowerCase()
+            .includes(needle)
+        ) {
+          continue;
+        }
+
+        rows.push({
+          partition: entry.partition,
+          label: entry.label,
+          count: entry.count,
+          prev: previous
+            ? previous.get(
+                entry.partition
+              )?.count ?? 0
+            : null,
+        });
+      }
+
+      rows.sort(
+        (a, b) =>
+          b.count - a.count
+          || a.label.localeCompare(b.label)
+      );
+
+      return rows;
+    }
+
+    // Role totals for a tool: which roles mention it under the current
+    // period / count filters, ranked by count. Rows are summed per role
+    // so a label split across several entity ids still lists once, and
+    // the counts add up to the same total as the note above the list.
+    function toolRoleBreakdown(
+      period,
+      partition
+    ) {
+
+      const counts = new Map();
+
+      for (const row of toolRoleRowsByTool.get(partition) || []) {
+
+        if (period !== 'all' && row.month !== period) {
+          continue;
+        }
+
+        const count =
+          selectedToolMetric(row);
+
+        if (!count) {
+          continue;
+        }
+
+        counts.set(
+          row.role,
+          (counts.get(row.role) || 0) + count
+        );
+      }
+
+      return [...counts.entries()]
+        .map(([role, count]) => ({ role, count }))
+        .sort(
+          (a, b) =>
+            b.count - a.count
+            || a.role.localeCompare(b.role)
+        );
+    }
+
+    // Job-function split for a tool: which job functions mention it
+    // under the current period / count filters, ranked by count.
+    // Mirrors toolRoleBreakdown but groups the cross-tab by its
+    // job-function column instead of its role column.
+    function toolJobFunctionBreakdown(
+      period,
+      partition
+    ) {
+
+      const counts =
+        new Map();
+
+      for (
+        const row
+        of toolCrossTabRows(period, partition, null)
+      ) {
+
+        const count =
+          selectedToolMetric(row);
+
+        if (!count) {
+          continue;
+        }
+
+        counts.set(
+          row.job_function,
+          (counts.get(row.job_function) || 0) + count
+        );
+      }
+
+      return [...counts.entries()]
+        .map(([job_function, count]) => ({
+          role: job_function,
+          count,
+        }))
+        .sort(
+          (a, b) =>
+            b.count - a.count
+            || a.role.localeCompare(b.role)
+        );
+    }
+
+    const TOOL_ROLE_DETAIL_LIMIT = 10;
+
+    // Panel heading: how many roles the list shows, so the panel
+    // reads as a ranking of the tool's roles rather than as the
+    // tool's own name (which stays on the highlighted row to the
+    // left).
+    // Share-bar list: one row per entry, bar width against the top
+    // entry, colour ramp identical to the ranking on the left so both
+    // panels read as the same kind of chart. `noun` names what the
+    // entries are (roles for the tool panel, tools / job functions for
+    // the role panel).
+    function toolRoleTotalsHtml(entries, noun = 'roles') {
+
+      if (!entries.length) {
+        return `<p class="detail-empty">No ${noun} totals under these`
+          + ' filters.</p>';
+      }
+
+      const total = entries.reduce(
+        (sum, entry) => sum + entry.count,
+        0
+      );
+
+      const shown =
+        entries.slice(0, TOOL_ROLE_DETAIL_LIMIT);
+
+      const max = shown[0].count || 1;
+
+      let html = '<ul class="role-totals">';
+
+      for (const entry of shown) {
+
+        const share =
+          total
+            ? Math.round(entry.count / total * 1000) / 10
+            : 0;
+
+        const intensity =
+          entry.count / max;
+
+        const color =
+          `hsl(${
+            205 - intensity * 60
+          },58%,${
+            50 - intensity * 13
+          }%)`;
+
+        html += `<li>`
+          + `<span class="role-total-name">${
+              escapeLookupHtml(entry.role)
+            }</span>`
+          + `<span class="track"><span class="fill" style="width:${
+              entry.count / max * 100
+            }%;background:${color}"></span></span>`
+          + `<span class="role-total-count">`
+          + `<span class="rtc-n">${fmt(entry.count)}</span>`
+          + `<span class="rtc-d"> \u00b7 </span>`
+          + `<span class="rtc-s">${share}%</span>`
+          + `</span>`
+          + `</li>`;
+      }
+
+      html += '</ul>';
+
+      if (entries.length > shown.length) {
+        html += `<p class="role-total-more">\u2026 and ${
+          fmt(entries.length - shown.length)
+        } more ${noun}</p>`;
+      }
+
+      return html;
+    }
+
+    // Share denominator: every tool's count under the same filters,
+    // summed from the full cross-tab so it stays exact when the list
+    // in front of it is a search result rather than the top 10.
     function totalToolMetric(
       period,
       jobFunction
     ) {
 
-      const targetRows =
+      let total = 0;
+
+      for (const row of toolCrossTabRows(
+        period,
+        null,
         jobFunction === 'all'
-          ? toolRows
-          : toolJobFunctionRows;
+          ? null
+          : jobFunction
+      )) {
 
-      return targetRows.reduce(
-        (sum, row) => {
+        total +=
+          selectedToolMetric(row);
+      }
 
-          if (
-            period !== 'all'
-            && row.month !== period
-          ) {
-            return sum;
-          }
-
-          if (
-            jobFunction !== 'all'
-            && row.job_function !== jobFunction
-          ) {
-            return sum;
-          }
-
-          return (
-            sum
-            + selectedToolMetric(
-                row
-              )
-          );
-        },
-        0
-      );
+      return total;
     }
 
     function renderTools() {
@@ -2588,26 +4528,10 @@
       const prior =
         priorMonthOf(period);
 
-      const baseRaw =
-        jobFunction === 'all'
-          ? toolRows
-          : toolJobFunctionRows.filter(
-              row =>
-                row.job_function === jobFunction
-            );
-
-      const currentRaw =
-        period === 'all'
-          ? baseRaw
-          : baseRaw.filter(
-              row =>
-                row.month === period
-            );
-
-      const toolRanked =
-        aggregateToolRows(
-          currentRaw
-        );
+      const query =
+        (
+          (toolSearch && toolSearch.value) || ''
+        ).trim();
 
       const denominator =
         totalToolMetric(
@@ -2623,50 +4547,158 @@
             )
           : null;
 
-      if (prior) {
+      const scope =
+        jobFunction === 'all'
+          ? null
+          : jobFunction;
 
-        const previousRanked =
+      let toolRanked;
+
+      if (query) {
+
+        // A typed query searches the full tool x job-function
+        // cross-tab, so it can surface tools that sit outside the
+        // top-10 ranking.
+        toolRanked =
+          searchToolRows(
+            period,
+            prior,
+            jobFunction,
+            query
+          );
+
+      } else {
+
+        toolRanked =
           aggregateToolRows(
-            baseRaw.filter(
-              row =>
-                row.month === prior
+            toolCrossTabRows(
+              period,
+              null,
+              scope
             )
           );
 
-        const previousMap =
-          new Map(
-            previousRanked.map(
-              row => [
-                row.partition,
-                row.count,
-              ]
-            )
-          );
+        if (prior) {
 
-        for (
-          const row of toolRanked
-        ) {
-          row.prev =
-            previousMap.get(
-              row.partition
+          const previousMap =
+            new Map(
+              aggregateToolRows(
+                toolCrossTabRows(
+                  prior,
+                  null,
+                  scope
+                )
+              ).map(
+                row => [
+                  row.partition,
+                  row.count,
+                ]
+              )
             );
+
+          for (
+            const row of toolRanked
+          ) {
+            row.prev =
+              previousMap.get(
+                row.partition
+              );
+          }
         }
       }
 
-      renderRespRanking(
-        'tool-responsibilities',
-        toolRanked,
-        denominator,
-        priorDenominator,
-        viewMode,
-        'data-tool-partition'
+      const rowLimit =
+        query
+          ? TOOL_SEARCH_LIMIT
+          : 10;
+
+      // As with roles, the detail panel must describe a row the list
+      // actually shows: a query or filter change that pushes the open
+      // tool out of the rendered window closes it.
+      if (
+        selectedToolPartition
+        && !toolRanked
+            .slice(0, rowLimit)
+            .some(
+              row =>
+                String(row.partition)
+                === selectedToolPartition
+            )
+      ) {
+        clearToolDetail();
+      }
+
+      if (toolRanked.length) {
+
+        renderRespRanking(
+          'tool-responsibilities',
+          toolRanked,
+          denominator,
+          priorDenominator,
+          viewMode,
+          'data-tool-partition',
+          rowLimit
+        );
+
+        // Keep the open tool marked while the query rewrites the
+        // list, so the detail panel still matches a highlighted row.
+        if (selectedToolPartition) {
+
+          const list =
+            $('tool-responsibilities');
+
+          if (list) {
+
+            list
+              .querySelectorAll(
+                '[data-tool-partition]'
+              )
+              .forEach(
+                node =>
+                  node.classList.toggle(
+                    'is-selected',
+                    node.dataset
+                      .toolPartition
+                      === selectedToolPartition
+                  )
+              );
+          }
+        }
+
+      } else {
+
+        // Nothing to point at: put the detail panel back on its hint
+        // instead of showing a tool the list cannot reach.
+        clearToolDetail();
+
+        $('tool-responsibilities').innerHTML =
+          `<li class="detail-empty">${
+            query
+              ? `No tools match \u201c${
+                  escapeLookupHtml(query)
+                }\u201d.`
+              : 'No tools recorded for this period.'
+          }</li>`;
+      }
+
+      setText(
+        'tool-resp-title',
+        query
+          ? toolRanked.length > TOOL_SEARCH_LIMIT
+            ? `Tools matching \u201c${query}\u201d (${
+                fmt(toolRanked.length)
+              }) \u00b7 showing top ${TOOL_SEARCH_LIMIT}`
+            : `Tools matching \u201c${query}\u201d (${
+                fmt(toolRanked.length)
+              })`
+          : 'Top 10 tools by job posts'
       );
 
       setText(
         'tool-resp-period',
         jobFunction === 'all'
           ? monthLabel(period)
-          : `${jobFunction} · ${monthLabel(period)}`
+          : `${jobFunction} \u00b7 ${monthLabel(period)}`
       );
 
       setText(
@@ -2678,13 +4710,82 @@
             : 'Posts'
       );
 
+      // The open detail panel holds live counts, so it is refreshed
+      // with the list whenever a control changes.
+      if (selectedToolPartition) {
+
+        showToolDetail(
+          selectedToolPartition,
+          selectedToolLabel
+        );
+      }
+
       syncDetailHeights();
+    }
+
+    // --------------------------------------------------------
+    // Tool detail: the role totals for the selected tool plus its
+    // total under the current period / count filters. Everything else
+    // about the tool already sits in the ranking on the left, so
+    // the panel stays out of its way.
+    // --------------------------------------------------------
+
+    function clearToolDetail() {
+
+      if (!selectedToolPartition) {
+        return;
+      }
+
+      selectedToolPartition = null;
+      selectedToolLabel = null;
+
+      setText('tool-detail-title', 'Tool detail');
+      setText('tool-detail-note', '');
+
+      activateDetailTab($('tdtab-btn-roles'));
+
+      const copyNode =
+        $('tool-detail-copy');
+
+      if (copyNode) {
+
+        copyNode.innerHTML =
+          '<p class="detail-empty">Select a tool to see the roles that use it here.</p>';
+      }
+
+      const jfNode =
+        $('tool-detail-jf-copy');
+
+      if (jfNode) {
+
+        jfNode.innerHTML =
+          '<p class="detail-empty">Select a tool to see the job functions that ask for it here.</p>';
+      }
+
+      const list =
+        $('tool-responsibilities');
+
+      if (list) {
+
+        list
+          .querySelectorAll('.is-selected')
+          .forEach(
+            node =>
+              node.classList.remove('is-selected')
+          );
+      }
     }
 
     function showToolDetail(
       partition,
       label
     ) {
+
+      selectedToolPartition =
+        String(partition);
+
+      selectedToolLabel =
+        label;
 
       const detail =
         $('tool-detail');
@@ -2696,15 +4797,29 @@
       const layout =
         $('tool-layout');
 
-      const examples =
-        toolStatements(
-          partition,
-          currentToolJobFunction()
-        );
+      const period =
+        currentToolPeriod();
+
+      const entries =
+        toolRoleBreakdown(period, String(partition));
 
       setText(
         'tool-detail-title',
         label
+      );
+
+      setText(
+        'tool-detail-note',
+        `${monthLabel(period)} \u00b7 ${fmt(
+          toolCrossTabTotal(
+            period,
+            String(partition)
+          )
+        )} ${
+          countMode === 'new'
+            ? 'new jobs'
+            : 'posts'
+        }`
       );
 
       const copyNode =
@@ -2712,33 +4827,49 @@
 
       if (copyNode) {
 
-        const escapeHtml = sentence =>
-          String(sentence)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;');
-
-        toolExampleItems =
-          examples.map(
-            sentence =>
-              `“${escapeHtml(sentence)}”`
-          );
-
-        toolExamplePage = 0;
-
         copyNode.innerHTML =
-          detailExamplesHtml(
-            toolExampleItems,
-            toolExamplePage,
-            'tool',
-            'Example sentence text is not available.'
+          toolRoleTotalsHtml(entries);
+      }
+
+      const jfNode =
+        $('tool-detail-jf-copy');
+
+      if (jfNode) {
+
+        const jfEntries =
+          toolJobFunctionBreakdown(
+            period,
+            String(partition)
+          );
+
+        jfNode.innerHTML =
+          toolRoleTotalsHtml(
+            jfEntries,
+            'job functions'
           );
       }
 
-      if (detail) {
-        detail.hidden = false;
+      const list =
+        $('tool-responsibilities');
+
+      if (list) {
+
+        list
+          .querySelectorAll(
+            '[data-tool-partition]'
+          )
+          .forEach(
+            node =>
+              node.classList.toggle(
+                'is-selected',
+                node.dataset
+                  .toolPartition
+                  === selectedToolPartition
+              )
+          );
       }
+
+      detail.hidden = false;
 
       if (layout) {
         layout.classList.add('has-detail');
@@ -2837,179 +4968,35 @@
     // Month selector
     // --------------------------------------------------------
 
-    function renderMetrics() {
+    // The first month of the window was collected before duplicate
+    // job posts were captured, so it is incomplete. The banner shows
+    // while that month is selected and while any month whose
+    // month-over-month comparison is measured against it.
+    function renderMonthWarning() {
 
-      const single =
-        currentMonthForMoM();
+      const node =
+        $('month-warning');
 
-      const monthIndex =
-        months.indexOf(
-          single
-        );
-
-      const prior =
-        monthIndex > 0
-          ? months[
-              monthIndex - 1
-            ]
-          : null;
-
-      const selected =
-        totalJobFunctionMetric(
-          'all',
-          single
-        );
-
-      const priorTotal =
-        prior
-          ? totalJobFunctionMetric(
-              'all',
-              prior
-            )
-          : 0;
-
-      const change =
-        prior
-          ? pct(
-              selected,
-              priorTotal
-            )
-          : null;
-
-      setText(
-        'metric-month',
-        fmt(selected)
-      );
-
-      setText(
-        'metric-month-note',
-        countMode === 'new'
-          ? `${monthLabel(single)} · New jobs`
-          : `${monthLabel(single)} · ${
-              includeRecruiters
-                ? 'Recruiter posts included'
-                : 'Recruiter posts excluded'
-            }`
-      );
-
-      setText(
-        'metric-mom',
-        change === null
-          ? '—'
-          : `${
-              change >= 0
-                ? '+'
-                : ''
-            }${change.toFixed(1)}%`
-      );
-
-      $('metric-mom').className =
-        change === null
-          ? ''
-          : change >= 0
-            ? 'up'
-            : 'down';
-
-      setText(
-        'metric-mom-note',
-        prior
-          ? `Compared with ${monthLabel(prior)}`
-          : 'No prior month in data'
-      );
-
-      // Recruiter share always uses the full market (recruiters included),
-      // so it responds to the posts/new jobs toggle but never to the
-      // recruiter toggle.
-
-      const monthShare = target => {
-
-        const targetRows =
-          jobFunctionRows.filter(
-            row =>
-              row.month === target
-          );
-
-        const denominator =
-          targetRows.reduce(
-            (sum, row) =>
-              sum
-              + (
-                Number(
-                  countMode === 'new'
-                    ? row.new_job_count
-                    : row.posting_count
-                ) || 0
-              ),
-            0
-          );
-
-        const recruiter =
-          targetRows.reduce(
-            (sum, row) =>
-              sum
-              + (
-                Number(
-                  countMode === 'new'
-                    ? row.new_recruiter_job_count
-                    : row.recruiter_posting_count
-                ) || 0
-              ),
-            0
-          );
-
-        return denominator
-          ? recruiter / denominator * 100
-          : null;
-      };
-
-      const share =
-        monthShare(single);
-
-      const priorShare =
-        prior
-          ? monthShare(prior)
-          : null;
-
-      const shareDelta =
-        share !== null
-        && priorShare !== null
-          ? share - priorShare
-          : null;
-
-      const shareNode =
-        $('metric-recruiter-share');
-
-      if (shareNode) {
-
-        shareNode.innerHTML =
-          share === null
-            ? '—'
-            : share.toFixed(1) + '%'
-              + (
-                shareDelta === null
-                  ? ''
-                  : ` <span class="metric-delta ${
-                      shareDelta > 0
-                        ? 'up'
-                        : shareDelta < 0
-                          ? 'down'
-                          : ''
-                    }">${shareDelta > 0 ? '+' : ''}${shareDelta.toFixed(1)} pp</span>`
-              );
+      if (!node) {
+        return;
       }
 
-      setText(
-        'metric-recruiter-share-note',
-        `${
-          countMode === 'new'
-            ? 'Of new jobs'
-            : 'Of job posts'
-        } ${monthLabel(single)}${
-          prior
-            ? ` vs ${monthLabel(prior)}`
-            : ''
-        }`
-      );
+      const first =
+        months[0];
+
+      const show =
+        monthSelect.value === first
+        || priorMonthOf(monthSelect.value) === first;
+
+      node.hidden = !show;
+
+      if (show) {
+
+        setText(
+          'month-warning-text',
+          `${monthShort(first)} data is incomplete \u2014 duplicate job posts were not collected at the start of the observation window. Treat ${monthShort(first)} volumes, and any month-over-month change measured against ${monthShort(first)}, with caution.`
+        );
+      }
     }
 
     // --------------------------------------------------------
@@ -3072,6 +5059,110 @@
     // Main render
     // --------------------------------------------------------
 
+    // --------------------------------------------------------
+    // Overview tabs
+    // Panels toggle with the hidden attribute. Charts inside a
+    // hidden panel have no layout box, so each tab re-renders
+    // its charts when it becomes visible.
+    // --------------------------------------------------------
+
+    const tabButtons =
+      Array.from(
+        document.querySelectorAll('.tab-btn')
+      );
+
+    function activateTab(button) {
+
+      const barButtons =
+        Array.from(
+          button
+            .closest('.tab-bar')
+            .querySelectorAll('.tab-btn')
+        );
+
+      for (const other of barButtons) {
+
+        const active =
+          other === button;
+
+        other.classList.toggle('is-active', active);
+        other.setAttribute('aria-selected', active ? 'true' : 'false');
+
+        const panel =
+          document.getElementById(
+            other.getAttribute('aria-controls')
+          );
+
+        if (panel) {
+          panel.hidden = !active;
+        }
+      }
+
+      const id =
+        button.getAttribute('aria-controls');
+
+      if (id === 'tab-trends') {
+        renderTrend();
+        renderJobFunctionTrend();
+      }
+
+      if (id === 'tab-pay') {
+        renderHistograms();
+      }
+
+      if (id === 'mtab-pay') {
+        renderMonthlyHistograms();
+      }
+    }
+
+    for (const button of tabButtons) {
+      button.addEventListener('click', () => activateTab(button));
+    }
+
+    // Detail asides (Role / Tool analysis): small independent tab
+    // bars inside each right-hand box. One helper serves both.
+
+    function activateDetailTab(button) {
+
+      if (!button) {
+        return;
+      }
+
+      const bar =
+        button.closest('.detail-tab-bar');
+
+      if (!bar) {
+        return;
+      }
+
+      for (const other of bar.querySelectorAll('.detail-tab-btn')) {
+
+        const active =
+          other === button;
+
+        other.classList.toggle('is-active', active);
+        other.setAttribute('aria-selected', active ? 'true' : 'false');
+
+        const panel =
+          document.getElementById(
+            other.getAttribute('aria-controls')
+          );
+
+        if (panel) {
+          panel.hidden = !active;
+        }
+      }
+    }
+
+    document.querySelectorAll('.detail-tab-btn')
+      .forEach(
+        button =>
+          button.addEventListener(
+            'click',
+            () => activateDetailTab(button)
+          )
+      );
+
     function render() {
 
       renderFilterState();
@@ -3090,20 +5181,18 @@
           : 'Top 5 job function trends'
       );
 
-      setText(
-        'monthly-job-function-title',
-        countMode === 'new'
-          ? 'New jobs by job function'
-          : 'Job posts by job function'
-      );
-
       renderOverallMetrics();
       renderHero();
+      renderOverallTicker();
       renderTicker();
-      renderMetrics();
+      renderMonthWarning();
       renderTrend();
       renderJobFunctionTrend();
       renderJobFunctionViews();
+      renderOverallPay();
+      renderOverallTopLists();
+      renderMonthlyPay();
+      renderMonthlyTopLists();
       renderResponsibilities();
       renderTools();
     }
@@ -3365,14 +5454,6 @@
         !hasTools;
     }
 
-    const toolsSoon =
-      $('tools-soon');
-
-    if (toolsSoon) {
-      toolsSoon.hidden =
-        hasTools;
-    }
-
     if (
       recruiterToggle
     ) {
@@ -3519,6 +5600,22 @@
       renderResponsibilities
     );
 
+    if (roleSearch) {
+
+      roleSearch.addEventListener(
+        'input',
+        renderResponsibilities
+      );
+    }
+
+    if (toolSearch) {
+
+      toolSearch.addEventListener(
+        'input',
+        renderTools
+      );
+    }
+
     if (
       toolMonthSelect
     ) {
@@ -3586,6 +5683,46 @@
       }
     );
 
+    $('pay-jf-prev').addEventListener(
+      'click',
+      () => {
+
+        payJfPage -= 1;
+
+        renderOverallPay();
+      }
+    );
+
+    $('pay-jf-next').addEventListener(
+      'click',
+      () => {
+
+        payJfPage += 1;
+
+        renderOverallPay();
+      }
+    );
+
+    $('monthly-pay-jf-prev').addEventListener(
+      'click',
+      () => {
+
+        monthlyPayJfPage -= 1;
+
+        renderMonthlyPay();
+      }
+    );
+
+    $('monthly-pay-jf-next').addEventListener(
+      'click',
+      () => {
+
+        monthlyPayJfPage += 1;
+
+        renderMonthlyPay();
+      }
+    );
+
     document.addEventListener(
       'click',
       event => {
@@ -3597,10 +5734,7 @@
 
         if (pagerPrev) {
 
-          turnDetailPage(
-            pagerPrev.dataset.examplesPrev,
-            -1
-          );
+          turnDetailPage(-1);
 
           return;
         }
@@ -3612,10 +5746,7 @@
 
         if (pagerNext) {
 
-          turnDetailPage(
-            pagerNext.dataset.examplesNext,
-            1
-          );
+          turnDetailPage(1);
 
           return;
         }
@@ -3711,6 +5842,7 @@
 
           renderTrend();
           renderJobFunctionTrend();
+          renderHistograms();
         }
       );
 

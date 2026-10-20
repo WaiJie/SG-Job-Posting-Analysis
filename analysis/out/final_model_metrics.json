@@ -1,0 +1,70 @@
+{
+  "model": "FDR tools (53 of 100) + role + experience + position + employment + district",
+  "target": "log((salary_min + salary_max) / 2)",
+  "n_features": 255,
+  "n_tool_candidates": 100,
+  "n_tools_selected": 53,
+  "fdr_q": 0.05,
+  "dropped_collinear": [],
+  "sample_counts": {
+    "raw_rows": 421355,
+    "master_rows": 248437,
+    "salary_exp_rows": 244872,
+    "role_rows": 244248,
+    "model_rows": 214138,
+    "unique_uuid": 214138
+  },
+  "n_model_rows": 214138,
+  "n_roles": 166,
+  "salary_mid_median": 4250.0,
+  "cv_r2": 0.6826862100064728,
+  "cv_r2_std": 0.009412018520972391,
+  "cv_mae_log": 0.22448332773792906,
+  "cv_mae_sgd": 1238.3292971486178,
+  "holdout_r2": 0.6833975380183963,
+  "holdout_mae_log": 0.2195467698830357,
+  "holdout_mae_sgd": 1190.6994278393322,
+  "in_sample_r2": 0.6907613774410042,
+  "in_sample_adj_r2": 0.6903941364254491,
+  "n_train": 173301,
+  "n_test": 40837,
+  "features": {
+    "role": true,
+    "experience_spline": true,
+    "position": true,
+    "employment": true,
+    "district": true,
+    "tools_fdr_selected": true,
+    "month": false,
+    "bools": false,
+    "rare_tool_count": false
+  },
+  "group_importance": [
+    {
+      "group": "Role",
+      "delta_mae_sgd": 430.0360253441662
+    },
+    {
+      "group": "Experience",
+      "delta_mae_sgd": 508.30726674680625
+    },
+    {
+      "group": "Position level",
+      "delta_mae_sgd": 320.7377912459816
+    },
+    {
+      "group": "Employment type",
+      "delta_mae_sgd": 38.98931168555341
+    },
+    {
+      "group": "Tools",
+      "delta_mae_sgd": 38.04740992275638
+    },
+    {
+      "group": "District",
+      "delta_mae_sgd": 19.098158611619645
+    }
+  ],
+  "salary_mid_p25": 3200.0,
+  "salary_mid_p75": 6300.0
+}
